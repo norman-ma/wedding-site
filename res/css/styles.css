@@ -1,0 +1,83 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	scroll-behavior: smooth;
+}
+
+#flowers{
+	position: fixed;
+	transform: rotate(-15deg);
+	width: 70vw;
+	z-index: 5;
+	margin: 0 auto;
+	display: block;
+	left: 20vw;
+	top: -25vh;
+}
+
+#names{
+	position: fixed;
+	max-width: 65vw;
+	display: block;
+	top: 27vh;
+	margin: 0 auto;
+	left: 17.5vw;
+}
+
+#main-menu{
+	position: -webkit-sticky; /* Safari */
+	position: sticky;
+	top: 2vh;
+	display: flex;
+	justify-content: center;
+	margin: 85vh auto;
+	z-index: 10;
+}
+
+button a{
+	text-decoration: none;
+}
+
+.menu-button{
+	background: none;
+	box-shadow: none;
+	border: none;
+	color: #400711;
+	font-family: "Cormorant Garamomd";
+	font-size: 1.3em;
+	margin: 0px;
+	width: 15%;
+}
+
+.menu-button:hover{
+	font-weight:bold;
+}
+
+.left{
+	border-right: 1px #400711 solid
+}
+
+.center{
+	border-right: 1px #400711 solid;
+	border-left: 1px #400711 solid;
+}
+
+.right{
+	border-left: 1px #400711 solid
+}
+
+#content{
+	height: 900vh;
+}
+
+h1{
+	font-family: "Cormorant Garamond";
+	font-weight: bold;
+	font-size: 5em;
+	text-align: center;
+	background: white;
+	color: #400711;
+	position: sticky;
+	top: 9vh;
+}
