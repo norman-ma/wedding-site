@@ -1,6 +1,11 @@
 @charset "utf-8";
 /* CSS Document */
 
+@font-face{
+	font-family: ChopinScript;
+	src: url("/res/fonts/ChopinScript.woff"); 
+}
+
 body{
 	scroll-behavior: smooth;
 }
