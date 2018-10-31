@@ -49,6 +49,11 @@ html{
 	width: 15%;
 }
 
+#main-menu a{
+	display: flex;
+	justify-content: center;
+}
+
 .menu-button{	
 	background: none;
 	box-shadow: none;
@@ -58,7 +63,6 @@ html{
 	font-size: 1.3em;
 	margin: 0px;
 	z-index: 10;
-	width: 100%;
 }
 
 .menu-button:hover{
