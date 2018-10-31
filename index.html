@@ -10,16 +10,23 @@
 <meta name="viewport" content="width=device-width, initial scale=1.0">
 <body>
 	<img src="res/images/flowers header.png" id="flowers" class="header" alt="Flowers" data-scroll-speed="5">
-	<img src="res/images/names.svg" id="names" class="header" alt="Michael-Anthony & Tiffany" data-scroll-speed="0">		
-	<div id="main-menu">
-		<button class="menu-button left"><a href="#wedding">Our Wedding</a></button>
-		<button class="menu-button center"><a href="#photos">Photos</a></button>
-		<button class="menu-button right"><a href="#registry">Registry</a></button>
+	<img src="res/images/names.svg" id="names" class="header" alt="Michael-Anthony & Tiffany" data-scroll-speed="0">	
+	<div id="home" onclick="toTop()">#AisleGoWithNorman</div>
+	<div id="main-menu">		
+		<a href="#our-wedding" class="left"><button class="menu-button">Our Wedding</button></a>
+		<a href="#photos" class="center"><button class="menu-button">Photos</button></a>
+		<a href="#registry" class="right"><button  class="menu-button">Registry</button></a>
 	</div>
 	<div id="content">
-		<h1><a id="wedding">Our Wedding</a></h1>
-		<h1><a id="photos">Photos</a></h1>
-		<h1><a id="registry">Registry</a></h1>
+		<div id="our-wedding" class="page">
+			<h1>Our Wedding</h1>
+		</div>
+		<div id="photos" class="page">
+			<h1>Photos</h1>
+		</div>
+		<div id="registry" class="page">
+			<h1>Registry</h1>
+		</div>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="res/js/app.js"></script>

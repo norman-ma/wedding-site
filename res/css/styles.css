@@ -6,7 +6,7 @@
 	src: url("/res/fonts/ChopinScript.woff"); 
 }
 
-body{
+html{
 	scroll-behavior: smooth;
 }
 
@@ -19,6 +19,7 @@ body{
 	display: block;
 	left: 20vw;
 	top: -25vh;
+	pointer-events: none;
 }
 
 #names{
@@ -28,23 +29,27 @@ body{
 	top: 27vh;
 	margin: 0 auto;
 	left: 17.5vw;
+	z-index: 3;
 }
 
 #main-menu{
 	position: -webkit-sticky; /* Safari */
 	position: sticky;
-	top: 2vh;
+	top: 0vh;
+	padding: 2vh 0;
 	display: flex;
 	justify-content: center;
-	margin: 85vh auto;
-	z-index: 10;
+	margin: 85vh auto 20vh auto;
+	z-index: 4;
 }
 
-button a{
+#main-menu a{
 	text-decoration: none;
+	position: relative;
+	width: 15%;
 }
 
-.menu-button{
+.menu-button{	
 	background: none;
 	box-shadow: none;
 	border: none;
@@ -52,7 +57,8 @@ button a{
 	font-family: 'Cormorant Garamond', serif;
 	font-size: 1.3em;
 	margin: 0px;
-	width: 15%;
+	z-index: 10;
+	width: 100%;
 }
 
 .menu-button:hover{
@@ -81,8 +87,26 @@ h1{
 	font-weight: bold;
 	font-size: 5em;
 	text-align: center;
-	background: white;
 	color: #400711;
 	position: sticky;
 	top: 9vh;
+}
+
+.page{
+	background: white;
+	height: 25%;
+}
+
+#home{
+	font-family: 'Cormorant Garamond', serif;
+	font-size: 1.5em;
+	font-weight: bold;
+	text-decoration: none;
+	display: none;
+	position: fixed;
+	top: 2vh;
+	left: 4vw;
+	z-index: 10;
+	opacity: 0.3;
+	cursor: context-menu;
 }
