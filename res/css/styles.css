@@ -6,20 +6,34 @@
 	src: url("/res/fonts/ChopinScript.woff"); 
 }
 
+@keyframes welcome{
+	from {opacity: 0; transform: translateY(2vh)}
+	to {opacity: 1; transform: translateY(0)}
+}
+
+@keyframes welcome-1{
+	from {opacity: 0; transform: translateY(2vh) rotate(-12deg)}
+	to {opacity: 1; transform: translateY(0) rotate(-15deg)}
+}
+
 html{
 	scroll-behavior: smooth;
 }
 
 #flowers{
 	position: fixed;
-	transform: rotate(-15deg);
 	width: 70vw;
 	z-index: 5;
+	transform: rotate(-15deg);
 	margin: 0 auto;
 	display: block;
 	left: 20vw;
 	top: -25vh;
 	pointer-events: none;
+	
+	animation-name: welcome-1;
+	animation-duration: 2s;
+	animation-fill-mode: backwards;
 }
 
 #names{
@@ -30,6 +44,11 @@ html{
 	margin: 0 auto;
 	left: 17.5vw;
 	z-index: 3;
+	
+	animation-name: welcome;
+	animation-duration: 1.5s;
+	animation-delay: 1s;
+	animation-fill-mode: backwards;
 }
 
 #main-menu{
@@ -41,6 +60,11 @@ html{
 	justify-content: center;
 	margin: 85vh auto 20vh auto;
 	z-index: 4;
+	
+	animation-name: welcome;
+	animation-duration: 2s;
+	animation-delay: 1.5s;
+	animation-fill-mode: backwards;
 }
 
 #main-menu a{
@@ -93,7 +117,7 @@ h1{
 	text-align: center;
 	color: #400711;
 	position: sticky;
-	top: 9vh;
+	top: 8vh;
 }
 
 .page{
@@ -113,4 +137,49 @@ h1{
 	z-index: 10;
 	opacity: 0.3;
 	cursor: context-menu;
+}
+
+.page .content{
+	top: 20vh;
+}
+
+#countdown{
+	position: fixed;
+	z-index: 10;
+	font-family: "Cormorant Garamond";
+	font-weight: bold;
+	width: 20vw;
+	top: 0vh;
+	left: 80vw;
+	display: none;
+	justify-content: center;
+	align-items: baseline;
+	cursor: context-menu;
+}
+
+#countown-val{
+	position: relative;	
+	display: inline-block;	
+}
+
+#countown-val h2{
+	font-size: 3em;
+	font-family: "Cormorant Garamond";
+	font-weight: bolder;
+	color: #bf6795;
+	margin: 0;
+	text-shadow: 2px
+}
+
+#countdown-message{
+	display: inline-block;
+	position: relative;
+	color: #400711;
+	font-weight:lighter;
+	font-style:oblique;
+}
+
+.current{
+	border-bottom: solid #400711 0.2vh;
+	font-weight: bold;
 }

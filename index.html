@@ -4,31 +4,51 @@
 	<meta charset="utf-8">
 	<title>Aisle Go With Norman</title>
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 	<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
 	<link rel="stylesheet" href="res/css/styles.css">	
 </head>
 <meta name="viewport" content="width=device-width, initial scale=1.0">
-<body>
-	<img src="res/images/flowers header.png" id="flowers" class="header" alt="Flowers" data-scroll-speed="5">
-	<img src="res/images/names.svg" id="names" class="header" alt="Michael-Anthony & Tiffany" data-scroll-speed="0">	
-	<div id="home" onclick="toTop()">#AisleGoWithNorman</div>
-	<div id="main-menu">		
-		<a href="#our-wedding" class="left wedding"><button class="menu-button">Our Wedding</button></a>
-		<a href="#photos" class="center photos"><button class="menu-button">Photos</button></a>
-		<a href="#registry" class="right registry"><button  class="menu-button">Registry</button></a>
-	</div>
-	<div id="content">
-		<div id="our-wedding" class="page">
-			<h1>Our Wedding</h1>
+<body><br>
+	<div ng-app="WeddingApp">
+		<img src="res/images/flowers header.png" id="flowers" class="header" alt="Flowers" data-scroll-speed="5">
+		<img src="res/images/names.svg" id="names" class="header" alt="Michael-Anthony & Tiffany" data-scroll-speed="0">	
+		<div id="home" onclick="toTop()">#AisleGoWithNorman</div>
+		<div id="countdown" ng-controller="CountdownController">
+			<div id="countown-val"><h2>{{ countdown }}</h2></div><div id="countdown-message">{{ message }}</div>						
 		</div>
-		<div id="photos" class="page">
-			<h1>Photos</h1>
+		<div id="main-menu" class="header" data-scroll-speed="0">		
+			<a href="#our-wedding" class="left wedding"><button class="menu-button">Our Wedding</button></a>
+			<a href="#getting-there" class="center there"><button class="menu-button">Getting There</button></a>
+			<a href="#photos" class="center photos"><button class="menu-button">Photos</button></a>		
+			<a href="#registry" class="right registry"><button class="menu-button">Registry</button></a>
 		</div>
-		<div id="registry" class="page">
-			<h1>Registry</h1>
+		<div id="content">
+			<div id="our-wedding" class="page">
+				<h1>Our Wedding</h1>
+				<div class="content"></div>
+			</div>
+			<div id="getting-there" class="page">
+				<h1>Getting There</h1>
+				<div class="content"></div>
+			</div>
+			<div id="photos" class="page">
+				<h1>Photos</h1>
+				<div class="content"></div>
+			</div>		
+			<div id="registry" class="page">
+				<h1>Registry</h1>
+				<div class="content"></div>
+			</div>
 		</div>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
 	<script src="res/js/app.js"></script>
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	<script>
+		AOS.init();
+	</script>
 </body>
 </html>
