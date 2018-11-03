@@ -70,9 +70,6 @@ $(window).scroll(function(){
 		menuFormat("");
 	}
 	
-	
-	
-	
 });
 
 function menuFormat(current){
@@ -82,26 +79,46 @@ function menuFormat(current){
 		$("#main-menu .there .menu-button").removeClass("current");
 		$("#main-menu .photos .menu-button").removeClass("current");
 		$("#main-menu .registry .menu-button").removeClass("current");
+		$("#our-wedding h1").addClass("current");
+		$("#getting-there h1").removeClass("current");
+		$("#photos h1").removeClass("current");
+		$("#registry h1").removeClass("current");
 	}else if(current === "Getting There"){
 		$("#main-menu .wedding .menu-button").removeClass("current");
 		$("#main-menu .there .menu-button").addClass("current");
 		$("#main-menu .photos .menu-button").removeClass("current");
 		$("#main-menu .registry .menu-button").removeClass("current");
+		$("#our-wedding h1").removeClass("current");
+		$("#getting-there h1").addClass("current");
+		$("#photos h1").removeClass("current");
+		$("#registry h1").removeClass("current");
 	}else if(current === "Photos"){
 		$("#main-menu .wedding .menu-button").removeClass("current");
 		$("#main-menu .there .menu-button").removeClass("current");
 		$("#main-menu .photos .menu-button").addClass("current");
 		$("#main-menu .registry .menu-button").removeClass("current");
+		$("#our-wedding h1").removeClass("current");
+		$("#getting-there h1").removeClass("current");
+		$("#photos h1").addClass("current");
+		$("#registry h1").removeClass("current");
 	}else if(current === "Registry"){
 		$("#main-menu .wedding .menu-button").removeClass("current");
 		$("#main-menu .there .menu-button").removeClass("current");
 		$("#main-menu .photos .menu-button").removeClass("current");
 		$("#main-menu .registry .menu-button").addClass("current");
+		$("#our-wedding h1").removeClass("current");
+		$("#getting-there h1").removeClass("current");
+		$("#photos h1").removeClass("current");
+		$("#registry h1").addClass("current");
 	}else{
 		$("#main-menu .wedding .menu-button").removeClass("current");
 		$("#main-menu .there .menu-button").removeClass("current");
 		$("#main-menu .photos .menu-button").removeClass("current");
 		$("#main-menu .registry .menu-button").removeClass("current");
+		$("#our-wedding h1").removeClass("current");
+		$("#getting-there h1").removeClass("current");
+		$("#photos h1").removeClass("current");
+		$("#registry h1").removeClass("current");
 	}
 }
 

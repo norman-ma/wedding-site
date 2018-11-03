@@ -12,7 +12,7 @@
 }
 
 @keyframes welcome-1{
-	from {opacity: 0; transform: translateY(2vh) rotate(-12deg)}
+	from {opacity: 0; transform: translateY(2vh) rotate(-13deg)}
 	to {opacity: 1; transform: translateY(0) rotate(-15deg)}
 }
 
@@ -118,6 +118,7 @@ h1{
 	color: #400711;
 	position: sticky;
 	top: 8vh;
+	z-index: 3;
 }
 
 .page{
@@ -179,7 +180,122 @@ h1{
 	font-style:oblique;
 }
 
-.current{
+.menu-button.current{
 	border-bottom: solid #400711 0.2vh;
-	font-weight: bold;
+	font-weight: bold;	
 }
+
+.page .current{
+	background: white;
+}
+
+.page{
+	position: relative;
+}
+
+#when, #where{
+	position: relative;
+	height: 80vh;
+	width: 33vw;
+	z-index: 3;
+}
+
+#when-img{
+	width: 22vw;
+	position: absolute;
+	left: -3vw;
+	z-index: 2;
+}
+
+#when-txt{
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	left: 11vw;
+	top: 9vh;
+}
+
+#our-wedding .title{
+	font-family: "Cormorant Garamond";
+	font-weight: bold;
+	color: #bf6795;
+	font-size: 12em;
+	text-align: center;
+	margin: 0;
+	height: 18vh;
+}
+
+#when h2{
+	font-family: "Cormorant Garamond";
+	color: #bf6795;
+	font-size: 4em;
+	text-align: center;
+	margin: 0;
+}
+
+#where{
+	position: absolute;
+	top: 28vh;
+	left: 64vw;
+}
+
+#where-img{
+	position: absolute;
+	width: 22vw;
+	left: 18vw;
+	top: 40vh;
+	z-index: 1;
+}
+
+#where .title{
+	position: absolute;
+	top: 40vh;
+}
+
+#where-txt{
+	font-family: "Cormorant Garamond";
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+}
+
+#line1, #line3{
+	font-size: 4em
+}
+
+#line2{
+	font-size: 2.5em;
+}
+
+#where-txt h2{
+	font-family: "Cormorant Garamond";
+	margin: 0;
+	padding: 0;
+	line-height: .7;
+	color: #bf6795;
+	text-align: center;
+}
+
+#where-txt p{
+	color: #400711;
+	font-size: 1.6em;
+	margin: 0
+}
+
+#where-txt h2, #where-txt p{
+	position: relative;
+	top: 20vh;
+	width: 25vw;
+}
+
+#wedding-divider{
+  position: absolute;
+	width: 22vw;
+	top: 30vh;
+	left: 39vw;
+	z-index: 0;
+}
+
+
