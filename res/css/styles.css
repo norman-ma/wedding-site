@@ -16,15 +16,15 @@
 	to {opacity: 1; transform: translateY(0) rotate(-15deg)}
 }
 
+html{
+	scroll-behavior: smooth;
+}
+
+
 [class*="col-"] {
     float: left;
     padding: 15px;
     margin: 0;
-	  width: 100%;
-}
-
-html{
-	scroll-behavior: smooth;
 }
 
 @media only screen and (min-width: 768px){
@@ -331,10 +331,13 @@ html{
 }
 
 @media (max-width: 768px){
+
+	[class*="col-"] {
+		width: 100vh;
+	}	
 	
 	#landing{
 		position: relative;
-		text-align: center;
 	}
 
 	#flowers{
@@ -360,8 +363,10 @@ html{
 	.names{
 		position: relative;
 		display: inline-block;	
-		width: 96%;
-		top: 60px;
+		top: 40vh;
+		margin:0 5%;
+		width: 90%;
+
 		animation-name: welcome;
 		animation-duration: 1.5s;
 		animation-delay: 1s;
