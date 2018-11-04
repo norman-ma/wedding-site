@@ -23,7 +23,6 @@ html{
 
 [class*="col-"] {
     float: left;
-    padding: 15px;
     margin: 0;
 }
 
