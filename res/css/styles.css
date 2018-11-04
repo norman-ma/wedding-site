@@ -16,286 +16,357 @@
 	to {opacity: 1; transform: translateY(0) rotate(-15deg)}
 }
 
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+    margin: 0;
+	  width: 100%;
+}
+
 html{
 	scroll-behavior: smooth;
 }
 
-#flowers{
-	position: fixed;
-	width: 70vw;
-	z-index: 5;
-	transform: rotate(-15deg);
-	margin: 0 auto;
-	display: block;
-	left: 20vw;
-	top: -25vh;
-	pointer-events: none;
+@media only screen and (min-width: 768px){
+	.col-1 {width: 8.33%;}
+	.col-2 {width: 16.66%;}
+	.col-3 {width: 25%;}
+	.col-4 {width: 33.33%;}
+	.col-5 {width: 41.66%;}
+	.col-6 {width: 50%;}
+	.col-7 {width: 58.33%;}
+	.col-8 {width: 66.66%;}
+	.col-9 {width: 75%;}
+	.col-10 {width: 83.33%;}
+	.col-11 {width: 91.66%;}
+	.col-12 {width: 100%;}
+
+	#flowers{
+		position: fixed;
+		width: 70vw;
+		z-index: 5;
+		transform: rotate(-15deg);
+		margin: 0 auto;
+		display: block;
+		left: 20vw;
+		top: -25vh;
+		pointer-events: none;
+
+		animation-name: welcome-1;
+		animation-duration: 2s;
+		animation-fill-mode: backwards;
+	}
 	
-	animation-name: welcome-1;
-	animation-duration: 2s;
-	animation-fill-mode: backwards;
+	.names.mobile{
+		display: none;
+	}
+
+	.names{
+		position: fixed;
+		max-width: 65vw;
+		display: block;
+		top: 27vh;
+		margin: 0 auto;
+		left: 17.5vw;
+		z-index: 3;
+
+		animation-name: welcome;
+		animation-duration: 1.5s;
+		animation-delay: 1s;
+		animation-fill-mode: backwards;
+	}
+
+	#header{
+		position: -webkit-sticky; /* Safari */
+		position: sticky;
+		top: 0vh;
+		padding: 2vh 0;
+		display: flex;
+		margin: 43% 0 10% 0;
+		z-index: 4;
+
+		animation-name: welcome;
+		animation-duration: 2s;
+		animation-delay: 1.5s;
+		animation-fill-mode: backwards;
+
+		padding: 0;
+	}
+
+	#main-menu{
+		display: flex;
+		align-items: center;
+		margin-top: 0;
+	}
+
+	#main-menu a{
+		text-decoration: none;
+		position: relative;
+		width: 25%;
+	}
+
+	#main-menu a{
+		display: flex;
+		justify-content: center;
+	}
+
+	.menu-button{	
+		background: none;
+		box-shadow: none;
+		border: none;
+		color: #400711;
+		font-family: 'Cormorant Garamond', serif;
+		font-size: 1.3em;
+		margin: 0px;
+		z-index: 10;
+	}
+
+	.menu-button:hover{
+		font-weight:bold;
+	}
+
+	.left{
+		border-right: 1px #400711 solid
+	}
+
+	.center{
+		border-right: 1px #400711 solid;
+		border-left: 1px #400711 solid;
+	}
+
+	.right{
+		border-left: 1px #400711 solid
+	}
+
+	#home{
+		opacity: 0;
+		cursor: context-menu;
+		display: flex;
+		align-items: center;
+	}
+
+	#home h3{
+		font-family: 'Cormorant Garamond', serif;
+		font-size: 1.5em;
+		font-weight: bold;
+		text-align: center;
+		width: 100%;
+	}
+
+	#countdown{
+		opacity: 0;
+		cursor: context-menu;
+		text-align: center;
+	}
+
+	#countown-val{	
+		position: relative;	
+		display: inline-block;	
+	}
+
+	#countown-val h2{
+		font-size: 3em;
+		font-family: "Cormorant Garamond";
+		font-weight: bolder;
+		color: #bf6795;
+		margin: 0;
+		text-shadow: 2px
+	}
+
+	#countdown-message{
+		font-family: "Cormorant Garamond";
+		display: inline-block;
+		position: relative;
+		color: #400711;
+		font-weight:lighter;
+		font-style:oblique;
+	}
+
+	#content{
+		height: 900vh;
+	}
+
+	h1{
+		font-family: 'Cormorant Garamond', serif;
+		font-weight: bold;
+		font-size: 5em;
+		text-align: center;
+		color: #400711;
+		position: sticky;
+		top: 8vh;
+		z-index: 3;
+		height: 13vh;
+	}
+
+	.menu-button.current{
+		border-bottom: solid #400711 0.2vh;
+		font-weight: bold;	
+	}
+
+	.page .current{
+		background: white;
+	}
+
+	.page{
+		height: 20%;
+	}
+
+	#when{
+		position: relative;
+		height: 65vh;
+		z-index: 3;
+	}
+
+	#when-img{
+		position: relative;
+		z-index: 1;
+		left: -20%;
+		width: 90%;
+	}
+
+	#when .txt{
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+
+		width: 60%;
+
+		position: relative;
+		top: -47vh;
+		left: 38%;
+	}
+
+	#when .title{
+		font-family: "Cormorant Garamond";
+		color: #bf6795;
+		font-weight: bold;
+		font-size: 10em;
+		display: inline;
+
+		position: relative;	
+	}
+
+	#when h2{
+		font-family: "Cormorant Garamond";
+		color: #bf6795;
+		display: inline;
+		font-size: 4em;
+		line-height: .6;
+	}
+
+	#where{
+		position: relative;
+		z-index: 3;
+		height: 65vh;
+	}
+
+	#where-img{
+		position: relative;
+		width: 90%;
+		right: -10vw;
+	}
+
+	#where .title{
+		font-family: "Cormorant Garamond";
+		color: #bf6795;
+		font-weight: bold;
+		font-size: 10em;
+		width: 100%;
+		text-align: center;
+	}
+
+	#where p{
+		font-family: "Cormorant Garamond";
+		color: #400711;
+		font-size: 1.6em;
+		text-align: center;
+		line-height: .5
+	}
+
+	#where .big{
+		font-family: "Cormorant Garamond";
+		color: #bf6795;
+		font-size: 4em;
+		text-align: center;
+		line-height: .5
+	}
+
+	#where .small{
+		font-family: "Cormorant Garamond";
+		color: #bf6795;
+		font-size: 2em;
+		text-align: center;
+		line-height: .5
+	}
+
+	#where .txt{
+		position: relative;
+		width: 80%;
+		top: 16vh;
+	}
+
+	.address{
+		position: relative;
+		top: 7vh;
+	}
+
+	#wedding-divider{
+		position: relative;
+		z-index: 1;
+		text-align: center;
+	}
+
+	#wedding-divider img{
+		position: relative;
+		display: inline-block;
+		width: 100%;
+		z-index: 1;
+		top: 12vh;
+	}
+
+	#our-wedding{}
+	#getting-there{}
+	#photos{}
+	#registry{}
 }
 
-#names{
-	position: fixed;
-	max-width: 65vw;
-	display: block;
-	top: 27vh;
-	margin: 0 auto;
-	left: 17.5vw;
-	z-index: 3;
+@media (max-width: 768px){
 	
-	animation-name: welcome;
-	animation-duration: 1.5s;
-	animation-delay: 1s;
-	animation-fill-mode: backwards;
-}
+	#landing{
+		position: relative;
+		text-align: center;
+	}
 
-#main-menu{
-	position: -webkit-sticky; /* Safari */
-	position: sticky;
-	top: 0vh;
-	padding: 2vh 0;
-	display: flex;
-	justify-content: center;
-	margin: 85vh auto 20vh auto;
-	z-index: 4;
+	#flowers{
+		position: fixed;
+		width: 120%;
+		z-index: 5;
+		transform: rotate(-15deg);
+		margin: 0 auto;
+		display: block;
+		top: -100px;
+		pointer-events: none;
+
+		animation-name: welcome-1;
+		animation-duration: 2s;
+		animation-fill-mode: backwards;
+
+	}
 	
-	animation-name: welcome;
-	animation-duration: 2s;
-	animation-delay: 1.5s;
-	animation-fill-mode: backwards;
+	.names.desktop{
+		display: none;
+	}
+
+	.names{
+		position: relative;
+		display: inline-block;	
+		width: 96%;
+		top: 60px;
+		animation-name: welcome;
+		animation-duration: 1.5s;
+		animation-delay: 1s;
+		animation-fill-mode: backwards;
+	}
+	
+
 }
-
-#main-menu a{
-	text-decoration: none;
-	position: relative;
-	width: 15%;
-}
-
-#main-menu a{
-	display: flex;
-	justify-content: center;
-}
-
-.menu-button{	
-	background: none;
-	box-shadow: none;
-	border: none;
-	color: #400711;
-	font-family: 'Cormorant Garamond', serif;
-	font-size: 1.3em;
-	margin: 0px;
-	z-index: 10;
-}
-
-.menu-button:hover{
-	font-weight:bold;
-}
-
-.left{
-	border-right: 1px #400711 solid
-}
-
-.center{
-	border-right: 1px #400711 solid;
-	border-left: 1px #400711 solid;
-}
-
-.right{
-	border-left: 1px #400711 solid
-}
-
-#content{
-	height: 900vh;
-}
-
-h1{
-	font-family: 'Cormorant Garamond', serif;
-	font-weight: bold;
-	font-size: 5em;
-	text-align: center;
-	color: #400711;
-	position: sticky;
-	top: 8vh;
-	z-index: 3;
-}
-
-.page{
-	background: white;
-	height: 25%;
-}
-
-#home{
-	font-family: 'Cormorant Garamond', serif;
-	font-size: 1.5em;
-	font-weight: bold;
-	text-decoration: none;
-	display: none;
-	position: fixed;
-	top: 2vh;
-	left: 4vw;
-	z-index: 10;
-	opacity: 0.3;
-	cursor: context-menu;
-}
-
-.page .content{
-	top: 20vh;
-}
-
-#countdown{
-	position: fixed;
-	z-index: 10;
-	font-family: "Cormorant Garamond";
-	font-weight: bold;
-	width: 20vw;
-	top: 0vh;
-	left: 80vw;
-	display: none;
-	justify-content: center;
-	align-items: baseline;
-	cursor: context-menu;
-}
-
-#countown-val{
-	position: relative;	
-	display: inline-block;	
-}
-
-#countown-val h2{
-	font-size: 3em;
-	font-family: "Cormorant Garamond";
-	font-weight: bolder;
-	color: #bf6795;
-	margin: 0;
-	text-shadow: 2px
-}
-
-#countdown-message{
-	display: inline-block;
-	position: relative;
-	color: #400711;
-	font-weight:lighter;
-	font-style:oblique;
-}
-
-.menu-button.current{
-	border-bottom: solid #400711 0.2vh;
-	font-weight: bold;	
-}
-
-.page .current{
-	background: white;
-}
-
-.page{
-	position: relative;
-}
-
-#when, #where{
-	position: relative;
-	height: 80vh;
-	width: 33vw;
-	z-index: 3;
-}
-
-#when-img{
-	width: 22vw;
-	position: absolute;
-	left: -3vw;
-	z-index: 2;
-}
-
-#when-txt{
-	position: absolute;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	left: 11vw;
-	top: 9vh;
-}
-
-#our-wedding .title{
-	font-family: "Cormorant Garamond";
-	font-weight: bold;
-	color: #bf6795;
-	font-size: 12em;
-	text-align: center;
-	margin: 0;
-	height: 18vh;
-}
-
-#when h2{
-	font-family: "Cormorant Garamond";
-	color: #bf6795;
-	font-size: 4em;
-	text-align: center;
-	margin: 0;
-}
-
-#where{
-	position: absolute;
-	top: 28vh;
-	left: 64vw;
-}
-
-#where-img{
-	position: absolute;
-	width: 22vw;
-	left: 18vw;
-	top: 40vh;
-	z-index: 1;
-}
-
-#where .title{
-	position: absolute;
-	top: 40vh;
-}
-
-#where-txt{
-	font-family: "Cormorant Garamond";
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	text-align: center;
-}
-
-#line1, #line3{
-	font-size: 4em
-}
-
-#line2{
-	font-size: 2.5em;
-}
-
-#where-txt h2{
-	font-family: "Cormorant Garamond";
-	margin: 0;
-	padding: 0;
-	line-height: .7;
-	color: #bf6795;
-	text-align: center;
-}
-
-#where-txt p{
-	color: #400711;
-	font-size: 1.6em;
-	margin: 0
-}
-
-#where-txt h2, #where-txt p{
-	position: relative;
-	top: 20vh;
-	width: 25vw;
-}
-
-#wedding-divider{
-  position: absolute;
-	width: 22vw;
-	top: 30vh;
-	left: 39vw;
-	z-index: 0;
-}
-
-

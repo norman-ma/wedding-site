@@ -12,51 +12,61 @@
 <meta name="viewport" content="width=device-width, initial scale=1.0">
 <body><br>
 	<div ng-app="WeddingApp">
-		<img src="res/images/flowers header.png" id="flowers" class="header" alt="Flowers" data-scroll-speed="5">
-		<img src="res/images/names.svg" id="names" class="header" alt="Michael-Anthony & Tiffany" data-scroll-speed="0">	
-		<div id="home" onclick="toTop()">#AisleGoWithNorman</div>
-		<div id="countdown" ng-controller="CountdownController">
-			<div id="countown-val"><h2>{{ countdown }}</h2></div><div id="countdown-message">{{ message }}</div>						
+		<div id="landing" class="col-12">
+			<img src="res/images/flowers header.png" id="flowers" class="header" alt="Flowers" data-scroll-speed="5">
+			<img src="res/images/names.svg" class="names header desktop" alt="Michael-Anthony & Tiffany" data-scroll-speed="0">	
+			<img src="res/images/names-2.svg" class="names header mobile" alt="Michael-Anthony & Tiffany" data-scroll-speed="0">	
 		</div>
-		<div id="main-menu" class="header" data-scroll-speed="0">		
-			<a href="#our-wedding" class="left wedding"><button class="menu-button">Our Wedding</button></a>
-			<a href="#getting-there" class="center there"><button class="menu-button">Getting There</button></a>
-			<a href="#photos" class="center photos"><button class="menu-button">Photos</button></a>		
-			<a href="#registry" class="right registry"><button class="menu-button">Registry</button></a>
+		
+		<div id="header" class="header row" data-scroll-speed="0">	
+			<div id="home" onclick="toTop()" class="col-2"><h3>#AisleGoWithNorman</h3></div>
+			<div id="main-menu" class="col-8">
+				<a href="#our-wedding" class="left wedding"><button class="menu-button">Our Wedding</button></a>
+				<a href="#getting-there" class="center there"><button class="menu-button">Getting There</button></a>
+				<a href="#photos" class="center photos"><button class="menu-button">Photos</button></a>			
+				<a href="#registry" class="right registry"><button class="menu-button">Registry</button></a>
+			</div>
+			<div id="countdown" ng-controller="CountdownController" class="col-2">
+				<div id="countown-val"><h2>{{ countdown }}</h2></div><div id="countdown-message">{{ message }}</div>						
+			</div>
 		</div>
 		<div id="content">
-			<div id="our-wedding" class="page">
-				<h1>Our Wedding</h1>
-				<div class="content">
-					<div id="when">
+			<div id="our-wedding" class="page col-12">
+				<h1 class="col-12">Our Wedding</h1>
+				<div class="content row">
+					<div id="when" class="col-4">
 						<img src="res/images/flowers3.png" alt="flowers" id="when-img">
-						<div id="when-txt">
+						<div class="txt">
 							<h2 class="title">When</h2>
 							<h2>July 6, 2019</h2>
 						</div>
 					</div>
-					<img src="res/images/flowers5.png" alt="flowers" id="wedding-divider">
-					<div id="where">
-						<img src="res/images/flowers4.png" alt="flowers" id="where-img">
-						<div id="where-txt">
-							<h2 class="title">Where</h2>
-							<h2 id="line1">Kendal Camp</h2>
-							<h2 id="line2">and</h2>
-							<h2 id="line3">Conference Centre</h2>
-							<p id="address">Kendal, Shooter's Hill, Manchester, Jamaica</p>
+					<div id="wedding-divider" class="col-4">
+						<img src="res/images/flowers5.png" alt="flowers">
+					</div>
+					<div id="where" class="col-4">
+						<div class="txt">			
+							<div class="address">
+								<h2 class="big">Kendal Camp</h2>
+								<h2 class="small">and</h2>
+								<h2 class="big">Conference Centre</h2>
+								<p>Kendal, Shooter's Hill, Manchester, Jamaica</p>
+							</div>
+							<h2 class="title col-4">Where</h2>
 						</div>
+						<img src="res/images/flowers4.png" alt="flowers" id="where-img">						
 					</div>
 				</div>
 			</div>
-			<div id="getting-there" class="page">
+			<div id="getting-there" class="page col-12">
 				<h1>Getting There</h1>
 				<div class="content"></div>
 			</div>
-			<div id="photos" class="page">
+			<div id="photos" class="page col-12">
 				<h1>Photos</h1>
 				<div class="content"></div>
 			</div>		
-			<div id="registry" class="page">
+			<div id="registry" class="page col-12">
 				<h1>Registry</h1>
 				<div class="content"></div>
 			</div>

@@ -20,11 +20,11 @@ $(window).scroll(function(){
 	//console.log(percent);
 	
 	if(percent < 0.1){
-		$("#home").css("display", "none");
+
 		
 		$("#flowers").css("opacity", 1 - 9.5 * percent);
 	
-		$("#names").css("opacity", 1 - 10 * percent);
+		$(".names").css("opacity", 1 - 10 * percent);
 
 		var size = $("#main-menu").css("font-size");
 		var val = parseInt(size.slice(0, size.length - 2));			
@@ -44,16 +44,17 @@ $(window).scroll(function(){
 			}
 			//console.log(offset);
 		});
-		
-		$("#countdown").css("display", "none");
+		$("#home").css("opacity", 0);
+		$("#countdown").css("opacity", 0);
+		$("#header").css("background", "none");
 	}else{
 		
 		$("#flowers").css("opacity", 0.0640237);
-		$("#names").css("opacity", 0.0172182);
-		$("#main-menu").css("background", "white");
+		$(".names").css("opacity", 0.0172182);
+		$("#header").css("background", "white");
 		$("#main-menu").css("font-size", menu_max+"px");		
-		$("#home").css("display", "block");		
-		$("#countdown").css("display", "flex");
+		$("#home").css("opacity", 0.3);		
+		$("#countdown").css("opacity", 1);
 		
 	}
 
