@@ -58,7 +58,7 @@ $(window).scroll(function(){
 		
 	}
 
-	var $offset = 0.08 * $(window).height();
+	var $offset = 0.1 * $(window).height();
 	if(Math.floor(wedding) === Math.floor($offset)){
 		menuFormat("Our Wedding");
 	}else if(Math.floor(there) === Math.floor($offset)){
