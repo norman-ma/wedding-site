@@ -333,7 +333,7 @@ html{
 @media (max-width: 768px){
 
 	[class*="col-"] {
-		width: 100vh;
+		width: 100vw;
 	}	
 	
 	#landing{
@@ -347,7 +347,7 @@ html{
 		transform: rotate(-15deg);
 		margin: 0 auto;
 		display: block;
-		top: -100px;
+		top: -50px;
 		pointer-events: none;
 
 		animation-name: welcome-1;
@@ -362,16 +362,128 @@ html{
 
 	.names{
 		position: relative;
-		display: inline-block;	
-		top: 40vh;
-		margin:0 5%;
+		top: 24vh;
 		width: 90%;
+		margin: 0 5%;
 
 		animation-name: welcome;
 		animation-duration: 1.5s;
 		animation-delay: 1s;
 		animation-fill-mode: backwards;
 	}
+	
+	#header{
+		display: none;
+	}
+	
+	.page{
+		position: relative;
+		height: 20%;
+		top: 40vh
+	}
+	
+	.page h1{
+		position: sticky;
+		font-family: "Cormorant Garamond";
+		color: #400711;
+		font-size: 4em;
+		text-align: center;
+		font-weight: bold;
+		top: 0px;
+		width: 100vw;
+		background: white;
+		z-index: 2
+	}
+	
+	#when-img{
+		position: relative;
+		width: 80vw;
+		left: -170px;
+		z-index: 2;
+	}
+	
+	#when .title{
+		font-family: "Cormorant Garamond";
+		color: #bf6795;
+		font-weight: bold;
+		font-size: 9em;
+		display: inline-block;
+		text-align: center;
+		line-height: .3
+	}
+	
+	#when h2{
+		font-family: "Cormorant Garamond";
+		color: #bf6795;
+		font-size: 3em;
+		display: inline-block;
+		text-align: center;
+	}
+	
+	#when .txt{
+		position: relative;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		top: -340px
+	}
+	
+	#wedding-divider{
+		position: relative;
+		width: 100vw;
+		top: -200px
+	}
+	
+	#wedding-divider img{
+		width: 90%;
+	}
+	
+	#where{
+		position: relative;
+		top: -140px
+	}
+	
+	#where .title{
+		font-family: "Cormorant Garamond";
+		color: #bf6795;
+		font-weight: bold;
+		font-size: 9em;
+		display: inline-block;
+		text-align: center;
+		line-height: .3
+	}
+	
+	#where p{
+		font-family: "Cormorant Garamond";
+		color: #400711;
+		text-align: center;
+		font-size: 1.6em;
+	}
+	
+	#where .big{
+		font-family: "Cormorant Garamond";
+		color: #bf6795;
+		font-size: 3.5em;
+		text-align: center;
+		line-height: .5
+	}
+	
+	#where .small{
+		font-family: "Cormorant Garamond";
+		color: #bf6795;
+		font-size: 2.3em;
+		text-align: center;
+	  line-height: .7
+	}
+	
+	#where-img{
+		position: relative;
+		width: 100%;
+		left: 230px;
+		top: -70px;
+		z-index: 2;
+	}
+	
 	
 
 }
