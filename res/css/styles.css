@@ -26,7 +26,7 @@ html{
     margin: 0;
 }
 
-@media only screen and (min-width: 1080){
+@media only screen and (min-width: 992px){
 	.col-1 {width: 8.33%;}
 	.col-2 {width: 16.66%;}
 	.col-3 {width: 25%;}
@@ -329,7 +329,7 @@ html{
 	#registry{}
 }
 
-@media only screen and (max-width: 1080px){
+@media only screen and (max-width: 600px){
 
 	[class*="col-"] {
 		width: 100vw;
