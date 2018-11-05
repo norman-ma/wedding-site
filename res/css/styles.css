@@ -146,7 +146,7 @@ html{
 
 	#home h3{
 		font-family: 'Cormorant Garamond', serif;
-		font-size: 1.5em;
+		font-size: 1.5vw;
 		font-weight: bold;
 		text-align: center;
 		width: 100%;
@@ -239,7 +239,7 @@ html{
 		font-family: "Cormorant Garamond";
 		color: #bf6795;
 		font-weight: bold;
-		font-size: 10em;
+		font-size: 9vw;
 		display: inline;
 
 		position: relative;	
@@ -249,7 +249,7 @@ html{
 		font-family: "Cormorant Garamond";
 		color: #bf6795;
 		display: inline;
-		font-size: 4em;
+		font-size: 3vw;
 		line-height: .6;
 	}
 
@@ -269,7 +269,7 @@ html{
 		font-family: "Cormorant Garamond";
 		color: #bf6795;
 		font-weight: bold;
-		font-size: 10em;
+		font-size: 9vw;
 		width: 100%;
 		text-align: center;
 	}
@@ -277,7 +277,7 @@ html{
 	#where p{
 		font-family: "Cormorant Garamond";
 		color: #400711;
-		font-size: 1.6em;
+		font-size: 1.2vw;
 		text-align: center;
 		line-height: .5
 	}
@@ -285,7 +285,7 @@ html{
 	#where .big{
 		font-family: "Cormorant Garamond";
 		color: #bf6795;
-		font-size: 4em;
+		font-size: 3vw;
 		text-align: center;
 		line-height: .5
 	}
@@ -293,7 +293,7 @@ html{
 	#where .small{
 		font-family: "Cormorant Garamond";
 		color: #bf6795;
-		font-size: 2em;
+		font-size: 1.5vw;
 		text-align: center;
 		line-height: .5
 	}
@@ -329,7 +329,7 @@ html{
 	#registry{}
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 992px){
 
 	[class*="col-"] {
 		width: 100vw;
@@ -481,8 +481,6 @@ html{
 		left: 230px;
 		top: -70px;
 		z-index: 2;
-	}
-	
-	
+	}	
 
 }
