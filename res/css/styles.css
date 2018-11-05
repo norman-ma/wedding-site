@@ -343,7 +343,7 @@ html{
 		position: fixed;
 		width: 120%;
 		z-index: 5;
-		transform: rotate(-15deg);
+		/*transform: rotate(-15deg);*/
 		margin: 0 auto;
 		display: block;
 		top: -50px;
