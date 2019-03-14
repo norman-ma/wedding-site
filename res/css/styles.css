@@ -16,8 +16,21 @@
 	to {opacity: 1; transform: translateY(0) rotate(-15deg)}
 }
 
+@keyframes fade-in{
+	from {opacity: 0%}
+	to{opacity: 100%}
+}
+
+@keyframes fade-to-blue{
+	to {background: #06062a; color: #bd9999; border-color: #bd9999}
+}
+
 html{
 	scroll-behavior: smooth;
+}
+
+#preload{
+	visibility: hidden;
 }
 
 
@@ -48,7 +61,7 @@ html{
 		margin: 0 auto;
 		display: block;
 		left: 20vw;
-		top: -25vh;
+		top: -15vw;
 		pointer-events: none;
 
 		animation-name: welcome-1;
@@ -62,12 +75,12 @@ html{
 
 	.names{
 		position: fixed;
-		max-width: 65vw;
+		width: 80vw;
 		display: block;
-		top: 27vh;
+		top: 13vw;
 		margin: 0 auto;
-		left: 17.5vw;
-		z-index: 3;
+		left: 10vw;
+		z-index: 0;
 
 		animation-name: welcome;
 		animation-duration: 1.5s;
@@ -83,13 +96,17 @@ html{
 		height: 12vh;
 		top: 0vh;
 		padding: 2vh 0;
-		margin: 43% 0 10% 0;
+		margin: 46vw 0 10vh 0;
 		z-index: 4;
 
     animation-name: welcome;
 		animation-duration: 2s;
 		animation-delay: 1.5s;
 		animation-fill-mode: backwards;
+	}
+	
+	#header.top{
+		background: white;
 	}
 
 	#main-menu{
@@ -102,9 +119,6 @@ html{
 		text-decoration: none;
 		position: relative;
 		width: 25%;
-	}
-
-	#main-menu a{
 		display: flex;
 		justify-content: center;
 	}
@@ -125,7 +139,7 @@ html{
 	}
 
 	.left{
-		border-right: 1px #400711 solid
+		border-right: 1px #400711 solid;
 	}
 
 	.center{
@@ -142,6 +156,7 @@ html{
 		cursor: context-menu;
 		display: flex;
 		align-items: center;
+		height: 65%
 	}
 
 	#home h3{
@@ -150,6 +165,7 @@ html{
 		font-weight: bold;
 		text-align: center;
 		width: 100%;
+		color: #B0B0B0;
 	}
 
 	#countdown{
@@ -160,7 +176,8 @@ html{
 
 	#countown-val{	
 		position: relative;	
-		display: inline-block;	
+		display: inline-block;
+		top: -15px;
 	}
 
 	#countown-val h2{
@@ -169,7 +186,7 @@ html{
 		font-weight: bolder;
 		color: #bf6795;
 		margin: 0;
-		text-shadow: 2px
+		text-shadow: 2px;
 	}
 
 	#countdown-message{
@@ -179,6 +196,7 @@ html{
 		color: #400711;
 		font-weight:lighter;
 		font-style:oblique;
+		top: -15px
 	}
 
 	#content{
@@ -194,12 +212,28 @@ html{
 		position: sticky;
 		top: 10vh;
 		z-index: 3;
-		height: 13vh;
 	}
 
 	.menu-button.current{
 		border-bottom: solid #400711 0.2vh;
 		font-weight: bold;	
+	}
+	
+	.to-blue,
+  #countdown-message.to-blue,
+	#header.to-blue,
+	.menu-button.to-blue,
+	.current.to-blue,
+	#main-menu a.to-blue,
+	.page h1.to-blue{
+		/*animation-name: fade-to-blue;
+	  animation-duration: 1.5s;
+		animation-fill-mode: forwards;
+		animation-delay: 0s;*/
+		background: #06062a; 
+		color: #bd9999; 
+		border-color: #bd9999;
+		
 	}
 
 	.page .current{
@@ -231,8 +265,9 @@ html{
 		width: 60%;
 
 		position: relative;
-		top: -47vh;
-		left: 38%;
+		top: -24vw;
+		left: 11vw
+
 	}
 
 	#when .title{
@@ -274,7 +309,7 @@ html{
 		text-align: center;
 	}
 
-	#where p{
+	#where p, #reception p{
 		font-family: "Cormorant Garamond";
 		color: #400711;
 		font-size: 1.2vw;
@@ -282,7 +317,13 @@ html{
 		line-height: .5
 	}
 
-	#where .big{
+	#where .big, #where .small, #where p,
+	#reception .big, #reception .small, #reception p{
+		position: relative; 
+		top: 3vw;
+	}
+
+	#where .big, #reception .big{
 		font-family: "Cormorant Garamond";
 		color: #bf6795;
 		font-size: 3vw;
@@ -295,18 +336,26 @@ html{
 		color: #bf6795;
 		font-size: 1.5vw;
 		text-align: center;
-		line-height: .5
+		line-height: .5;
+	}
+	
+	 #reception .small{
+		font-family: "Cormorant Garamond";
+		color: #bf6795;
+		font-size: 1.5vw;
+		text-align: center;
 	}
 
 	#where .txt{
 		position: relative;
-		width: 80%;
-		top: 16vh;
+		top: 9vw;
+		right: 3vw;
 	}
-
-	.address{
+	
+	#reception{
 		position: relative;
-		top: 7vh;
+		left: 33.3%;
+		
 	}
 
 	#wedding-divider{
@@ -323,9 +372,96 @@ html{
 		top: 12vh;
 	}
 
-	#our-wedding{}
+	#our-wedding{
+		height: 120vh;
+	}
+	
 	#getting-there{}
-	#photos{}
+	#photos{
+		height: 200vh;
+	}
+	
+	#img-catalog{
+		position: relative;
+		top: 8vh;
+		/*display: none;*/
+		-webkit-column-count: 6;
+    -webkit-column-gap: 0px;
+    -moz-column-count: 6;
+    -moz-column-gap: 0px;
+    column-count: 6;
+    column-gap: 0px; 
+	}
+	
+	#img-catalog img{
+		width: 100% !important;
+    height: auto !important;
+	}
+	
+	#img-catalog img:hover{
+		width: 102% !important;
+    height: auto !important;
+	}
+	
+	#lightbox{
+		display: none;
+		position: fixed;
+		z-index: 10;
+		padding-top: 5vh;
+		left: 0;
+		top: 0;
+		width: 100vw;
+		height: 100vh;
+		overflow: auto;
+		background-color: #06062a;
+	}
+	
+	#currentPhoto{
+		position: relative;		
+		margin: 0;
+		padding: 0;
+		height: 90vh;
+	}
+	
+	#currentPhoto img{
+		max-height: 100%;
+		max-width: 80vw;
+		display: block;
+    margin-left: auto;
+    margin-right: auto;
+	}
+	
+	#close,#prev,#next{
+		position: absolute;
+		cursor: context-menu;
+		color: #bd9999;
+	}
+	
+	#close{
+		left: 95vw;
+		top: 1vh;
+		font-size: 3em;
+	}
+	
+	#prev,#next{
+		font-size: 5em;
+		opacity: 0.3;
+		top: 40vh
+	}
+	
+	#prev{
+		left: 3vw;
+	}
+	
+	#next{
+		left: 95vw;
+	}
+	
+	#close:hover, #next:hover, #prev:hover{
+		font-weight: bold;
+		opacity: 1;
+	}
+	
 	#registry{}
 }
 
@@ -346,7 +482,7 @@ html{
 		/*transform: rotate(-15deg);*/
 		margin: 0 auto;
 		display: block;
-		top: -50px;
+		top: -20vw;
 		pointer-events: none;
 
 		animation-name: welcome-1;
@@ -361,7 +497,7 @@ html{
 
 	.names{
 		position: relative;
-		top: 24vh;
+		top: 33vw;
 		width: 90%;
 		margin: 0 5%;
 
@@ -385,19 +521,20 @@ html{
 		position: sticky;
 		font-family: "Cormorant Garamond";
 		color: #400711;
-		font-size: 4em;
+		font-size: 13vw;
 		text-align: center;
 		font-weight: bold;
 		top: 0px;
 		width: 100vw;
 		background: white;
-		z-index: 2
+		z-index: 2;
+		margin-bottom: 10vh;
 	}
 	
 	#when-img{
 		position: relative;
 		width: 80vw;
-		left: -170px;
+		left: -40vw;
 		z-index: 2;
 	}
 	
@@ -405,7 +542,7 @@ html{
 		font-family: "Cormorant Garamond";
 		color: #bf6795;
 		font-weight: bold;
-		font-size: 9em;
+		font-size: 30vw;
 		display: inline-block;
 		text-align: center;
 		line-height: .3
@@ -414,7 +551,7 @@ html{
 	#when h2{
 		font-family: "Cormorant Garamond";
 		color: #bf6795;
-		font-size: 3em;
+		font-size: 10vw;
 		display: inline-block;
 		text-align: center;
 	}
@@ -424,13 +561,13 @@ html{
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
-		top: -340px
+		top: -70vw
 	}
 	
 	#wedding-divider{
 		position: relative;
 		width: 100vw;
-		top: -200px
+		top: -50vw
 	}
 	
 	#wedding-divider img{
@@ -439,30 +576,30 @@ html{
 	
 	#where{
 		position: relative;
-		top: -140px
+		top: -30vw
 	}
 	
 	#where .title{
 		font-family: "Cormorant Garamond";
 		color: #bf6795;
 		font-weight: bold;
-		font-size: 9em;
+		font-size: 30vw;
 		display: inline-block;
 		text-align: center;
-		line-height: .3
+		line-height: 1;
 	}
 	
 	#where p{
 		font-family: "Cormorant Garamond";
 		color: #400711;
 		text-align: center;
-		font-size: 1.6em;
+		font-size: 5vw;
 	}
 	
 	#where .big{
 		font-family: "Cormorant Garamond";
 		color: #bf6795;
-		font-size: 3.5em;
+		font-size: 10vw;
 		text-align: center;
 		line-height: .5
 	}
@@ -470,7 +607,7 @@ html{
 	#where .small{
 		font-family: "Cormorant Garamond";
 		color: #bf6795;
-		font-size: 2.3em;
+		font-size: 6vw;
 		text-align: center;
 	  line-height: .7
 	}
@@ -478,8 +615,8 @@ html{
 	#where-img{
 		position: relative;
 		width: 100%;
-		left: 230px;
-		top: -70px;
+		left: 48vw;
+		top: -20vw;
 		z-index: 2;
 	}	
 

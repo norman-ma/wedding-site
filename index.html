@@ -52,9 +52,16 @@
 								<h2 class="big">Conference Centre</h2>
 								<p>Kendal, Shooter's Hill, Manchester, Jamaica</p>
 							</div>
-							<h2 class="title col-4">Where</h2>
+							<h2 class="title col-4">Where</h2>							
 						</div>
-						<img src="res/images/flowers4.png" alt="flowers" id="where-img">						
+						<img src="res/images/flowers4.png" alt="flowers" id="where-img">	
+					</div>					
+					<div id="reception" class="col-4">
+						<div class="address">
+							<h2 class="small">with Reception at the</h2>
+							<h2 class="big">Golf View Hotel</h2>
+							<p>5½ Caledonia Rd, Mandeville, Manchester, Jamaica</p>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -64,18 +71,54 @@
 			</div>
 			<div id="photos" class="page col-12">
 				<h1>Photos</h1>
-				<div class="content"></div>
+				<div class="content" ng-controller="ImageController">
+					<div id="img-catalog">
+						<div class="img" ng-repeat="img in photos track by $index" data-aos="fade-in" data-aos-delay="100" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-anchor-placement="top-center">
+							<img ng-src="{{img.src}}" alt="{{img.caption}}" ng-click="openLightbox(img.position)">
+						</div>
+					</div>
+					<div id="lightbox">
+						<a id="close" ng-click="closeLightbox()">&times;</a>
+						
+						<div id="currentPhoto">
+							<img ng-src="{{currentPhoto.src}}" alt="{{currentPhoto.caption}}">
+							<div id="caption">
+								<p>{{currentPhoto.caption}}</p>	
+							</div>
+						</div>
+						<!-- Next/previous controls -->
+						<a id="prev" ng-click="prevSlide()">&#10094;</a>
+						<a id="next" ng-click="nextSlide()">&#10095;</a>	
+						
+						<div id="thumbnails">
+							<div class="thumbails" ng-repeat="img in images">
+								<div ng-repeat="img in images track by $index" class="thumnail">
+									<img ng-src="{{img.src}}" alt="{{img.caption}}" ng-click="showSlide($index+1)">
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				
+				</div>
 			</div>		
 			<div id="registry" class="page col-12">
 				<h1>Registry</h1>
 				<div class="content"></div>
 			</div>
 		</div>
-	</div>
+		<div id="preload" ng-controller="ImageController">
+			<div class="img" ng-repeat="img in photos">
+				<img ng-src="{{img.src}}" height="1" weight="1" alt="{{img.caption}}">
+			</div>
+		</div>
+	</div>	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
 	<script src="res/js/app.js"></script>
-	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>	
+	
 	<script>
 		AOS.init();
 	</script>
