@@ -10,107 +10,109 @@
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
 	<link rel="stylesheet" href="res/css/styles.css">	
 </head>
-<body>
+<body>	
 	<div ng-app="WeddingApp">
-		<div id="landing" class="col-12">
-			<img src="res/images/flowers header.png" id="flowers" class="header" alt="Flowers" data-scroll-speed="5">
-			<img src="res/images/names.svg" class="names header desktop" alt="Michael-Anthony & Tiffany" data-scroll-speed="0">	
-			<img src="res/images/names-2.svg" class="names header mobile" alt="Michael-Anthony & Tiffany" data-scroll-speed="0">	
-		</div>
-		
-		<div id="header" class="header row" data-scroll-speed="0">	
-			<div id="home" onclick="toTop()" class="col-2"><h3>#AisleGoWithNorman</h3></div>
-			<div id="main-menu" class="col-8">
-				<a href="#our-wedding" class="left wedding"><button class="menu-button">Our Wedding</button></a>
-				<a href="#getting-there" class="center there"><button class="menu-button">Getting There</button></a>
-				<a href="#photos" class="center photos"><button class="menu-button">Photos</button></a>			
-				<a href="#registry" class="right registry"><button class="menu-button">Registry</button></a>
-			</div>
-			<div id="countdown" ng-controller="CountdownController" class="col-2">
-				<div id="countown-val"><h2>{{ countdown }}</h2></div><div id="countdown-message">{{ message }}</div>						
-			</div>
-		</div>
-		<div id="content">
-			<div id="our-wedding" class="page col-12">
-				<h1 class="col-12">Our Wedding</h1>
-				<div class="content row">
-					<div id="when" class="col-4">
-						<img src="res/images/flowers3.png" alt="flowers" id="when-img">
-						<div class="txt">
-							<h2 class="title">When</h2>
-							<h2>July 6, 2019</h2>
-						</div>
-					</div>
-					<div id="wedding-divider" class="col-4">
-						<img src="res/images/flowers5.png" alt="flowers">
-					</div>
-					<div id="where" class="col-4">
-						<div class="txt">			
-							<div class="address">
-								<h2 class="big">Kendal Camp</h2>
-								<h2 class="small">and</h2>
-								<h2 class="big">Conference Centre</h2>
-								<p>Kendal, Shooter's Hill, Manchester, Jamaica</p>
-							</div>
-							<h2 class="title col-4">Where</h2>							
-						</div>
-						<img src="res/images/flowers4.png" alt="flowers" id="where-img">	
-					</div>					
-					<div id="reception" class="col-4">
-						<div class="address">
-							<h2 class="small">with Reception at the</h2>
-							<h2 class="big">Golf View Hotel</h2>
-							<p>5½ Caledonia Rd, Mandeville, Manchester, Jamaica</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="getting-there" class="page col-12">
-				<h1>Getting There</h1>
-				<div class="content"></div>
-			</div>
-			<div id="photos" class="page col-12">
-				<h1>Photos</h1>
-				<div class="content" ng-controller="ImageController">
-					<div id="img-catalog">
-						<div class="img" ng-repeat="img in photos track by $index" data-aos="fade-in" data-aos-delay="100" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-anchor-placement="top-center">
-							<img ng-src="{{img.src}}" alt="{{img.caption}}" ng-click="openLightbox(img.position)">
-						</div>
-					</div>
-					<div id="lightbox">
-						<a id="close" ng-click="closeLightbox()">&times;</a>
-						
-						<div id="currentPhoto">
-							<img ng-src="{{currentPhoto.src}}" alt="{{currentPhoto.caption}}">
-							<div id="caption">
-								<p>{{currentPhoto.caption}}</p>	
-							</div>
-						</div>
-						<!-- Next/previous controls -->
-						<a id="prev" ng-click="prevSlide()">&#10094;</a>
-						<a id="next" ng-click="nextSlide()">&#10095;</a>	
-						
-						<div id="thumbnails">
-							<div class="thumbails" ng-repeat="img in images">
-								<div ng-repeat="img in images track by $index" class="thumnail">
-									<img ng-src="{{img.src}}" alt="{{img.caption}}" ng-click="showSlide($index+1)">
-								</div>
-							</div>
-						</div>
-						
-					</div>
-				
-				</div>
-			</div>		
-			<div id="registry" class="page col-12">
-				<h1>Registry</h1>
-				<div class="content"></div>
-			</div>
-		</div>
+		<div class="loader" id="preloader"></div>
 		<div id="preload" ng-controller="ImageController">
 			<div class="img" ng-repeat="img in photos">
 				<img ng-src="{{img.src}}" height="1" weight="1" alt="{{img.caption}}">
 			</div>
+		</div>
+		<div id="main">
+			<div id="landing" class="col-12">
+				<img src="res/images/flowers header.png" id="flowers" class="header" alt="Flowers" data-scroll-speed="5">
+				<img src="res/images/names.svg" id="names" class="header" alt="Tiffany & Michael-Anthony" data-scroll-speed="0">	
+			</div>
+
+			<div id="header" class="header row" data-scroll-speed="0">	
+				<div id="home" onclick="toTop()" class="col-2"><h3>#AisleGoWithNorman</h3></div>
+				<div id="main-menu" class="col-8">
+					<a href="#our-wedding" class="left wedding"><button class="menu-button">Our Wedding</button></a>
+					<a href="#getting-there" class="center there"><button class="menu-button">Getting There</button></a>
+					<a href="#photos" class="center photos"><button class="menu-button">Photos</button></a>			
+					<a href="#registry" class="right registry"><button class="menu-button">Registry</button></a>
+				</div>
+				<div id="countdown" ng-controller="CountdownController" class="col-2">
+					<div id="countown-val"><h2>{{ countdown }}</h2></div><div id="countdown-message">{{ message }}</div>						
+				</div>
+			</div>
+			<div id="content">
+				<div id="our-wedding" class="page col-12">
+					<h1 class="col-12">Our Wedding</h1>
+					<div class="content row">
+						<div id="when" class="col-4">
+							<img src="res/images/flowers3.png" alt="flowers" id="when-img">
+							<div class="txt">
+								<h2 class="title">When</h2>
+								<h2 class="date">July 6, 2019</h2>
+							</div>
+						</div>
+						<div id="wedding-divider" class="col-4">
+							<img src="res/images/flowers5.png" alt="flowers">
+						</div>
+						<div id="where" class="col-4">
+							<div class="txt">			
+								<div class="address">
+									<h2 class="big">Kendal Camp</h2>
+									<h2 class="small">and</h2>
+									<h2 class="big">Conference Centre</h2>
+									<p>Kendal, Shooter's Hill, Manchester, Jamaica</p>
+								</div>
+								<h2 class="title col-4">Where</h2>							
+							</div>
+							<img src="res/images/flowers4.png" alt="flowers" id="where-img">	
+						</div>					
+						<div id="reception" class="col-4">
+							<div class="address">
+								<h2 class="small">with Reception at the</h2>
+								<h2 class="big">Golf View Hotel</h2>
+								<p>5½ Caledonia Rd, Mandeville, Manchester, Jamaica</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="getting-there" class="page col-12">
+					<h1>Getting There</h1>
+					<div class="content"></div>
+				</div>
+				<div id="photos" class="page col-12">
+					<h1>Photos</h1>
+					<div class="content" ng-controller="ImageController">
+						<div id="img-catalog">
+							<div class="img" ng-repeat="img in photos" data-aos="fade-in" data-aos-delay="100" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-anchor-placement="top-center">
+								<img ng-src="{{img.src}}" alt="{{img.caption}}" ng-click="openLightbox(img.position)">
+							</div>
+						</div>
+						<div id="lightbox">
+							<a id="close" ng-click="closeLightbox()">&times;</a>
+
+							<div id="currentPhoto">
+								<img ng-src="{{currentPhoto.src}}" alt="{{currentPhoto.caption}}">
+								<div id="caption">
+									<p>{{currentPhoto.caption}}</p>	
+								</div>
+							</div>
+							<!-- Next/previous controls -->
+							<a id="prev" ng-click="prevSlide()">&#10094;</a>
+							<a id="next" ng-click="nextSlide()">&#10095;</a>	
+
+							<div id="thumbnails">
+								<div class="thumbails" ng-repeat="img in images">
+									<div ng-repeat="img in images track by $index" class="thumnail">
+										<img ng-src="{{img.src}}" alt="{{img.caption}}" ng-click="showSlide($index+1)">
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+				</div>		
+				<div id="registry" class="page col-12">
+					<h1>Registry</h1>
+					<div class="content"></div>
+				</div>
+			</div>				
 		</div>
 	</div>	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

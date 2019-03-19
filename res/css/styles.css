@@ -1,10 +1,21 @@
 @charset "utf-8";
 /* CSS Document */
 
-@font-face{
-	font-family: ChopinScript;
-	src: url("/res/fonts/ChopinScript.woff"); 
+@font-face {
+font-family: "Trajan Pro";
+src: url(../fonts/TrajanPro-Regular.otf);
 }
+
+@font-face {
+font-family: "Trajan Pro Bold";
+src: url(../fonts/TrajanPro-Bold.otf);
+}
+
+@font-face {
+font-family: "Queenstown Signature";
+src: url(../fonts/QUEENSTOWN-SIGNATURE.otf);
+}
+
 
 @keyframes welcome{
 	from {opacity: 0; transform: translateY(2vh)}
@@ -25,14 +36,37 @@
 	to {background: #06062a; color: #bd9999; border-color: #bd9999}
 }
 
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 html{
 	scroll-behavior: smooth;
+	--color1: 
+}
+
+
+.loader {
+	display: none;
+	position: absolute;
+	left: 48vw;
+	top: 25vw;
+  border: 4px solid white;
+  border-top: 4px solid #CF8EB0; 
+  border-radius: 50%;
+  width: 4vw;
+  height: 4vw;
+  animation: spin 1.5s linear infinite;
 }
 
 #preload{
-	visibility: hidden;
+	position: absolute;
 }
 
+#main{
+	display: block;
+}
 
 [class*="col-"] {
     float: left;
@@ -54,32 +88,29 @@ html{
 	.col-12 {width: 100%;}
 
 	#flowers{
+		--width: 50vw;
 		position: fixed;
-		width: 70vw;
+		width: var(--width);
 		z-index: 5;
-		transform: rotate(-15deg);
 		margin: 0 auto;
 		display: block;
-		left: 20vw;
-		top: -15vw;
+		left: calc(100vw/2 - var(--width)/2);
+		top: -2vw;
 		pointer-events: none;
 
-		animation-name: welcome-1;
+		animation-name: welcome;
 		animation-duration: 2s;
 		animation-fill-mode: backwards;
 	}
-	
-	.names.mobile{
-		display: none;
-	}
 
-	.names{
+	#names{
+		--width: 60vw;
 		position: fixed;
-		width: 80vw;
+		width: var(--width);
 		display: block;
-		top: 13vw;
+		top: 15vw;
 		margin: 0 auto;
-		left: 10vw;
+		left: calc(100vw/2 - var(--width)/2);
 		z-index: 0;
 
 		animation-name: welcome;
@@ -89,11 +120,12 @@ html{
 	}
 
 	#header{
+		font-family: "Trajan Pro";
 		position: -webkit-sticky; /* Safari */
 		position: sticky;
 		align-items: center;
 		width: 100%;
-		height: 12vh;
+		height: 10vh;
 		top: 0vh;
 		padding: 2vh 0;
 		margin: 46vw 0 10vh 0;
@@ -128,14 +160,13 @@ html{
 		box-shadow: none;
 		border: none;
 		color: #400711;
-		font-family: 'Cormorant Garamond', serif;
 		font-size: 1.3em;
 		margin: 0px;
 		z-index: 10;
 	}
 
 	.menu-button:hover{
-		font-weight:bold;
+		font-family: "Trajan Pro Bold";
 	}
 
 	.left{
@@ -156,12 +187,12 @@ html{
 		cursor: context-menu;
 		display: flex;
 		align-items: center;
-		height: 65%
+		height: 90%
 	}
 
 	#home h3{
-		font-family: 'Cormorant Garamond', serif;
-		font-size: 1.5vw;
+		font-family: "Queenstown Signature";
+		font-size: 2vw;
 		font-weight: bold;
 		text-align: center;
 		width: 100%;
@@ -169,6 +200,7 @@ html{
 	}
 
 	#countdown{
+		font-family: "Cormorant Garamond";
 		opacity: 0;
 		cursor: context-menu;
 		text-align: center;
@@ -181,8 +213,8 @@ html{
 	}
 
 	#countown-val h2{
-		font-size: 3em;
 		font-family: "Cormorant Garamond";
+		font-size: 3em;
 		font-weight: bolder;
 		color: #bf6795;
 		margin: 0;
@@ -190,7 +222,6 @@ html{
 	}
 
 	#countdown-message{
-		font-family: "Cormorant Garamond";
 		display: inline-block;
 		position: relative;
 		color: #400711;
@@ -204,19 +235,18 @@ html{
 	}
 
 	h1{
-		font-family: 'Cormorant Garamond', serif;
-		font-weight: bold;
-		font-size: 5em;
+		font-family: "Queenstown Signature";
+		font-size: 10em;
 		text-align: center;
 		color: #400711;
 		position: sticky;
 		top: 10vh;
-		z-index: 3;
+		z-index:0;
 	}
 
 	.menu-button.current{
+		font-family: "Trajan Pro Bold";
 		border-bottom: solid #400711 0.2vh;
-		font-weight: bold;	
 	}
 	
 	.to-blue,
@@ -243,6 +273,11 @@ html{
 	.page{
 		height: 20%;
 	}
+	
+	.title{
+		font-family: "Trajan Pro";
+		font-size: 10em;
+	}
 
 	#when{
 		position: relative;
@@ -255,6 +290,13 @@ html{
 		z-index: 1;
 		left: -20%;
 		width: 90%;
+	}
+	
+	#when .date{
+		font-family: "Trajan Pro";
+		font-size: 2.3vw;
+		text-align: right;
+		width: 100%;
 	}
 
 	#when .txt{
@@ -271,20 +313,14 @@ html{
 	}
 
 	#when .title{
-		font-family: "Cormorant Garamond";
 		color: #bf6795;
-		font-weight: bold;
-		font-size: 9vw;
-		display: inline;
-
-		position: relative;	
+		width: 100%;
+		text-align: center;
 	}
 
 	#when h2{
-		font-family: "Cormorant Garamond";
 		color: #bf6795;
 		display: inline;
-		font-size: 3vw;
 		line-height: .6;
 	}
 
@@ -292,6 +328,10 @@ html{
 		position: relative;
 		z-index: 3;
 		height: 65vh;
+	}
+	
+	#where .address{
+		font-family: "Trajan Pro";
 	}
 
 	#where-img{
@@ -301,20 +341,17 @@ html{
 	}
 
 	#where .title{
-		font-family: "Cormorant Garamond";
 		color: #bf6795;
-		font-weight: bold;
-		font-size: 9vw;
 		width: 100%;
 		text-align: center;
 	}
 
 	#where p, #reception p{
-		font-family: "Cormorant Garamond";
 		color: #400711;
 		font-size: 1.2vw;
 		text-align: center;
-		line-height: .5
+		line-height: .5;
+		padding-bottom: 0.4vw;
 	}
 
 	#where .big, #where .small, #where p,
@@ -324,23 +361,22 @@ html{
 	}
 
 	#where .big, #reception .big{
-		font-family: "Cormorant Garamond";
+		font-family: "Trajan Pro";
 		color: #bf6795;
-		font-size: 3vw;
+		font-size: 2.5vw;
 		text-align: center;
 		line-height: .5
 	}
 
 	#where .small{
-		font-family: "Cormorant Garamond";
+		font-family: "Queenstown Signature";
 		color: #bf6795;
-		font-size: 1.5vw;
+		font-size: 4vw;
 		text-align: center;
-		line-height: .5;
+		line-height: .3;
 	}
 	
 	 #reception .small{
-		font-family: "Cormorant Garamond";
 		color: #bf6795;
 		font-size: 1.5vw;
 		text-align: center;
@@ -353,6 +389,7 @@ html{
 	}
 	
 	#reception{
+		display: none;
 		position: relative;
 		left: 33.3%;
 		
@@ -490,12 +527,8 @@ html{
 		animation-fill-mode: backwards;
 
 	}
-	
-	.names.desktop{
-		display: none;
-	}
 
-	.names{
+	#names{
 		position: relative;
 		top: 33vw;
 		width: 90%;
@@ -519,7 +552,6 @@ html{
 	
 	.page h1{
 		position: sticky;
-		font-family: "Cormorant Garamond";
 		color: #400711;
 		font-size: 13vw;
 		text-align: center;
@@ -539,7 +571,6 @@ html{
 	}
 	
 	#when .title{
-		font-family: "Cormorant Garamond";
 		color: #bf6795;
 		font-weight: bold;
 		font-size: 30vw;
@@ -549,7 +580,6 @@ html{
 	}
 	
 	#when h2{
-		font-family: "Cormorant Garamond";
 		color: #bf6795;
 		font-size: 10vw;
 		display: inline-block;
@@ -580,7 +610,6 @@ html{
 	}
 	
 	#where .title{
-		font-family: "Cormorant Garamond";
 		color: #bf6795;
 		font-weight: bold;
 		font-size: 30vw;
@@ -590,14 +619,12 @@ html{
 	}
 	
 	#where p{
-		font-family: "Cormorant Garamond";
 		color: #400711;
 		text-align: center;
 		font-size: 5vw;
 	}
 	
 	#where .big{
-		font-family: "Cormorant Garamond";
 		color: #bf6795;
 		font-size: 10vw;
 		text-align: center;
@@ -605,7 +632,6 @@ html{
 	}
 	
 	#where .small{
-		font-family: "Cormorant Garamond";
 		color: #bf6795;
 		font-size: 6vw;
 		text-align: center;

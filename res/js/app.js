@@ -24,7 +24,7 @@ $(window).scroll(function(){
 		
 		$("#flowers").css("opacity", 1 - 9.5 * percent);
 	
-		$(".names").css("opacity", 1 - 10 * percent);
+		$("#names").css("opacity", 1 - 10 * percent);
 
 		var size = $("#main-menu").css("font-size");
 		var val = parseInt(size.slice(0, size.length - 2));			
@@ -39,9 +39,6 @@ $(window).scroll(function(){
 			//console.log("speed",scrollspeed);
 			var offset = - $scrollTop / scrollspeed;
 			$this.css('transform', 'translateY(' + offset + 'px)');
-			if($this.attr("id") === "flowers"){
-				$this.css('transform', 'translateY(' + offset + 'px) rotate(-15deg)');
-			}
 			//console.log(offset);
 		});
 		$("#home").css("opacity", 0);
@@ -50,7 +47,7 @@ $(window).scroll(function(){
 	}else{
 		
 		$("#flowers").css("opacity", 0.0640237);
-		$(".names").css("opacity", 0.0172182);
+		$("#names").css("opacity", 0.0172182);
 		$("#header").addClass("top");
 		$("#main-menu").css("font-size", menu_max+"px");		
 		$("#home").css("opacity", 1);		
