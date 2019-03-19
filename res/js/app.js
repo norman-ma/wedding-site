@@ -44,6 +44,7 @@ $(window).scroll(function(){
 		$("#home").css("opacity", 0);
 		$("#countdown").css("opacity", 0);
 		$("#header").removeClass("top");
+		
 	}else{
 		
 		$("#flowers").css("opacity", 0.0640237);
@@ -339,15 +340,17 @@ app.controller("ImageController",["$scope", function($scope){
 	
 	$scope.openLightbox = function(s){
 		$("#lightbox").css("display","block");
-		$("body").css("overflow","hidden");
+		//$("body").css("overflow","hidden");
 		$("body").css("position","fixed");
 		$scope.showSlide(s);
 	};
 	
 	$scope.closeLightbox = function(){
 		$("#lightbox").css("display","none");
-		$("body").css("overflow","auto");
+		//$("body").css("overflow","auto");
 		$("body").css("position","relative");
 		//$.scrollTo("#photos");
-	};	
+		$.scrollTo("#img-"+$scope.currentPhoto.position,{offset:-400});
+		console.log($scope.currentPhoto.position);
+	};		
 }]);
