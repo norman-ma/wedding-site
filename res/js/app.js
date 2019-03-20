@@ -57,13 +57,13 @@ $(window).scroll(function(){
 	}
 
 	var $offset = 0.1 * $(window).height();
-	if(Math.floor(wedding) === Math.floor($offset)){
+	if(Math.floor(wedding) <= Math.floor($offset) && Math.floor(wedding) >= 0){
 		menuFormat("Our Wedding");
 		$("*").removeClass("to-blue");
-	}else if(Math.floor(there) === Math.floor($offset)){
+	}else if(Math.floor(there) <= Math.floor($offset) && Math.floor(there) >= 0){
 		menuFormat("Getting There");
 		$("*").removeClass("to-blue");
-	}else if(Math.floor(photos) === Math.floor($offset)){
+	}else if(Math.floor(photos) <= Math.floor($offset) && Math.floor(photos) >= 0){
 		menuFormat("Photos");
 	    $("#content").addClass("to-blue");
 		$("#countdown-message").addClass("to-blue");
@@ -73,7 +73,9 @@ $(window).scroll(function(){
 		$(".current").addClass("to-blue");
 		$("#main-menu a").addClass("to-blue");
 		$(".page h1").addClass("to-blue");
-	}else if(Math.floor(registry) === Math.floor($offset)){
+		$(".content").addClass("to-blue");
+		$(".page").addClass("to-blue");
+	}else if(Math.floor(registry) <= Math.floor($offset) && Math.floor(registry) >= 0){
 		menuFormat("Registry");
 		$("*").removeClass("to-blue");
 	}else{
