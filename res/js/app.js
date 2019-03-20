@@ -359,4 +359,22 @@ app.controller("ImageController",["$scope", function($scope){
 		$.scrollTo("#img-"+$scope.currentPhoto.position,{offset:-400});
 		console.log($scope.currentPhoto.position);
 	};		
+	
+	$("#lightbox").swipe({
+		swipeLeft:function(event, direction, distance, duration, fingerCount) {
+			$scope.$apply(function(){
+				$scope.nextSlide();
+				console.log("You swiped " + direction );
+			});
+		}
+	});
+	
+	$("#lightbox").swipe({
+		swipeRight:function(event, direction, distance, duration, fingerCount) {
+			$scope.$apply(function(){
+				$scope.prevSlide();
+				console.log("You swiped " + direction );
+			});
+		}
+	});
 }]);

@@ -707,9 +707,8 @@ html{
 		padding-top: 5vh;
 		left: 0;
 		top: 0;
-		width: 100vw;
-		height: 100vh;
-		overflow: auto;
+		width: 100%;
+		overflow: hidden;
 		background-color: #06062a;
 	}
 	
@@ -737,7 +736,7 @@ html{
 	}
 	
 	#close{
-		left: 90vw;
+		left: 89vw;
 		top: 1vh;
 		font-size: 3em;
 	}
@@ -753,7 +752,7 @@ html{
 	}
 	
 	#next{
-		left: 90vw;
+		left: 88vw;
 	}
 	
 	#close:hover, #next:hover, #prev:hover{
