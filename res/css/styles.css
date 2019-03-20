@@ -46,7 +46,6 @@ html{
 	--color1: 
 }
 
-
 .loader {
 	display: none;
 	position: absolute;
@@ -265,8 +264,7 @@ html{
 		animation-delay: 0s;*/
 		background: #06062a; 
 		color: #bd9999; 
-		border-color: #bd9999;
-		
+		border-color: #bd9999;		
 	}
 
 	.page .current{
@@ -514,28 +512,44 @@ html{
 	#landing{
 		position: relative;
 	}
+	
+	.to-blue,
+  #countdown-message.to-blue,
+	#header.to-blue,
+	.menu-button.to-blue,
+	.current.to-blue,
+	#main-menu a.to-blue,
+	.page h1.to-blue{
+		/*animation-name: fade-to-blue;
+	  animation-duration: 1.5s;
+		animation-fill-mode: forwards;
+		animation-delay: 0s;*/
+		background: #06062a; 
+		color: #bd9999; 
+		border-color: #bd9999;		
+	}
 
 	#flowers{
 		position: fixed;
-		width: 120%;
+		width: 100%;
 		z-index: 5;
 		/*transform: rotate(-15deg);*/
 		margin: 0 auto;
 		display: block;
-		top: -20vw;
+		top: 13vh;
 		pointer-events: none;
 
-		animation-name: welcome-1;
+		animation-name: welcome;
 		animation-duration: 2s;
 		animation-fill-mode: backwards;
-
 	}
 
 	#names{
 		position: relative;
-		top: 33vw;
-		width: 90%;
-		margin: 0 5%;
+		--width:140vw;
+		top: 30vh;
+		width: var(--width);
+		left: calc(100vw/2 - var(--width)/2);
 
 		animation-name: welcome;
 		animation-duration: 1.5s;
@@ -550,20 +564,29 @@ html{
 	.page{
 		position: relative;
 		height: 20%;
-		top: 40vh
+		top: 30vh;
 	}
 	
 	.page h1{
+		font-family: "Queenstown Signature";
 		position: sticky;
 		color: #400711;
-		font-size: 13vw;
+		font-size: 6em;
 		text-align: center;
-		font-weight: bold;
 		top: 0px;
 		width: 100vw;
 		background: white;
 		z-index: 2;
 		margin-bottom: 10vh;
+	}
+	
+	#our-wedding{
+		top: 60vh;
+	}
+	
+	.title{
+		font-family: "Trajan Pro Bold";
+		font-size: 6em;
 	}
 	
 	#when-img{
@@ -573,10 +596,12 @@ html{
 		z-index: 2;
 	}
 	
+	#when .date{
+		font-family: "Trajan Pro";
+	}
+	
 	#when .title{
 		color: #bf6795;
-		font-weight: bold;
-		font-size: 30vw;
 		display: inline-block;
 		text-align: center;
 		line-height: .3
@@ -584,7 +609,6 @@ html{
 	
 	#when h2{
 		color: #bf6795;
-		font-size: 10vw;
 		display: inline-block;
 		text-align: center;
 	}
@@ -594,7 +618,7 @@ html{
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
-		top: -70vw
+		top: -65vw
 	}
 	
 	#wedding-divider{
@@ -614,31 +638,32 @@ html{
 	
 	#where .title{
 		color: #bf6795;
-		font-weight: bold;
-		font-size: 30vw;
 		display: inline-block;
 		text-align: center;
 		line-height: 1;
 	}
 	
 	#where p{
+		font-family: "Trajan Pro";
 		color: #400711;
 		text-align: center;
-		font-size: 5vw;
+		font-size: 1em;
 	}
 	
 	#where .big{
+		font-family: "Trajan Pro";
 		color: #bf6795;
-		font-size: 10vw;
+		font-size: 2em;
 		text-align: center;
 		line-height: .5
 	}
 	
 	#where .small{
+		font-family: "Queenstown Signature";
 		color: #bf6795;
-		font-size: 6vw;
+		font-size: 4.5em;
 		text-align: center;
-	  line-height: .7
+	  line-height: .3
 	}
 	
 	#where-img{
@@ -648,5 +673,92 @@ html{
 		top: -20vw;
 		z-index: 2;
 	}	
-
+	
+	#reception{
+		display: none;
+	}
+	
+	#img-catalog{
+		position: relative;
+		top: 8vh;
+		/*display: none;*/
+		-webkit-column-count: 3;
+    -webkit-column-gap: 0px;
+    -moz-column-count: 3;
+    -moz-column-gap: 0px;
+    column-count: 3;
+    column-gap: 0px; 
+	}
+	
+	#img-catalog img{
+		width: 100% !important;
+    height: auto !important;
+	}
+	
+	#img-catalog img:hover{
+		width: 102% !important;
+    height: auto !important;
+	}
+	
+	#lightbox{
+		display: none;
+		position: fixed;
+		z-index: 10;
+		padding-top: 5vh;
+		left: 0;
+		top: 0;
+		width: 100vw;
+		height: 100vh;
+		overflow: auto;
+		background-color: #06062a;
+	}
+	
+	#currentPhoto{
+		position: relative;		
+		margin: 0;
+		padding: 0;
+		height: 90vh;
+	}
+	
+	#currentPhoto img{
+		--height:60vh;
+		max-height: var(--height);
+		max-width: 70vw;
+		display: block;
+    margin-left: auto;
+    margin-right: auto;
+		margin-top: calc(100vh/2 - var(--height)/2);
+	}
+	
+	#close,#prev,#next{
+		position: absolute;
+		cursor: context-menu;
+		color: #bd9999;
+	}
+	
+	#close{
+		left: 90vw;
+		top: 1vh;
+		font-size: 3em;
+	}
+	
+	#prev, #next{
+		font-size: 5em;
+		opacity: 0.3;
+		top: 40vh;
+	}
+	
+	#prev{
+		left: 1vw;
+	}
+	
+	#next{
+		left: 90vw;
+	}
+	
+	#close:hover, #next:hover, #prev:hover{
+		font-weight: bold;
+		opacity: 1;
+	}
+	
 }
