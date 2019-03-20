@@ -87,7 +87,7 @@
 							<a id="close" ng-click="closeLightbox()">&times;</a>
 
 							<div id="currentPhoto">
-								<img ng-src="{{currentPhoto.src}}" alt="{{currentPhoto.caption}}">
+								<img ng-src="{{currentPhoto.src}}" alt="{{currentPhoto.caption}}" ng-click="nextSlide()">
 								<div id="caption">
 									<p>{{currentPhoto.caption}}</p>	
 								</div>

@@ -231,6 +231,10 @@ html{
 		font-style:oblique;
 		top: -15px
 	}
+	
+	#our-wedding{
+		top: 100vh;		
+	}
 
 	#content{
 		height: 900vh;
@@ -465,8 +469,11 @@ html{
 		max-height: 100%;
 		max-width: 80vw;
 		display: block;
-    margin-left: auto;
-    margin-right: auto;
+    position: absolute;
+		top: 50%;
+		left: 50%;
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
 	}
 	
 	#close,#prev,#next{
@@ -708,6 +715,7 @@ html{
 		left: 0;
 		top: 0;
 		width: 100%;
+		height: 100%;
 		overflow: hidden;
 		background-color: #06062a;
 	}
@@ -720,31 +728,32 @@ html{
 	}
 	
 	#currentPhoto img{
-		--height:60vh;
-		max-height: var(--height);
-		max-width: 70vw;
-		display: block;
-    margin-left: auto;
-    margin-right: auto;
-		margin-top: calc(100vh/2 - var(--height)/2);
+		max-height: 100vh;;
+		max-width: 92vw;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
 	}
 	
 	#close,#prev,#next{
 		position: absolute;
 		cursor: context-menu;
 		color: #bd9999;
+		opacity: 0.2;
 	}
 	
 	#close{
 		left: 89vw;
-		top: 1vh;
-		font-size: 3em;
+		top: 10vh;
+		font-size: 2em;
+		
 	}
 	
 	#prev, #next{
-		font-size: 5em;
-		opacity: 0.3;
-		top: 40vh;
+		font-size: 2em;		
+		top: 50vh;
 	}
 	
 	#prev{
@@ -752,7 +761,7 @@ html{
 	}
 	
 	#next{
-		left: 88vw;
+		left: 94vw;
 	}
 	
 	#close:hover, #next:hover, #prev:hover{
