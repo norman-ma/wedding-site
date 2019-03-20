@@ -325,7 +325,11 @@ app.controller("ImageController",["$scope", function($scope){
 	
 	$scope.nextSlide = function(){
 		var n = ($scope.currentPhoto.position + 1) % $scope.num;
-		$scope.showSlide(n);
+		if(n > 0){
+			$scope.showSlide(n);
+		}else{
+			$scope.showSlide($scope.num - n);
+		}
 		console.log($scope.currentPhoto);
 	};
 	
