@@ -15,7 +15,7 @@
 		<div class="loader" id="preloader"></div>
 		<div id="preload" ng-controller="ImageController">
 			<div class="img" ng-repeat="img in photos">
-				<img ng-src="{{img.src}}" height="1" weight="1" alt="{{img.caption}}">
+				<img ng-src="{{img.src}}" height="1" weight="1" alt="">
 			</div>
 		</div>
 		<div id="bg"></div>
@@ -92,7 +92,7 @@
 					<div class="content" ng-controller="ImageController">
 						<div id="img-catalog">
 							<div class="img" ng-repeat="img in photos" data-aos="fade-in" data-aos-delay="100" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-anchor-placement="top-center">
-								<img ng-src="{{img.src}}" alt="{{img.caption}}" ng-click="openLightbox(img.position)" id="img-{{img.position}}">
+								<img ng-src="{{img.src}}" alt="" ng-click="openLightbox(img.position)" id="img-{{img.position}}">
 							</div>
 						</div>
 						<div id="lightbox">

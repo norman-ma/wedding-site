@@ -1,3 +1,7 @@
+$(document).onreadystatechange = alert("Ready");
+
+
+
 var header = $(".header");
 
 var size = $("#main-menu").css("font-size");
@@ -184,7 +188,7 @@ app.controller("CountdownController",["$scope",function($scope){
 	
 	$scope.update = function(){
 		var today = new Date();
-		var wedding_date = new Date("July 6, 2019 17:00:00 GMT -5");
+		var wedding_date = new Date("July 6, 2019 00:00:00 GMT -5");
 		
 		var days = days_between(today, wedding_date);
 		
