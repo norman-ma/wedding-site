@@ -1,7 +1,3 @@
-$(document).onreadystatechange = alert("Ready");
-
-
-
 var header = $(".header");
 
 var size = $("#main-menu").css("font-size");
