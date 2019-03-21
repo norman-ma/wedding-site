@@ -33,6 +33,7 @@ src: url(../fonts/QUEENSTOWN-SIGNATURE.otf);
 }
 
 @keyframes fade-to-blue{
+	from {background: transparent; color: #400711;; border-color: #400711;}
 	to {background: #06062a; color: #bd9999; border-color: #bd9999}
 }
 
@@ -43,7 +44,6 @@ src: url(../fonts/QUEENSTOWN-SIGNATURE.otf);
 
 html{
 	scroll-behavior: smooth;
-	--color1: 
 }
 
 .loader {
@@ -117,6 +117,18 @@ html{
 		animation-delay: 1s;
 		animation-fill-mode: backwards;
 	}
+	
+	#bg{
+		background: none;
+		position: absolute;
+		width: 100vw;
+		height: 1000vh;
+		top: 0;
+	}
+	
+	#main{
+		background: transparent;
+	}
 
 	#header{
 		font-family: "Trajan Pro";
@@ -136,8 +148,14 @@ html{
 		animation-fill-mode: backwards;
 	}
 	
-	#header.top{
+	#header.top .bg{
+		position: absolute;
 		background: white;
+		height: 80%;
+		width: 100%;
+		top: 0;
+		opacity: 0.5;
+		z-index: 0;
 	}
 
 	#main-menu{
@@ -186,7 +204,7 @@ html{
 		cursor: context-menu;
 		display: flex;
 		align-items: center;
-		height: 90%
+		height: 90%;
 	}
 
 	#home h3{
@@ -194,7 +212,7 @@ html{
 		font-size: 2.2vw;
 		text-align: center;
 		width: 100%;
-		color: #B0B0B0;
+		color:  #400711;
 	}
 	
 	#home h3:hover{
@@ -255,28 +273,32 @@ html{
 		border-bottom: solid #400711 0.2vh;
 	}
 	
-	.to-blue,
-  #countdown-message.to-blue,
-	#header.to-blue,
-	.menu-button.to-blue,
-	.current.to-blue,
-	#main-menu a.to-blue,
-	.page h1.to-blue{
-		/*animation-name: fade-to-blue;
-	  animation-duration: 1.5s;
+	#bg.to-blue, .bg.to-blue{
+		animation-name: fade-to-blue;
+	  animation-duration: 3s;
 		animation-fill-mode: forwards;
-		animation-delay: 0s;*/
-		background: #06062a; 
+		animation-delay: 0s;
+		
+		/*background: #06062a; 
 		color: #bd9999; 
-		border-color: #bd9999;		
+		border-color: #bd9999;*/
 	}
+	
+	#main .to-blue{
+		color: #bd9999;
+		border-color: #bd9999;
+	}	
 
 	.page .current{
-		background: white;
+		background: transparent;
 	}
 
 	.page{
 		height: 20%;
+	}
+	
+	#our-wedding{
+		height: 120vh;
 	}
 	
 	.title{
@@ -412,13 +434,51 @@ html{
 		width: 100%;
 		z-index: 1;
 		top: 12vh;
-	}
-
-	#our-wedding{
-		height: 120vh;
+	}	
+	
+	#getting-there{
+		height: 120vh;		
 	}
 	
-	#getting-there{}
+	#map{
+		--width: 70vw;
+		position: relative;
+		top: 10vh;
+		width: var(--width);
+		height: 60vh;
+		left: calc(100vw/2 - var(--width)/2);
+	}
+	
+	#accomodations{
+		position: relative;
+		top: 10vh;
+		color: #400711;
+		width: 100vw;
+		text-align: center;
+	}
+	
+	#accomodations h2{
+		font-family: "Queenstown Signature";
+		font-size: 6em
+	}
+	
+	#accomodations p{
+		font-family: "Trajan Pro";
+		font-size: 1.5em;
+	}
+	
+	#jdv{
+		font-family: "Trajan Pro Bold";
+	}
+	
+	#jdv:hover{
+		font-size: 1.1em;
+	}
+	
+	#directions{
+		font-size: 0.4em;
+	}
+	
 	#photos{
 		height: 200vh;
 	}
@@ -458,28 +518,33 @@ html{
 		background-color: #06062a;
 	}
 	
-	#currentPhoto{
-		position: relative;		
-		margin: 0;
-		padding: 0;
-		height: 90vh;
+	#click-out{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: 0;
+		top: 0;
 	}
 	
-	#currentPhoto img{
-		max-height: 100%;
-		max-width: 80vw;
-		display: block;
-    position: absolute;
+	#currentPhoto{
+		position: absolute;
 		top: 50%;
 		left: 50%;
 		-ms-transform: translate(-50%, -50%);
 		transform: translate(-50%, -50%);
 	}
 	
+	#currentPhoto img{
+		max-height: 90vh;
+		max-width: 90vw;
+		display: block;    
+	}
+	
 	#close,#prev,#next{
 		position: absolute;
 		cursor: context-menu;
 		color: #bd9999;
+		z-index: 2;
 	}
 	
 	#close{
@@ -516,25 +581,33 @@ html{
 		width: 100vw;
 	}	
 	
+	#bg{
+		background: none;
+		position: absolute;
+		width: 100vw;
+		height: 1000vh;
+		top: 0;
+	}
+	
 	#landing{
 		position: relative;
 	}
 	
-	.to-blue,
-  #countdown-message.to-blue,
-	#header.to-blue,
-	.menu-button.to-blue,
-	.current.to-blue,
-	#main-menu a.to-blue,
-	.page h1.to-blue{
-		/*animation-name: fade-to-blue;
-	  animation-duration: 1.5s;
+	#bg.to-blue, .bg.to-blue{
+		animation-name: fade-to-blue;
+	  animation-duration: 3s;
 		animation-fill-mode: forwards;
-		animation-delay: 0s;*/
-		background: #06062a; 
+		animation-delay: 0s;
+		
+		/*background: #06062a; 
 		color: #bd9999; 
-		border-color: #bd9999;		
+		border-color: #bd9999;*/
 	}
+	
+	#main .to-blue{
+		color: #bd9999;
+		border-color: #bd9999;
+	}	
 
 	#flowers{
 		position: fixed;
@@ -582,8 +655,7 @@ html{
 		text-align: center;
 		top: 0px;
 		width: 100vw;
-		background: white;
-		z-index: 2;
+		background: transparent;
 		margin-bottom: 10vh;
 	}
 	
@@ -685,6 +757,19 @@ html{
 		display: none;
 	}
 	
+	#getting-there{
+		height: 150vh;
+	}
+	
+	#map{
+		--width: 95vw;
+		position: relative;
+		top: 30vh;
+		width: var(--width);
+		height: 60vh;
+		left: calc(100vw/2 - var(--width)/2);
+	}
+	
 	#img-catalog{
 		position: relative;
 		top: 8vh;
@@ -720,16 +805,17 @@ html{
 		background-color: #06062a;
 	}
 	
-	#currentPhoto{
-		position: relative;		
-		margin: 0;
-		padding: 0;
-		height: 90vh;
+	#click-out{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: 0;
+		top: 0;
 	}
 	
-	#currentPhoto img{
-		max-height: 100vh;;
-		max-width: 92vw;
+	#currentPhoto{	
+		margin: 0;
+		padding: 0;
 		position: absolute;
 		top: 50%;
 		left: 50%;
@@ -737,23 +823,40 @@ html{
 		transform: translate(-50%, -50%);
 	}
 	
+	#currentPhoto img{
+		max-height: 100vh;;
+		max-width: 92vw;
+		
+	}
+	
 	#close,#prev,#next{
 		position: absolute;
 		cursor: context-menu;
 		color: #bd9999;
-		opacity: 0.2;
 	}
 	
 	#close{
-		left: 89vw;
-		top: 10vh;
-		font-size: 2em;
+		--width: 15vw;
+		top: 87vh;
+		left: calc(100vw/2 - var(--width)/2);
+		font-size: var(--width);
+		text-align: center;
+		line-height: .8;
+		
+		border: solid 2px;
+		border-radius: 50%;
+		height: var(--width);
+		width: var(--width);
+		
+		z-index: 3;
+		opacity: 0.5;		
 		
 	}
 	
 	#prev, #next{
 		font-size: 2em;		
 		top: 50vh;
+	  opacity: 0.2;		
 	}
 	
 	#prev{
@@ -767,6 +870,56 @@ html{
 	#close:hover, #next:hover, #prev:hover{
 		font-weight: bold;
 		opacity: 1;
+	}
+	
+	#photos{
+		height: 200vh;
+	}
+	
+	#getting-there{
+		height: 180vh;
+	}
+	
+	#accomodations{
+		position: relative;
+		top: 35vh;
+		color: #400711;
+		width: 100vw;
+		text-align: center;
+	}
+	
+	#accomodations h2{
+		font-family: "Queenstown Signature";
+		font-size: 3em
+	}
+	
+	#accomodations p{
+		font-family: "Trajan Pro";		
+	}
+	
+	#acc{
+		font-size: 1em;
+	}
+	
+	#jdv{
+		font-family: "Trajan Pro Bold";
+	}
+	
+	#jdv:hover{
+		font-size: 1.1em;
+	}
+	
+	#directions{
+		font-size: 0.8em;
+		line-height: 0;
+	}
+	
+	#directions:hover{
+		font-size: 0.9em;
+	}
+	
+	#registry{
+		height: 100vh
 	}
 	
 }

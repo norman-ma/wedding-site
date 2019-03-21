@@ -5,6 +5,11 @@ var menu_init = parseInt(size.slice(0, size.length - 2));
 var menu_max = menu_init * 1.5;
 var menu_diff = menu_max - menu_init;
 
+var weddingOrigin = $("#our-wedding h1")[0].getBoundingClientRect().top;
+var thereOrigin = $("#getting-there h1")[0].getBoundingClientRect().top;
+var photosOrigin = $("#photos h1")[0].getBoundingClientRect().top;
+var registryOrigin = $("#registry h1")[0].getBoundingClientRect().top;
+
 $(window).scroll(function(){	
 	"use strict";
 	
@@ -18,7 +23,6 @@ $(window).scroll(function(){
 	var $scrollArea = $(document).height() - $(window).height();
 	var percent = $scrollTop/$scrollArea;
 	//console.log(percent);
-	
 	if(percent < 0.1){
 
 		
@@ -57,30 +61,48 @@ $(window).scroll(function(){
 	}
 
 	var $offset = 0.1 * $(window).height();
+	var $offset2 = 0.9 * $(window).height();
+	var $offset3 = 0.5 * $(window).height();
+	
+	var current = "";
+	
 	if(Math.floor(wedding) <= Math.floor($offset) && Math.floor(wedding) >= 0){
 		menuFormat("Our Wedding");
 		$("*").removeClass("to-blue");
+		current = weddingOrigin;
 	}else if(Math.floor(there) <= Math.floor($offset) && Math.floor(there) >= 0){
 		menuFormat("Getting There");
 		$("*").removeClass("to-blue");
+		current = thereOrigin;
 	}else if(Math.floor(photos) <= Math.floor($offset) && Math.floor(photos) >= 0){
 		menuFormat("Photos");
-	    $("#content").addClass("to-blue");
-		$("#countdown-message").addClass("to-blue");
-		$("#header").addClass("to-blue");
-		$("#header").removeClass("top");
-		$(".menu-button").addClass("to-blue");
-		$(".current").addClass("to-blue");
-		$("#main-menu a").addClass("to-blue");
-		$(".page h1").addClass("to-blue");
-		$(".content").addClass("to-blue");
-		$(".page").addClass("to-blue");
+		current = photosOrigin;
 	}else if(Math.floor(registry) <= Math.floor($offset) && Math.floor(registry) >= 0){
 		menuFormat("Registry");
 		$("*").removeClass("to-blue");
+		current = registryOrigin;
 	}else{
 		menuFormat("");
 		$("*").removeClass("to-blue");
+		current = "";
+	}	
+	
+	if(Math.floor(photos) <= Math.floor($offset2) && Math.floor(photos) >= 0){
+		$("#header").addClass("to-blue");
+		$("#bg").addClass("to-blue");
+		$("*").addClass("to-blue");
+	}
+
+	var currentHead = $("h1.current");	
+	
+	
+	if($(document).scrollTop() <= current + $offset3 && $(document).scrollTop() >= current){
+		var x = (current + $offset3 - $(document).scrollTop())/$offset3;
+		currentHead.css("opacity", x);
+		console.log(x);
+		
+		//console.log((topPosition + $offset2 - $(document).scrollTop())/$offset2);
+		//console.log($(document).scrollTop(), topPosition, topPosition + $offset2);
 	}
 	
 });
@@ -133,6 +155,17 @@ function menuFormat(current){
 		$("#photos h1").removeClass("current");
 		$("#registry h1").removeClass("current");
 	}
+}
+
+function toggleMaps(key){
+	var maps = {
+		kendal:"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2681.7858853700372!2d-77.48911321264521!3d18.089231923405777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8edbbebe172e832b%3A0x47bd588f7d5cf85b!2sKendal+Conference+Center!5e0!3m2!1sen!2sjm!4v1553104191860",
+		jdv: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3792.312850404201!2d-77.50930398479734!3d18.103338386525188!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8edbbed0181b23c1%3A0x82584fde0d153264!2sJamaica+Deaf+Village+Retreat+Centre!5e0!3m2!1sen!2sjm!4v1553115832312",
+		directions: "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d9846.933337051016!2d-77.49927966929364!3d18.094582436322682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x8edbbed0181b23c1%3A0x82584fde0d153264!2sJamaica+Deaf+Village+Retreat+Centre!3m2!1d18.1033333!2d-77.5071153!4m5!1s0x8edbbebe172e832b%3A0x47bd588f7d5cf85b!2sKendal+Conference+Center!3m2!1d18.0893303!2d-77.4885035!5e0!3m2!1sen!2sjm!4v1553115589485"
+	};
+	
+	$("#map").attr("src",maps[key]);
+	$.scrollTo("#map",{offset: -0.3 * $(window).height() });	
 }
 
 function toTop(){

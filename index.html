@@ -18,13 +18,14 @@
 				<img ng-src="{{img.src}}" height="1" weight="1" alt="{{img.caption}}">
 			</div>
 		</div>
+		<div id="bg"></div>
 		<div id="main">
 			<div id="landing" class="col-12">
 				<img src="res/images/flowers header.png" id="flowers" class="header" alt="Flowers" data-scroll-speed="5">
 				<img src="res/images/names.svg" id="names" class="header" alt="Tiffany & Michael-Anthony" data-scroll-speed="0">	
 			</div>
 
-			<div id="header" class="header row" data-scroll-speed="0">	
+			<div id="header" class="header row" data-scroll-speed="0">					
 				<div id="home" onclick="toTop()" class="col-2"><h3>#AisleGoWithNorman</h3></div>
 				<div id="main-menu" class="col-8">
 					<a href="#our-wedding" class="left wedding"><button class="menu-button">Our Wedding</button></a>
@@ -35,6 +36,7 @@
 				<div id="countdown" ng-controller="CountdownController" class="col-2">
 					<div id="countown-val"><h2>{{ countdown }}</h2></div><div id="countdown-message">{{ message }}</div>						
 				</div>
+				<div class="bg"></div>
 			</div>
 			<div id="content">
 				<div id="our-wedding" class="page col-12">
@@ -50,7 +52,7 @@
 						<div id="wedding-divider" class="col-4">
 							<img src="res/images/flowers5.png" alt="flowers">
 						</div>
-						<div id="where" class="col-4">
+						<div id="where" class="col-4" onclick="toggleMaps('kendal')">
 							<div class="txt">			
 								<div class="address">
 									<h2 class="big">Kendal Camp</h2>
@@ -73,7 +75,17 @@
 				</div>
 				<div id="getting-there" class="page col-12">
 					<h1>Getting There</h1>
-					<div class="content"></div>
+					<div class="content">
+						
+						<iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2681.7858853700372!2d-77.48911321264521!3d18.089231923405777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8edbbebe172e832b%3A0x47bd588f7d5cf85b!2sKendal+Conference+Center!5e0!3m2!1sen!2sjm!4v1553104191860" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+						
+						<div id="accomodations">
+							<h2>And Where can we stay?</h2>
+							<p id="acc">Accomodations may be provided at the <span id="jdv" onclick="toggleMaps('jdv')">Jamaica Deaf Village</span></p>
+							<p id="directions" onclick="toggleMaps('directions')">Get Directions Here</p>
+						</div>
+						
+					</div>
 				</div>
 				<div id="photos" class="page col-12">
 					<h1>Photos</h1>
@@ -85,7 +97,7 @@
 						</div>
 						<div id="lightbox">
 							<a id="close" ng-click="closeLightbox()">&times;</a>
-
+							<div id="click-out" ng-click="closeLightbox()"></div>
 							<div id="currentPhoto">
 								<img ng-src="{{currentPhoto.src}}" alt="{{currentPhoto.caption}}" ng-click="nextSlide()">
 								<div id="caption">
