@@ -9,6 +9,12 @@
 	<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,700" rel="stylesheet">  
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
 	<link rel="stylesheet" href="res/css/styles.css">
+	<script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+	<script type="text/javascript">
+	   (function(){
+		  emailjs.init("user_ZrWXKupH6MTY01y5pTaeW");
+	   })();
+	</script>
 </head>
 <body>	
 	<div ng-app="WeddingApp">
@@ -31,7 +37,8 @@
 					<a href="#our-wedding" class="left wedding"><button class="menu-button">Our Wedding</button></a>
 					<a href="#getting-there" class="center there"><button class="menu-button">Getting There</button></a>
 					<a href="#photos" class="center photos"><button class="menu-button">Photos</button></a>			
-					<a href="#registry" class="right registry"><button class="menu-button">Registry</button></a>
+					<a href="#registry" class="center registry"><button class="menu-button">Registry</button></a>
+					<a href="#rsvp" class="right rsvp"><button class="menu-button">RSVP</button></a>
 				</div>
 				<div id="countdown" ng-controller="CountdownController" class="col-2">
 					<div id="countown-val"><h2>{{ countdown }}</h2></div><div id="countdown-message">{{ message }}</div>						
@@ -40,7 +47,8 @@
 			</div>
 			<div id="content">
 				<div id="our-wedding" class="page col-12">
-					<h1 class="col-12">Our Wedding</h1>
+					<h1 class="col-12 desktop">Our Wedding</h1>
+					<h1 class="col-12 mobile" onClick="toTop()">Our Wedding</h1>
 					<div class="content row">
 						<div id="when" class="col-4">
 							<img src="res/images/flowers3.png" alt="flowers" id="when-img">
@@ -74,7 +82,8 @@
 					</div>
 				</div>
 				<div id="getting-there" class="page col-12">
-					<h1>Getting There</h1>
+					<h1 class="col-12 desktop">Getting There</h1>
+					<h1 class="col-12 mobile" onClick="toTop()">Getting There</h1>
 					<div class="content">
 						
 						<iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2681.7858853700372!2d-77.48911321264521!3d18.089231923405777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8edbbebe172e832b%3A0x47bd588f7d5cf85b!2sKendal+Conference+Center!5e0!3m2!1sen!2sjm!4v1553104191860" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
@@ -88,7 +97,8 @@
 					</div>
 				</div>
 				<div id="photos" class="page col-12">
-					<h1>Photos</h1>
+					<h1 class="col-12 desktop">Photos</h1>
+					<h1 class="col-12 mobile" onClick="toTop()">Photos</h1>
 					<div class="content" ng-controller="ImageController">
 						<div id="img-catalog">
 							<div class="img" ng-repeat="img in photos" data-aos="fade-in" data-aos-delay="100" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-anchor-placement="top-center">
@@ -119,8 +129,27 @@
 					</div>
 				</div>		
 				<div id="registry" class="page col-12">
-					<h1>Registry</h1>
+					<h1 class="col-12 desktop">Registry</h1>
+					<h1 class="col-12 mobile" onClick="toTop()">Registry</h1>
 					<div class="content"></div>
+				</div>
+				<div id="rsvp" class="page col-12">
+					<h1 class="col-12 desktop">RSVP</h1>
+					<h1 class="col-12 mobile" onClick="toTop()">RSVP</h1>
+					<div class="content">
+					  	<form id="rsvpform">
+						 	<div>								
+								<input id="rsvpname" type="text"><br/>
+								<label name="name">Name</label><br/><br/>
+								<input type="radio" name="accept" value="accept" id="rsvpaccept"><label name="rsvpaccept">Accepts with pleasure</label>
+								<input type="radio" name="accept" value="decline" id="rsvpdecline"><label name="rsvpdecline">Decline with regrets</label><br/><br/>
+								<div id="rsvpnum"><label name="num">Number Attending</label><input id="attendingnum" type="number" min="1"></div><br/><br/>
+
+								<input type="submit" value="Submit">
+							</div>							
+						</form>		
+						<img id="rsvpimg" src="res/images/bouquet-6.png" alt="">
+					</div>
 				</div>
 			</div>				
 		</div>
@@ -131,7 +160,6 @@
 	<script src="res/js/jquery.touchSwipe.min.js"></script>
 	<script src="res/js/app.js"></script>
 	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>	
-	
 	<script>
 		AOS.init();
 	</script>

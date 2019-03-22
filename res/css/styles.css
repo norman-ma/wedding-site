@@ -85,6 +85,14 @@ html{
 	.col-10 {width: 83.33%;}
 	.col-11 {width: 91.66%;}
 	.col-12 {width: 100%;}
+	
+	.mobile{
+		display: none;
+	}
+	
+	.desktop{
+		display: block;
+	}
 
 	#flowers{
 		--width: 50vw;
@@ -122,7 +130,7 @@ html{
 		background: none;
 		position: absolute;
 		width: 100vw;
-		height: 1000vh;
+		height: 800vh;
 		top: 0;
 	}
 	
@@ -177,7 +185,7 @@ html{
 		box-shadow: none;
 		border: none;
 		color: #400711;
-		font-size: 1.3em;
+		font-size: 1.2em;
 		margin: 0px;
 		z-index: 10;
 	}
@@ -440,13 +448,13 @@ html{
 	}	
 	
 	#getting-there{
-		height: 170vh;		
+		height: 250vh;		
 	}
 	
 	#map{
 		--width: 70vw;
 		position: relative;
-		top: 10vh;
+		top: 20vh;
 		width: var(--width);
 		height: 60vh;
 		left: calc(100vw/2 - var(--width)/2);
@@ -454,7 +462,7 @@ html{
 	
 	#accomodations{
 		position: relative;
-		top: 10vh;
+		top: 40vh;
 		color: #400711;
 		width: 100vw;
 		text-align: center;
@@ -466,8 +474,7 @@ html{
 	}
 	
 	#accomodations p{
-		font-family: "Trajan Pro";
-		
+		font-family: "Trajan Pro";		
 	}
 	
 	#acc{
@@ -588,9 +595,136 @@ html{
 	}
 	
 	#registry{}
+	
+	#rsvp{
+	   height: 100vh;	
+	}
+	
+	form div{
+		position: relative;
+		top: 8vh;
+	}
+	
+	#rsvpimg{
+		pointer-events: none;
+		position: relative;
+		--width: 25vw;
+		width: var(--width);
+		top: -24vh;
+		left: 44vw;
+		z-index: 2;
+	}
+	
+	#rsvpform{ 
+		display: flex;
+		align-content: center;
+		padding: 30px;
+		border: 1px solid;
+		border-radius: 30px;
+		box-shadow: 3px 3px 10px grey;
+		top: 15vh;
+		position: relative;
+		--width: 25vw;
+		width: var(--width);
+		height: 50vh;
+		left: calc(100vw/2 - var(--width)/2);
+		background: white;
+		z-index: 1;
+		color: #400711;
+		border-color: #400711;
+	}
+	
+	label{
+		font-family: "Trajan Pro Bold";
+		margin-right: 1vw;
+		font-size: 1.1em;
+		background: transparent;
+	}
+	
+	label[name="name"]{
+		position: relative;
+		text-align: center;
+		font-size: 1em;
+		left: 45%;
+	}
+	
+	input[type="text"]{
+		border:0;
+		border-bottom: 1px solid;
+		width: 100%;
+		text-align: center;
+		font-family: "Trajan Pro";
+		font-size: 1.5em;
+		color: #400711;
+		border-color: #400711;
+	}
+	
+	input[type="radio"]{
+    margin-right: 0.5vw;
+		color: #400711;
+		border-color: #400711;
+	}
+	
+	input[type="number"]{
+		border: 0;
+		border-bottom: 1px solid;
+		width: 3vw;
+		text-align: center;
+	}
+	
+	label[name="rsvpaccept"],
+	label[name="rsvpdecline"]{
+		font-size: .8em;
+	}
+	
+	#rsvpnum{
+		position: relative;
+		display: flex;
+		justify-content: "center";
+		top: 0;
+	}
+	
+	#rsvpnum input, #rsvpnum label{
+		position: relative;
+		left: 16%
+	}
+	
+	input[type="submit"]{
+		position: relative;
+		display: flex;
+		top: 10%;
+		height: 10%;
+		width: 40%;
+		left: 30%;
+		background: none;
+		border: none;
+		border: 1px solid;
+		border-radius: 8px;
+		font-family: "Trajan Pro Bold";
+		font-size: 1.5em;
+	}		
+	
+	input[type="submit"]:hover{
+		border: 2px solid;
+		font-size: 1.6em;
+	}
+	#thankyou{
+		position: relative;
+		font-size: 8em;
+		top: 4vh;
+	}
+	
 }
 
 @media only screen and (max-width: 992px){
+	
+	.mobile{
+		display: block;
+	}
+	
+	.desktop{
+		display: none;
+	}
 
 	[class*="col-"] {
 		width: 100vw;
@@ -668,14 +802,18 @@ html{
 		color: #400711;
 		font-size: 20vw;
 		text-align: center;
-		top: 0px;
+		top: 15px;
 		width: 100vw;
 		background: transparent;
 		margin-bottom: 10vh;
+		cursor: context-menu;
 	}
+	
+	h1.current{}
 	
 	#our-wedding{
 		top: 60vh;
+		height: 220vh
 	}
 	
 	.title{
@@ -779,7 +917,7 @@ html{
 	#map{
 		--width: 95vw;
 		position: relative;
-		top: 30vh;
+		top: 10vh;
 		width: var(--width);
 		height: 60vh;
 		left: calc(100vw/2 - var(--width)/2);
@@ -787,7 +925,6 @@ html{
 	
 	#img-catalog{
 		position: relative;
-		top: 8vh;
 		/*display: none;*/
 		-webkit-column-count: 3;
     -webkit-column-gap: 0px;
@@ -935,6 +1072,125 @@ html{
 	
 	#registry{
 		height: 100vh
+	}
+	
+	#rsvp{
+	   height: 100vh;	
+	}
+	
+	form div{
+		position: relative;
+		top: 8vh;
+	}
+	
+	#rsvpimg{
+		pointer-events: none;
+		position: relative;
+		--width: 70vw;
+		width: var(--width);
+		top: -12vh;
+		left: 40vw;
+		z-index: 2;
+	}
+	
+	#rsvpform{ 
+		display: flex;
+		align-content: center;
+		padding: 30px;
+		border: 1px solid;
+		border-radius: 30px;
+		box-shadow: 3px 3px 10px grey;
+		top: 15vh;
+		position: relative;
+		--width: 97vw;
+		width: var(--width);
+		height: 50vh;
+		left: calc(100vw/2 - var(--width)/2);
+		background: white;
+		z-index: 1;
+		color: #400711;
+		border-color: #400711;
+	}
+	
+	label{
+		font-family: "Trajan Pro Bold";
+		margin-right: 1vw;
+		font-size: 1em;
+		background: transparent;
+	}
+	
+	label[name="name"]{
+		position: relative;
+		text-align: center;
+		font-size: 1em;
+		left: 45%;
+	}
+	
+	input[type="text"]{
+		border:0;
+		border-bottom: 1px solid;
+		width: 100%;
+		text-align: center;
+		font-family: "Trajan Pro";
+		font-size: 1em;
+		color: #400711;
+		border-color: #400711;
+	}
+	
+	input[type="radio"]{
+    margin-right: 0.5vw;
+		color: #400711;
+		border-color: #400711;
+	}
+	
+	input[type="number"]{
+		border: 0;
+		border-bottom: 1px solid;
+		width: 15vw;
+		text-align: center;
+	}
+	
+	label[name="rsvpaccept"],
+	label[name="rsvpdecline"]{
+		font-size: .6em;
+	}
+	
+	#rsvpnum{
+		position: relative;
+		display: flex;
+		justify-content: "center";
+		top: 0;
+	}
+	
+	#rsvpnum input, #rsvpnum label{
+		position: relative;
+		left: 6%;
+	}
+	
+	input[type="submit"]{
+		position: relative;
+		display: flex;
+		top: 10%;
+		height: 10%;
+		width: 40%;
+		left: 30%;
+		background: none;
+		border: none;
+		border: 1px solid;
+		border-radius: 8px;
+		font-family: "Trajan Pro Bold";
+		font-size: 1.5em;
+	}		
+	
+	input[type="submit"]:hover{
+		border: 2px solid;
+		font-size: 1.6em;
+	}
+	
+	#thankyou{
+		position: relative;
+		font-size: 6em;
+		left: -10%;
 	}
 	
 }

@@ -2,22 +2,24 @@ var header = $(".header");
 
 var size = $("#main-menu").css("font-size");
 var menu_init = parseInt(size.slice(0, size.length - 2));	
-var menu_max = menu_init * 1.5;
+var menu_max = menu_init * 1.2;
 var menu_diff = menu_max - menu_init;
 
-var weddingOrigin = $("#our-wedding h1")[0].getBoundingClientRect().top;
-var thereOrigin = $("#getting-there h1")[0].getBoundingClientRect().top;
-var photosOrigin = $("#photos h1")[0].getBoundingClientRect().top;
-var registryOrigin = $("#registry h1")[0].getBoundingClientRect().top;
+var weddingOrigin = ($("#our-wedding h1.desktop")[0].getBoundingClientRect().top > 0) ? $("#our-wedding h1.desktop")[0].getBoundingClientRect().top:$("#our-wedding h1.mobile")[0].getBoundingClientRect().top;
+var thereOrigin = ($("#getting-there h1.desktop")[0].getBoundingClientRect().top > 0) ? $("#getting-there h1.desktop")[0].getBoundingClientRect().top:$("#getting-there h1.mobile")[0].getBoundingClientRect().top;
+var photosOrigin = ($("#photos h1.desktop")[0].getBoundingClientRect().top > 0) ? $("#photos h1.desktop")[0].getBoundingClientRect().top:$("#photos h1.mobile")[0].getBoundingClientRect().top;
+var registryOrigin = ($("#registry h1.desktop")[0].getBoundingClientRect().top > 0) ? $("#registry h1.desktop")[0].getBoundingClientRect().top:$("#registry h1.mobile")[0].getBoundingClientRect().top;
+var rsvpOrigin = ($("#rsvp h1.desktop")[0].getBoundingClientRect().top > 0) ? $("#rsvp h1.desktop")[0].getBoundingClientRect().top:$("#rsvp h1.mobile")[0].getBoundingClientRect().top;
 
 $(window).scroll(function(){	
 	"use strict";
 	
-	var wedding = $("#our-wedding h1")[0].getBoundingClientRect().top;
-	var there = $("#getting-there h1")[0].getBoundingClientRect().top;
-	var photos = $("#photos h1")[0].getBoundingClientRect().top;
-	var registry = $("#registry h1")[0].getBoundingClientRect().top;
-	//console.log("w", wedding, "p", photos, "r", registry);
+	var wedding = ($("#our-wedding h1.desktop")[0].getBoundingClientRect().top > 0) ? $("#our-wedding h1.desktop")[0].getBoundingClientRect().top:$("#our-wedding h1.mobile")[0].getBoundingClientRect().top;
+	var there = ($("#getting-there h1.desktop")[0].getBoundingClientRect().top > 0) ? $("#getting-there h1.desktop")[0].getBoundingClientRect().top:$("#getting-there h1.mobile")[0].getBoundingClientRect().top;
+	var photos = ($("#photos h1.desktop")[0].getBoundingClientRect().top > 0) ? $("#photos h1.desktop")[0].getBoundingClientRect().top:$("#photos h1.mobile")[0].getBoundingClientRect().top;
+	var registry = ($("#registry h1.desktop")[0].getBoundingClientRect().top > 0) ? $("#registry h1.desktop")[0].getBoundingClientRect().top:$("#registry h1.mobile")[0].getBoundingClientRect().top;
+	var rsvp = ($("#rsvp h1.desktop")[0].getBoundingClientRect().top > 0) ? $("#rsvp h1.desktop")[0].getBoundingClientRect().top:$("#rsvp h1.mobile")[0].getBoundingClientRect().top;
+	console.log("w", wedding, "t",there ,"p", photos, "r", registry, "rs", rsvp);
 
 	var $scrollTop = $(document).scrollTop();
 	var $scrollArea = $(document).height() - $(window).height();
@@ -66,40 +68,49 @@ $(window).scroll(function(){
 	
 	var current = "";
 	
-	if(Math.floor(wedding) <= Math.floor($offset) && Math.floor(wedding) >= 0){
-		menuFormat("Our Wedding");
+	if(Math.floor(wedding) <= Math.floor($offset) && Math.floor(wedding) > 0){
+		menuFormat("wedding");
 		$("*").removeClass("to-blue");
 		current = weddingOrigin;
-	}else if(Math.floor(there) <= Math.floor($offset) && Math.floor(there) >= 0){
-		menuFormat("Getting There");
+		console.log(1);
+	}else if(Math.floor(there) <= Math.floor($offset) && Math.floor(there) > 0){
+		menuFormat("gettingthere");
 		$("*").removeClass("to-blue");
 		current = thereOrigin;
-	}else if(Math.floor(photos) <= Math.floor($offset) && Math.floor(photos) >= 0){
-		menuFormat("Photos");
+		console.log(2);
+	}else if(Math.floor(photos) <= Math.floor($offset) && Math.floor(photos) > 0){
+		menuFormat("photos");
 		current = photosOrigin;
-	}else if(Math.floor(registry) <= Math.floor($offset) && Math.floor(registry) >= 0){
-		menuFormat("Registry");
+		console.log(3);
+	}else if(Math.floor(registry) <= Math.floor($offset) && Math.floor(registry) > 0){
+		menuFormat("registry");
 		$("*").removeClass("to-blue");
 		current = registryOrigin;
+		console.log(4);
+	}else if(Math.floor(rsvp) <= Math.floor($offset) && Math.floor(rsvp) > 0){
+		menuFormat("rsvp");
+		$("*").removeClass("to-blue");
+		current = rsvpOrigin;
+		console.log(5);
 	}else{
-		menuFormat("");
+		menuFormat("other");
 		$("*").removeClass("to-blue");
 		current = "";
 	}	
 	
-	if(Math.floor(photos) <= Math.floor($offset2) && Math.floor(photos) >= 0){
+	if(Math.floor(photos) <= Math.floor($offset2) && Math.floor(photos) > 0){
 		$("#header").addClass("to-blue");
 		$("#bg").addClass("to-blue");
 		$("*").addClass("to-blue");
 	}
 
 	var currentHead = $("h1.current");	
-	
+		
 	
 	if($(document).scrollTop() <= current + $offset3 && $(document).scrollTop() >= current){
 		var x = (current + $offset3 - $(document).scrollTop())/$offset3;
 		currentHead.css("opacity", x);
-		console.log(x);
+		//console.log(x);
 		
 		//console.log((topPosition + $offset2 - $(document).scrollTop())/$offset2);
 		//console.log($(document).scrollTop(), topPosition, topPosition + $offset2);
@@ -109,24 +120,39 @@ $(window).scroll(function(){
 
 function menuFormat(current){
 	"use strict";
+	var pages={
+		wedding:["#our-wedding h1", "#main-menu .wedding .menu-button"],
+		gettingthere:["#getting-there h1", "#main-menu .there .menu-button"],
+		photos:["#photos h1", "#main-menu .photos .menu-button"],
+		registry:["#registry h1", "#main-menu .registry .menu-button"],
+		rsvp:["#rsvp h1", "#main-menu .rsvp .menu-button"],
+	};
+	
+	if(current === "none"){
+		$(".menu-button").removeClass("current");
+		$("h1").removeClass("current");
+	}else{
+		$(".menu-button").removeClass("current");
+		$("h1").removeClass("current");
+		$(pages[current][0]).addClass("current");
+		$(pages[current][1]).addClass("current");	
+		console.log(pages[current]);
+	}
+	
+		
+	
+	
+	/*
 	if(current === "Our Wedding"){
-		$("#main-menu .wedding .menu-button").addClass("current");
-		$("#main-menu .there .menu-button").removeClass("current");
-		$("#main-menu .photos .menu-button").removeClass("current");
-		$("#main-menu .registry .menu-button").removeClass("current");
+		$(".menu-button").removeClass("current")
+		$("h1").removeClass("current")
+		$("#main-menu .wedding .menu-button").addClass("current");		
 		$("#our-wedding h1").addClass("current");
-		$("#getting-there h1").removeClass("current");
-		$("#photos h1").removeClass("current");
-		$("#registry h1").removeClass("current");
 	}else if(current === "Getting There"){
-		$("#main-menu .wedding .menu-button").removeClass("current");
+		$(".menu-button").removeClass("current")
+		$("h1").removeClass("current")
 		$("#main-menu .there .menu-button").addClass("current");
-		$("#main-menu .photos .menu-button").removeClass("current");
-		$("#main-menu .registry .menu-button").removeClass("current");
-		$("#our-wedding h1").removeClass("current");
 		$("#getting-there h1").addClass("current");
-		$("#photos h1").removeClass("current");
-		$("#registry h1").removeClass("current");
 	}else if(current === "Photos"){
 		$("#main-menu .wedding .menu-button").removeClass("current");
 		$("#main-menu .there .menu-button").removeClass("current");
@@ -154,10 +180,11 @@ function menuFormat(current){
 		$("#getting-there h1").removeClass("current");
 		$("#photos h1").removeClass("current");
 		$("#registry h1").removeClass("current");
-	}
+	}*/
 }
 
 function toggleMaps(key){
+	"use strict";
 	var maps = {
 		kendal:"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2681.7858853700372!2d-77.48911321264521!3d18.089231923405777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8edbbebe172e832b%3A0x47bd588f7d5cf85b!2sKendal+Conference+Center!5e0!3m2!1sen!2sjm!4v1553104191860",
 		jdv: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3792.312850404201!2d-77.50930398479734!3d18.103338386525188!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8edbbed0181b23c1%3A0x82584fde0d153264!2sJamaica+Deaf+Village+Retreat+Centre!5e0!3m2!1sen!2sjm!4v1553115832312",
@@ -168,8 +195,37 @@ function toggleMaps(key){
 	$.scrollTo("#map",{offset: -0.3 * $(window).height() });	
 }
 
+$("#rsvpform").on("submit", function(event){
+	"use strict";
+	event.preventDefault();
+	
+	var name = $("#rsvpname").val();
+	var attending = ($("#rsvpaccept").is(":checked")) ? "Accept with pleasure":"Decline with regrets";
+	var num = (attending === "decline") ? 0:$("#attendingnum").val();
+	
+	console.log(name, attending, num);
+	
+	var formData = new FormData(this);
+	formData.append("service_id", "aislegowithnorman");
+	formData.append("template_id", "template_UdCZDolE");
+	formData.append("user_id", "user_ZrWXKupH6MTY01y5pTaeW");
+	formData.append("name", name);
+	formData.append("attending", attending);
+	formData.append("num", num);
+	
+	$.ajax('https://api.emailjs.com/api/v1.0/email/send-form', {
+        type: 'POST',
+        data: formData,
+        contentType: false, // auto-detection
+        processData: false // no need to parse formData to string
+    }).done(function() {
+        $("form div").html("<h1 id='thankyou'>Thank You!</h1>");
+    }).fail(function(error) {});
+});
+
 function toTop(){
 	"use strict";
+	
 	$(document).scrollTop(0);
 }
 
@@ -373,8 +429,7 @@ app.controller("ImageController",["$scope", function($scope){
 		}else{
 			$scope.showSlide($scope.num - n);
 		}
-		console.log($scope.currentPhoto);
-		
+		console.log($scope.currentPhoto);		
 	};
 	
 	$scope.openLightbox = function(s){
