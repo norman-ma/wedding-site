@@ -711,7 +711,7 @@ html{
 	#thankyou{
 		position: relative;
 		font-size: 8em;
-		top: 4vh;
+		top: 3vh;
 	}
 	
 }
@@ -1075,7 +1075,7 @@ html{
 	}
 	
 	#rsvp{
-	   height: 100vh;	
+	   height: 115vh;	
 	}
 	
 	form div{
@@ -1086,10 +1086,10 @@ html{
 	#rsvpimg{
 		pointer-events: none;
 		position: relative;
-		--width: 70vw;
+		--width: 100vw;
 		width: var(--width);
-		top: -12vh;
-		left: 40vw;
+		top: -27vh;
+		left: 16vw;
 		z-index: 2;
 	}
 	
@@ -1100,11 +1100,11 @@ html{
 		border: 1px solid;
 		border-radius: 30px;
 		box-shadow: 3px 3px 10px grey;
-		top: 15vh;
+		top: 10vh;
 		position: relative;
 		--width: 97vw;
 		width: var(--width);
-		height: 50vh;
+		height: 70vh;
 		left: calc(100vw/2 - var(--width)/2);
 		background: white;
 		z-index: 1;
