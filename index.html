@@ -18,12 +18,7 @@
 </head>
 <body>	
 	<div ng-app="WeddingApp">
-		<div class="loader" id="preloader"></div>
-		<div id="preload" ng-controller="ImageController">
-			<div class="img" ng-repeat="img in photos">
-				<img ng-src="{{img.src}}" height="1" weight="1" alt="">
-			</div>
-		</div>
+		<div class="loader" id="preloader"></div>		
 		<div id="bg"></div>
 		<div id="main">
 			<div id="landing" class="col-12">
@@ -101,8 +96,11 @@
 					<h1 class="col-12 mobile" onClick="toTop()">Photos</h1>
 					<div class="content" ng-controller="ImageController">
 						<div id="img-catalog">
-							<div class="img" ng-repeat="img in photos" data-aos="fade-in" data-aos-delay="100" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-anchor-placement="top-center">
-								<img ng-src="{{img.src}}" alt="" ng-click="openLightbox(img.position)" id="img-{{img.position}}">
+							<div class="img-column" ng-repeat="column in columns">
+								<div class="img" ng-repeat="img in column track by $index" id="column-{{$index}}">
+									<div class="imgoverlay" ng-click="openLightbox(img.position)"></div>
+									<img ng-src="{{img.src}}" alt="" id="img-{{img.position}}">
+								</div>
 							</div>
 						</div>
 						<div id="lightbox">
@@ -131,18 +129,38 @@
 				<div id="registry" class="page col-12">
 					<h1 class="col-12 desktop">Registry</h1>
 					<h1 class="col-12 mobile" onClick="toTop()">Registry</h1>
-					<div class="content"></div>
+					<div class="content">
+						<p class="txt">Help us start our <span>new life together</span></p>
+						<div id="registries">
+							<div id="target">
+								<a href="https://tgt.gifts/aislegowithnorman"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Target_logo.svg" alt="Target"/></a>
+							</div>
+							<div id="bbb">
+								<a href="https://www.bedbathandbeyond.com/store/giftregistry/viewregistryguest/547335049?eventType=Wedding"><img src="http://www.logospng.com/images/150/bed-bath-amp-beyond-nice-deal-on-california-pistachio-bags-150806.png" alt="Bed Bath & Beyond"></a>
+							</div>
+						</div>
+						<p class="txt">or if you wish: Contribute to our <span>Newlywed Fund</span></p>
+						<div id="paypal">
+							<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+								<input type="hidden" name="cmd" value="_s-xclick" />
+								<input type="hidden" name="hosted_button_id" value="88VEYWP9AN9GQ" />
+								<input id="donatebutton" type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+								<img alt="" border="0" src="https://www.paypal.com/en_JM/i/scr/pixel.gif" width="1" height="1" />
+							</form>
+						</div>
+					</div>
 				</div>
 				<div id="rsvp" class="page col-12">
 					<h1 class="col-12 desktop">RSVP</h1>
 					<h1 class="col-12 mobile" onClick="toTop()">RSVP</h1>
 					<div class="content">
 					  	<form id="rsvpform">
-						 	<div>								
+						 	<div>			
+								<p id="instructions">Kindly submit by June 15<sup>th</sup></p>
 								<input id="rsvpname" type="text"><br/>
 								<label name="name">Name</label><br/><br/>
-								<input type="radio" name="accept" value="accept" id="rsvpaccept"><label name="rsvpaccept">Accepts with pleasure</label>
-								<input type="radio" name="accept" value="decline" id="rsvpdecline"><label name="rsvpdecline">Decline with regrets</label><br/><br/>
+								<input type="radio" name="accept" value="accept" id="rsvpaccept" checked="true"><label name="rsvpaccept">Accepts with pleasure</label>
+								<input type="radio" name="accept" value="decline" id="rsvpdecline"><label name="rsvpdecline">Declines with regret</label><br/><br/>
 								<div id="rsvpnum"><label name="num">Number Attending</label><input id="attendingnum" type="number" min="1"></div><br/><br/>
 
 								<input type="submit" value="Submit">
@@ -151,7 +169,12 @@
 						<img id="rsvpimg" src="res/images/bouquet-6.png" alt="">
 					</div>
 				</div>
-			</div>				
+			</div>
+			<div id="preload" ng-controller="ImageController">
+				<div class="img" ng-repeat="img in photos">
+					<img ng-src="{{img.src}}" height="1" weight="1" alt="">
+				</div>
+			</div>
 		</div>
 	</div>	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

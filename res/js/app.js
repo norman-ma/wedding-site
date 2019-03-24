@@ -19,7 +19,7 @@ $(window).scroll(function(){
 	var photos = ($("#photos h1.desktop")[0].getBoundingClientRect().top > 0) ? $("#photos h1.desktop")[0].getBoundingClientRect().top:$("#photos h1.mobile")[0].getBoundingClientRect().top;
 	var registry = ($("#registry h1.desktop")[0].getBoundingClientRect().top > 0) ? $("#registry h1.desktop")[0].getBoundingClientRect().top:$("#registry h1.mobile")[0].getBoundingClientRect().top;
 	var rsvp = ($("#rsvp h1.desktop")[0].getBoundingClientRect().top > 0) ? $("#rsvp h1.desktop")[0].getBoundingClientRect().top:$("#rsvp h1.mobile")[0].getBoundingClientRect().top;
-	console.log("w", wedding, "t",there ,"p", photos, "r", registry, "rs", rsvp);
+	//console.log("w", wedding, "t",there ,"p", photos, "r", registry, "rs", rsvp);
 
 	var $scrollTop = $(document).scrollTop();
 	var $scrollArea = $(document).height() - $(window).height();
@@ -71,33 +71,29 @@ $(window).scroll(function(){
 	if(Math.floor(wedding) <= Math.floor($offset) && Math.floor(wedding) > 0){
 		menuFormat("wedding");
 		$("*").removeClass("to-blue");
-		current = weddingOrigin;
-		console.log(1);
+		current = weddingOrigin;		
 	}else if(Math.floor(there) <= Math.floor($offset) && Math.floor(there) > 0){
 		menuFormat("gettingthere");
 		$("*").removeClass("to-blue");
-		current = thereOrigin;
-		console.log(2);
+		current = thereOrigin;		
 	}else if(Math.floor(photos) <= Math.floor($offset) && Math.floor(photos) > 0){
 		menuFormat("photos");
-		current = photosOrigin;
-		console.log(3);
+		current = photosOrigin;		
 	}else if(Math.floor(registry) <= Math.floor($offset) && Math.floor(registry) > 0){
 		menuFormat("registry");
 		$("*").removeClass("to-blue");
-		current = registryOrigin;
-		console.log(4);
+		current = registryOrigin;		
 	}else if(Math.floor(rsvp) <= Math.floor($offset) && Math.floor(rsvp) > 0){
 		menuFormat("rsvp");
 		$("*").removeClass("to-blue");
 		current = rsvpOrigin;
-		console.log(5);
 	}else{
 		menuFormat("other");
 		$("*").removeClass("to-blue");
 		current = "";
 	}	
 	
+		
 	if(Math.floor(photos) <= Math.floor($offset2) && Math.floor(photos) > 0){
 		$("#header").addClass("to-blue");
 		$("#bg").addClass("to-blue");
@@ -136,7 +132,7 @@ function menuFormat(current){
 		$("h1").removeClass("current");
 		$(pages[current][0]).addClass("current");
 		$(pages[current][1]).addClass("current");	
-		console.log(pages[current]);
+		//console.log(pages[current]);
 	}
 	
 		
@@ -203,7 +199,7 @@ $("#rsvpform").on("submit", function(event){
 	var attending = ($("#rsvpaccept").is(":checked")) ? "Accept with pleasure":"Decline with regrets";
 	var num = (attending === "decline") ? 0:$("#attendingnum").val();
 	
-	console.log(name, attending, num);
+	//console.log(name, attending, num);
 	
 	var formData = new FormData(this);
 	formData.append("service_id", "aislegowithnorman");
@@ -404,9 +400,52 @@ app.controller("ImageController",["$scope", function($scope){
 		}
 	];	
 	
+	$scope.columns = [];
+	
 	$scope.num = $scope.photos.length;
 	
 	$scope.currentPhoto = {};
+	
+	$scope.setColumns = function(){
+		
+		$scope.columns = [];
+		
+		var n = (window.innerWidth > 992) ? 6:3;
+		for(var i = 0; i < n; i++){
+			$scope.columns.push([]);
+		}
+		//var col = 0;
+		//var max = Math.floor($scope.num/n) - 1;
+		var min = [];
+		var x, img, min_l, col;
+		for(var img of $scope.photos){
+			min = [];
+			for(var i = 0; i < n; i++){
+				col = $scope.columns[i];
+				if(min.length === 0){
+					min.push(i);
+					min_l = col.length;
+				}else if(col.length < min_l){
+					min = [];
+					min.push(i);
+					min_l = col.length;
+				}else if(col.length === min_l){
+					min.push(i);
+				}					
+			}
+			x = Math.floor(Math.random() * min.length);
+			$scope.columns[min[x]].push(img);	
+			//console.log(x, min_l, min);
+		}		
+	};	
+	
+	$("#img-catalog").onload = $scope.distribute;
+	
+	$scope.setColumns();
+	window.onresize = function(){
+		$scope.$apply($scope.setColumns());
+		console.log("resize");
+	};
 	
 	$scope.showSlide = function(num){
 		$scope.currentPhoto = $scope.photos[num - 1];		
@@ -419,7 +458,7 @@ app.controller("ImageController",["$scope", function($scope){
 		}else{
 			$scope.showSlide($scope.num - n);
 		}
-		console.log($scope.currentPhoto);
+		//console.log($scope.currentPhoto);
 	};
 	
 	$scope.prevSlide = function(){
@@ -429,7 +468,7 @@ app.controller("ImageController",["$scope", function($scope){
 		}else{
 			$scope.showSlide($scope.num - n);
 		}
-		console.log($scope.currentPhoto);		
+		//console.log($scope.currentPhoto);		
 	};
 	
 	$scope.openLightbox = function(s){
@@ -445,14 +484,14 @@ app.controller("ImageController",["$scope", function($scope){
 		$("body").css("position","relative");
 		//$.scrollTo("#photos");
 		$.scrollTo("#img-"+$scope.currentPhoto.position,{offset:-400});
-		console.log($scope.currentPhoto.position);
+		//console.log($scope.currentPhoto.position);
 	};		
 	
 	$("#lightbox").swipe({
 		swipeLeft:function(event, direction, distance, duration, fingerCount) {
 			$scope.$apply(function(){
 				$scope.nextSlide();
-				console.log("You swiped " + direction );
+				//console.log("You swiped " + direction );
 			});
 		}
 	});
@@ -461,7 +500,7 @@ app.controller("ImageController",["$scope", function($scope){
 		swipeRight:function(event, direction, distance, duration, fingerCount) {
 			$scope.$apply(function(){
 				$scope.prevSlide();
-				console.log("You swiped " + direction );
+				//console.log("You swiped " + direction );
 			});
 		}
 	});

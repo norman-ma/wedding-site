@@ -16,7 +16,6 @@ font-family: "Queenstown Signature";
 src: url(../fonts/QUEENSTOWN-SIGNATURE.otf);
 }
 
-
 @keyframes welcome{
 	from {opacity: 0; transform: translateY(2vh)}
 	to {opacity: 1; transform: translateY(0)}
@@ -44,6 +43,7 @@ src: url(../fonts/QUEENSTOWN-SIGNATURE.otf);
 
 html{
 	scroll-behavior: smooth;
+	height: 1041vh;
 }
 
 .loader {
@@ -130,7 +130,7 @@ html{
 		background: none;
 		position: absolute;
 		width: 100vw;
-		height: 800vh;
+		height: 1041vh;
 		top: 0;
 	}
 	
@@ -502,30 +502,58 @@ html{
 	}
 	
 	#photos{
-		height: 200vh;
+		height: 280vh;
+	}
+	
+	#photos .content{
+		position: relative;
+		height: 100%;
 	}
 	
 	#img-catalog{
 		position: relative;
-		top: 8vh;
-		/*display: none;*/
-		-webkit-column-count: 6;
-    -webkit-column-gap: 0px;
-    -moz-column-count: 6;
-    -moz-column-gap: 0px;
-    column-count: 6;
-    column-gap: 0px; 
+		justify-content: center;
+    top: 20vh;
+		padding: 0;
 	}
 	
-	#img-catalog img{
-		width: 100% !important;
-    height: auto !important;
+	.img-column{
+		vertical-align: top;
+		position: relative;
+		display: inline-grid;
+		max-width: 16.666%;
+		padding: 0;
+		margin: 0;
 	}
 	
-	#img-catalog img:hover{
-		width: 102% !important;
-    height: auto !important;
+	.img{
+		position: relative;
 	}
+	
+	.imgoverlay{
+		top: 0;
+		position: absolute;
+    background: pink;
+		height: 100%;
+		width: 100%;
+		opacity: 0;
+		z-index: 2;
+	}
+	
+	.imgoverlay:hover{
+		opacity: 0.3;
+	}
+	
+	.img-column img{
+		width: 100%;
+		height: auto;
+		opacity: 1;
+	}	
+	
+	.img-column img:hover{
+		width: 100%;
+		height: auto;
+	}	
 	
 	#lightbox{
 		display: none;
@@ -594,7 +622,45 @@ html{
 		opacity: 1;
 	}
 	
-	#registry{}
+	#registry{
+		height: 100vh;
+	}
+	
+	#registry .content{
+		position: relative;
+		top: 10vh;
+	}
+	
+	#registry .txt{
+		font-family: "Trajan Pro";
+		font-size: 2em;
+		text-align: center;
+	}
+	
+	#registry .txt span{
+		position: relative;
+		font-family: "Queenstown Signature";
+		font-size: 3em;
+		top: 1vh;
+		left: 0.5vw;
+		color: #400711;
+	}
+	
+	#registries{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	#target img, #bbb img, #paypal{
+		max-height: 10vh;
+		margin: 0 3vw
+	}
+	
+	#paypal{
+		display: flex;
+		justify-content: center;
+	}
 	
 	#rsvp{
 	   height: 100vh;	
@@ -602,7 +668,7 @@ html{
 	
 	form div{
 		position: relative;
-		top: 8vh;
+		top: 10%;
 	}
 	
 	#rsvpimg{
@@ -619,7 +685,7 @@ html{
 		display: flex;
 		align-content: center;
 		padding: 30px;
-		border: 1px solid;
+		border: 2px solid;
 		border-radius: 30px;
 		box-shadow: 3px 3px 10px grey;
 		top: 15vh;
@@ -632,6 +698,11 @@ html{
 		z-index: 1;
 		color: #400711;
 		border-color: #400711;
+	}
+	
+	#instructions{
+		font-family: "Trajan Pro";
+		text-align: center;
 	}
 	
 	label{
@@ -708,6 +779,7 @@ html{
 		border: 2px solid;
 		font-size: 1.6em;
 	}
+	
 	#thankyou{
 		position: relative;
 		font-size: 8em;
@@ -923,25 +995,30 @@ html{
 		left: calc(100vw/2 - var(--width)/2);
 	}
 	
+	#photos .content{
+		position: relative;
+		height: 100%;
+	}
+	
 	#img-catalog{
 		position: relative;
-		/*display: none;*/
-		-webkit-column-count: 3;
-    -webkit-column-gap: 0px;
-    -moz-column-count: 3;
-    -moz-column-gap: 0px;
-    column-count: 3;
-    column-gap: 0px; 
+		justify-content: center;
+    top: 40vh;
+		padding: 0;
 	}
 	
-	#img-catalog img{
-		width: 100% !important;
-    height: auto !important;
+	.img-column{
+		vertical-align: top;
+		position: relative;
+		display: inline-grid;
+		max-width: 33.333%;
+		padding: 0;
+		margin: 0;
 	}
 	
-	#img-catalog img:hover{
-		width: 102% !important;
-    height: auto !important;
+	.img-column img{
+		width: 100%;
+		height: auto;
 	}
 	
 	#lightbox{
