@@ -1003,7 +1003,7 @@ html{
 	#img-catalog{
 		position: relative;
 		justify-content: center;
-    top: 40vh;
+    top: 10vh;
 		padding: 0;
 	}
 	
@@ -1148,7 +1148,46 @@ html{
 	}
 	
 	#registry{
-		height: 100vh
+		height: 170vh
+	}
+	
+	#registry .content{
+		position: relative;
+	}
+	
+	#registry .txt{
+		font-family: "Trajan Pro";
+		font-size: 2em;
+		text-align: center;
+		line-height: 1;
+	}
+	
+	#registry .txt span{
+		position: relative;
+		font-family: "Queenstown Signature";
+		font-size: 3em;
+		top: 1vh;
+		left: 0.5vw;
+		color: #400711;
+	}
+	
+	#registries{
+		display: flex;
+		justify-content: center;
+		align-items: top;
+		flex-wrap: wrap;
+	}
+	
+	#target img, #bbb img{
+		max-width: 60vw;
+		margin: 0 0 5% 0
+	}
+	
+	#paypal{
+		display: block;
+		width: 100vw;
+		display: flex;
+		justify-content: center;
 	}
 	
 	#rsvp{
@@ -1170,11 +1209,16 @@ html{
 		z-index: 2;
 	}
 	
+	#instructions{
+		font-family: "Trajan Pro";
+		text-align: center;
+	}
+	
 	#rsvpform{ 
 		display: flex;
 		align-content: center;
 		padding: 30px;
-		border: 1px solid;
+		border: 2px solid;
 		border-radius: 30px;
 		box-shadow: 3px 3px 10px grey;
 		top: 10vh;
