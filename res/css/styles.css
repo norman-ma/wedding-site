@@ -31,11 +31,6 @@ src: url(../fonts/QUEENSTOWN-SIGNATURE.otf);
 	to{opacity: 100%}
 }
 
-@keyframes fade-to-blue{
-	from {background: transparent; color: #400711; border-color: #400711;}
-	to {background: #06062a; color: #bd9999; border-color: #bd9999}
-}
-
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
@@ -159,7 +154,7 @@ html{
 			border-color 2s ease-out;
 	}
 	
-	#header.top #header.top .bg.fade-in{
+	#header.top .bg.fade-out{
 		background: white; 
 		color: #400711; 
 		border-color: #400711;
@@ -325,22 +320,6 @@ html{
 		border-bottom: solid #400711 0.2vh;
 	}
 	
-	#bg.to-blue, .bg.to-blue{
-		animation-name: fade-to-blue;
-	  animation-duration: 3s;
-		animation-fill-mode: forwards;
-		animation-delay: 0s;
-		
-		/*background: #06062a; 
-		color: #bd9999; 
-		border-color: #bd9999;*/
-	}
-	
-	#main .to-blue{
-		color: #bd9999;
-		border-color: #bd9999;
-	}	
-
 	.page .current{
 		background: transparent;
 	}
@@ -861,26 +840,51 @@ html{
 		top: 0;
 	}
 	
+	#bg.fade-in, #header.top .bg.fade-in{
+		background: #06062a; 
+		color: #bd9999; 
+		border-color: #bd9999;
+		transition: background 2s ease-in, 
+			color 2s ease-in, 
+			border-color 2s ease-in;
+	}
+	
+	#main .fade-in{
+		color: #bd9999; 
+		border-color: #bd9999;
+		transition: color 2s ease-in, 
+			border-color 2s ease-in;
+	}
+	
+	#bg.fade-out{
+		background: transparent; 
+		color: #400711; 
+		border-color: #400711;
+		transition: background 2s ease-out, 
+			color 2s ease-out, 
+			border-color 2s ease-out;
+	}
+	
+	#header.top .bg.fade-out{
+		background: white; 
+		color: #400711; 
+		border-color: #400711;
+		transition: background 2s ease-out, 
+			color 2s ease-out, 
+			border-color 2s ease-out;
+	}
+	
+	#main .fade-out{
+		color: #400711; 
+		border-color: #400711;
+		transition: color 2s ease-out, 
+			border-color 2s ease-out;
+	}
+	
 	#landing{
 		position: relative;
 	}
 	
-	#bg.to-blue, .bg.to-blue{
-		animation-name: fade-to-blue;
-	  animation-duration: 3s;
-		animation-fill-mode: forwards;
-		animation-delay: 0s;
-		
-		/*background: #06062a; 
-		color: #bd9999; 
-		border-color: #bd9999;*/
-	}
-	
-	#main .to-blue{
-		color: #bd9999;
-		border-color: #bd9999;
-	}	
-
 	#flowers{
 		position: fixed;
 		width: 100%;
