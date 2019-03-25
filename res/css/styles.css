@@ -940,7 +940,7 @@ html{
 	
 	#our-wedding{
 		top: 60vh;
-		height: 250vh
+		height: 300vh
 	}
 	
 	.title{
@@ -1174,7 +1174,7 @@ html{
 	}
 	
 	#photos{
-		height: 200vh;
+		height: 250vh;
 	}
 	
 	#getting-there{
@@ -1220,7 +1220,7 @@ html{
 	}
 	
 	#registry{
-		height: 170vh
+		height: 180vh
 	}
 	
 	#registry .content{
