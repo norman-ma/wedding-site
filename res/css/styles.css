@@ -537,6 +537,7 @@ html{
 	
 	.img{
 		position: relative;
+		opacity: 1;
 	}
 	
 	.imgoverlay{

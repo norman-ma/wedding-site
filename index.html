@@ -1,189 +1,189 @@
 <!doctype html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<title>Aisle Go With Norman</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
-	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-	<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,700" rel="stylesheet">  
-	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
-	<link rel="stylesheet" href="res/css/styles.css">
-	<script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
-	<script type="text/javascript">
-	   (function(){
-		  emailjs.init("user_ZrWXKupH6MTY01y5pTaeW");
-	   })();
-	</script>
-</head>
-<body>	
-	<div ng-app="WeddingApp">
-		<div class="loader" id="preloader"></div>		
-		<div id="bg"></div>
-		<div id="main">
-			<div id="landing" class="col-12">
-				<img src="res/images/flowers header.png" id="flowers" class="header" alt="Flowers" data-scroll-speed="5">
-				<img src="res/images/names.svg" id="names" class="header" alt="Tiffany & Michael-Anthony" data-scroll-speed="0">	
-			</div>
+	<head>
+		<meta charset="utf-8">
+		<title>Aisle Go With Norman</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+		<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,700" rel="stylesheet">  
+		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
+		<link rel="stylesheet" href="res/css/styles.css">
+		<script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+		<script type="text/javascript">
+		   (function(){
+			  emailjs.init("user_ZrWXKupH6MTY01y5pTaeW");
+		   })();
+		</script>
+	</head>
+	<body>	
+		<div ng-app="WeddingApp">
+			<div class="loader" id="preloader"></div>		
+			<div id="bg"></div>
+			<div id="main">
+				<div id="landing" class="col-12">
+					<img src="res/images/flowers header.png" id="flowers" class="header" alt="Flowers" data-scroll-speed="5">
+					<img src="res/images/names.svg" id="names" class="header" alt="Tiffany & Michael-Anthony" data-scroll-speed="0">	
+				</div>
 
-			<div id="header" class="header row" data-scroll-speed="0">					
-				<div id="home" onclick="toTop()" class="col-2"><h3>#AisleGoWithNorman</h3></div>
-				<div id="main-menu" class="col-8">
-					<a href="#our-wedding" class="left wedding"><button class="menu-button">Our Wedding</button></a>
-					<a href="#getting-there" class="center there"><button class="menu-button">Getting There</button></a>
-					<a href="#photos" class="center photos"><button class="menu-button">Photos</button></a>			
-					<a href="#registry" class="center registry"><button class="menu-button">Registry</button></a>
-					<a href="#rsvp" class="right rsvp"><button class="menu-button">RSVP</button></a>
+				<div id="header" class="header row" data-scroll-speed="0">					
+					<div id="home" onclick="toTop()" class="col-2"><h3>#AisleGoWithNorman</h3></div>
+					<div id="main-menu" class="col-8">
+						<a href="#our-wedding" class="left wedding"><button class="menu-button">Our Wedding</button></a>
+						<a href="#getting-there" class="center there"><button class="menu-button">Getting There</button></a>
+						<a href="#photos" class="center photos"><button class="menu-button">Photos</button></a>			
+						<a href="#registry" class="center registry"><button class="menu-button">Registry</button></a>
+						<a href="#rsvp" class="right rsvp"><button class="menu-button">RSVP</button></a>
+					</div>
+					<div id="countdown" ng-controller="CountdownController" class="col-2">
+						<div id="countown-val"><h2>{{ countdown }}</h2></div><div id="countdown-message">{{ message }}</div>						
+					</div>
+					<div class="bg"></div>
 				</div>
-				<div id="countdown" ng-controller="CountdownController" class="col-2">
-					<div id="countown-val"><h2>{{ countdown }}</h2></div><div id="countdown-message">{{ message }}</div>						
-				</div>
-				<div class="bg"></div>
-			</div>
-			<div id="content">
-				<div id="our-wedding" class="page col-12">
-					<h1 class="col-12 desktop">Our Wedding</h1>
-					<h1 class="col-12 mobile" onClick="toTop()">Our Wedding</h1>
-					<div class="content row">
-						<div id="when" class="col-4">
-							<img src="res/images/flowers3.png" alt="flowers" id="when-img">
-							<div class="txt">
-								<h2 class="title">When</h2>
-								<h2 class="date">July 6, 2019</h2>
-							</div>
-						</div>
-						<div id="wedding-divider" class="col-4">
-							<img src="res/images/flowers5.png" alt="flowers">
-						</div>
-						<div id="where" class="col-4" onclick="toggleMaps('kendal')">
-							<div class="txt">			
-								<div class="address">
-									<h2 class="big">Kendal Camp</h2>
-									<h2 class="small">and</h2>
-									<h2 class="big">Conference Centre</h2>
-									<p>Kendal, Shooter's Hill, Manchester, Jamaica</p>
+				<div id="content">
+					<div id="our-wedding" class="page col-12">
+						<h1 class="col-12 desktop">Our Wedding</h1>
+						<h1 class="col-12 mobile" onClick="toTop()">Our Wedding</h1>
+						<div class="content row">
+							<div id="when" class="col-4">
+								<img src="res/images/flowers3.png" alt="flowers" id="when-img">
+								<div class="txt">
+									<h2 class="title">When</h2>
+									<h2 class="date">July 6, 2019</h2>
 								</div>
-								<h2 class="title col-4">Where</h2>							
 							</div>
-							<img src="res/images/flowers4.png" alt="flowers" id="where-img">	
-						</div>					
-						<div id="time" class="col-4">
-							<div class="time">
-								<h2 class="small">starting at</h2>
-								<h2 class="big">4pm</h2>
+							<div id="wedding-divider" class="col-4">
+								<img src="res/images/flowers5.png" alt="flowers">
+							</div>
+							<div id="where" class="col-4" onclick="toggleMaps('kendal')">
+								<div class="txt">			
+									<div class="address">
+										<h2 class="big">Kendal Camp</h2>
+										<h2 class="small">and</h2>
+										<h2 class="big">Conference Centre</h2>
+										<p>Kendal, Shooter's Hill, Manchester, Jamaica</p>
+									</div>
+									<h2 class="title col-4">Where</h2>							
+								</div>
+								<img src="res/images/flowers4.png" alt="flowers" id="where-img">	
+							</div>					
+							<div id="time" class="col-4">
+								<div class="time">
+									<h2 class="small">starting at</h2>
+									<h2 class="big">4pm</h2>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div id="getting-there" class="page col-12">
-					<h1 class="col-12 desktop">Getting There</h1>
-					<h1 class="col-12 mobile" onClick="toTop()">Getting There</h1>
-					<div class="content">
-						
-						<iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2681.7858853700372!2d-77.48911321264521!3d18.089231923405777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8edbbebe172e832b%3A0x47bd588f7d5cf85b!2sKendal+Conference+Center!5e0!3m2!1sen!2sjm!4v1553104191860" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-						
-						<div id="accomodations">
-							<h2>And Where can we stay?</h2>
-							<p id="acc">Accomodations may be provided at the <span id="jdv" onclick="toggleMaps('jdv')">Jamaica Deaf Village</span></p>
-							<p id="directions" onclick="toggleMaps('directions')">Get Directions Here</p>
-						</div>
-						
-					</div>
-				</div>
-				<div id="photos" class="page col-12">
-					<h1 class="col-12 desktop">Photos</h1>
-					<h1 class="col-12 mobile" onClick="toTop()">Photos</h1>
-					<div class="content" ng-controller="ImageController">
-						<div id="img-catalog">
-							<div class="img-column" ng-repeat="column in columns">
-								<div class="img" ng-repeat="img in column track by $index" id="column-{{$index}}">
-									<div class="imgoverlay" ng-click="openLightbox(img.position)"></div>
-									<img ng-src="{{img.src}}" alt="" id="img-{{img.position}}">
-								</div>
-							</div>
-						</div>
-						<div id="lightbox">
-							<a id="close" ng-click="closeLightbox()">&times;</a>
-							<div id="click-out" ng-click="closeLightbox()"></div>
-							<div id="currentPhoto">
-								<img ng-src="{{currentPhoto.src}}" alt="{{currentPhoto.caption}}" ng-click="nextSlide()">
-								<div id="caption">
-									<p>{{currentPhoto.caption}}</p>	
-								</div>
-							</div>
-							<!-- Next/previous controls -->
-							<a id="prev" ng-click="prevSlide()">&#10094;</a>
-							<a id="next" ng-click="nextSlide()">&#10095;</a>	
+					<div id="getting-there" class="page col-12">
+						<h1 class="col-12 desktop">Getting There</h1>
+						<h1 class="col-12 mobile" onClick="toTop()">Getting There</h1>
+						<div class="content">
 
-							<div id="thumbnails">
-								<div class="thumbails" ng-repeat="img in images">
-									<div ng-repeat="img in images track by $index" class="thumnail">
-										<img ng-src="{{img.src}}" alt="{{img.caption}}" ng-click="showSlide($index+1)">
+							<iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2681.7858853700372!2d-77.48911321264521!3d18.089231923405777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8edbbebe172e832b%3A0x47bd588f7d5cf85b!2sKendal+Conference+Center!5e0!3m2!1sen!2sjm!4v1553104191860" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+							<div id="accomodations">
+								<h2>And Where can we stay?</h2>
+								<p id="acc">Accomodations may be provided at the <span id="jdv" onclick="toggleMaps('jdv')">Jamaica Deaf Village</span></p>
+								<p id="directions" onclick="toggleMaps('directions')">Get Directions Here</p>
+							</div>
+
+						</div>
+					</div>
+					<div id="photos" class="page col-12">
+						<h1 class="col-12 desktop">Photos</h1>
+						<h1 class="col-12 mobile" onClick="toTop()">Photos</h1>
+						<div class="content" ng-controller="ImageController">
+							<div id="img-catalog">
+								<div class="img-column" ng-repeat="column in columns">
+									<div class="img" ng-repeat="img in column track by $index" id="column-{{$index}}">
+										<div class="imgoverlay" ng-click="openLightbox(img.position)"></div>
+										<img ng-src="{{img.src}}" alt="" id="img-{{img.position}}">
+									</div>
+								</div>
+							</div>
+							<div id="lightbox">
+								<a id="close" ng-click="closeLightbox()">&times;</a>
+								<div id="click-out" ng-click="closeLightbox()"></div>
+								<div id="currentPhoto">
+									<img ng-src="{{currentPhoto.src}}" alt="{{currentPhoto.caption}}" ng-click="nextSlide()">
+									<div id="caption">
+										<p>{{currentPhoto.caption}}</p>	
+									</div>
+								</div>
+								<!-- Next/previous controls -->
+								<a id="prev" ng-click="prevSlide()">&#10094;</a>
+								<a id="next" ng-click="nextSlide()">&#10095;</a>	
+
+								<div id="thumbnails">
+									<div class="thumbails" ng-repeat="img in images">
+										<div ng-repeat="img in images track by $index" class="thumnail">
+											<img ng-src="{{img.src}}" alt="{{img.caption}}" ng-click="showSlide($index+1)">
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>		
-				<div id="registry" class="page col-12">
-					<h1 class="col-12 desktop">Registry</h1>
-					<h1 class="col-12 mobile" onClick="toTop()">Registry</h1>
-					<div class="content">
-						<p class="txt">Help us start our <span>new life together</span></p>
-						<div id="registries">
-							<div id="target">
-								<a href="https://www.target.com/gift-registry/giftgiver?registryId=44ac4d5ab0204510a1fb3e994d990c35&type=WEDDING"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Target_logo.svg" alt="Target"/></a>
+					</div>		
+					<div id="registry" class="page col-12">
+						<h1 class="col-12 desktop">Registry</h1>
+						<h1 class="col-12 mobile" onClick="toTop()">Registry</h1>
+						<div class="content">
+							<p class="txt">Help us start our <span>new life together</span></p>
+							<div id="registries">
+								<div id="target">
+									<a href="https://www.target.com/gift-registry/giftgiver?registryId=44ac4d5ab0204510a1fb3e994d990c35&type=WEDDING"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Target_logo.svg" alt="Target"/></a>
+								</div>
+								<div id="bbb">
+									<a href="https://www.bedbathandbeyond.com/store/giftregistry/viewregistryguest/547335049?eventType=Wedding"><img src="http://www.logospng.com/images/150/bed-bath-amp-beyond-nice-deal-on-california-pistachio-bags-150806.png" alt="Bed Bath & Beyond"></a>
+								</div>
 							</div>
-							<div id="bbb">
-								<a href="https://www.bedbathandbeyond.com/store/giftregistry/viewregistryguest/547335049?eventType=Wedding"><img src="http://www.logospng.com/images/150/bed-bath-amp-beyond-nice-deal-on-california-pistachio-bags-150806.png" alt="Bed Bath & Beyond"></a>
+							<p class="txt">or if you wish: Contribute to our <span>Newlywed Fund</span></p>
+							<div id="paypal">
+								<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+									<input type="hidden" name="cmd" value="_s-xclick" />
+									<input type="hidden" name="hosted_button_id" value="88VEYWP9AN9GQ" />
+									<input id="donatebutton" type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+									<img alt="" border="0" src="https://www.paypal.com/en_JM/i/scr/pixel.gif" width="1" height="1" />
+								</form>
 							</div>
 						</div>
-						<p class="txt">or if you wish: Contribute to our <span>Newlywed Fund</span></p>
-						<div id="paypal">
-							<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-								<input type="hidden" name="cmd" value="_s-xclick" />
-								<input type="hidden" name="hosted_button_id" value="88VEYWP9AN9GQ" />
-								<input id="donatebutton" type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-								<img alt="" border="0" src="https://www.paypal.com/en_JM/i/scr/pixel.gif" width="1" height="1" />
-							</form>
-						</div>
 					</div>
-				</div>
-				<div id="rsvp" class="page col-12">
-					<h1 class="col-12 desktop">RSVP</h1>
-					<h1 class="col-12 mobile" onClick="toTop()">RSVP</h1>
-					<div class="content">
-					  	<form id="rsvpform">
-						 	<div>			
-								<p id="instructions">Kindly submit by June 15<sup>th</sup></p>
-								<input id="rsvpname" type="text"><br/>
-								<label name="name">Name</label><br/><br/>
-								<input type="radio" name="accept" value="accept" id="rsvpaccept" checked="true"><label name="rsvpaccept">Accepts with pleasure</label>
-								<input type="radio" name="accept" value="decline" id="rsvpdecline"><label name="rsvpdecline">Declines with regret</label><br/><br/>
-								<div id="rsvpnum"><label name="num">Number Attending</label><input id="attendingnum" type="number" min="1"></div><br/><br/>
+					<div id="rsvp" class="page col-12">
+						<h1 class="col-12 desktop">RSVP</h1>
+						<h1 class="col-12 mobile" onClick="toTop()">RSVP</h1>
+						<div class="content">
+							<form id="rsvpform">
+								<div>			
+									<p id="instructions">Kindly submit by June 15<sup>th</sup></p>
+									<input id="rsvpname" type="text"><br/>
+									<label name="name">Name</label><br/><br/>
+									<input type="radio" name="accept" value="accept" id="rsvpaccept" checked="true"><label name="rsvpaccept">Accepts with pleasure</label>
+									<input type="radio" name="accept" value="decline" id="rsvpdecline"><label name="rsvpdecline">Declines with regret</label><br/><br/>
+									<div id="rsvpnum"><label name="num">Number Attending</label><input id="attendingnum" type="number" min="1"></div><br/><br/>
 
-								<input type="submit" value="Submit">
-							</div>							
-						</form>		
-						<img id="rsvpimg" src="res/images/bouquet-6.png" alt="">
+									<input type="submit" value="Submit">
+								</div>							
+							</form>		
+							<img id="rsvpimg" src="res/images/bouquet-6.png" alt="">
+						</div>
+					</div>
+				</div>
+				<div id="preload" ng-controller="ImageController">
+					<div class="img" ng-repeat="img in photos">
+						<img ng-src="{{img.src}}" height="1" weight="1" alt="">
 					</div>
 				</div>
 			</div>
-			<div id="preload" ng-controller="ImageController">
-				<div class="img" ng-repeat="img in photos">
-					<img ng-src="{{img.src}}" height="1" weight="1" alt="">
-				</div>
-			</div>
-		</div>
-	</div>	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
-	<script src="res/js/jquery.touchSwipe.min.js"></script>
-	<script src="res/js/app.js"></script>
-	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>	
-	<script>
-		AOS.init();
-	</script>
-</body>
+		</div>	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+		<script src="res/js/jquery.touchSwipe.min.js"></script>
+		<script src="res/js/app.js"></script>
+		<script src="https://unpkg.com/aos@next/dist/aos.js"></script>	
+		<script>
+			AOS.init();
+		</script>
+	</body>
 </html>

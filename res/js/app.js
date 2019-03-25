@@ -103,8 +103,8 @@ $(window).scroll(function(){
 	var currentHead = $("h1.current");	
 		
 	
-	if($(document).scrollTop() <= current + $offset3 && $(document).scrollTop() >= current){
-		var x = (current + $offset3 - $(document).scrollTop())/$offset3;
+	if($scrollTop <= current + $offset3 && $scrollTop >= current){
+		var x = (current + $offset3 - $scrollTop)/$offset3;
 		currentHead.css("opacity", x);
 		//console.log(x);
 		
@@ -112,6 +112,25 @@ $(window).scroll(function(){
 		//console.log($(document).scrollTop(), topPosition, topPosition + $offset2);
 	}
 	
+	$("#photos .img").each(function(){
+		//var centre = $(this).height()/2;
+		var pos = {
+			top: $(this)[0].getBoundingClientRect().top + $scrollTop,
+			bottom: $(this)[0].getBoundingClientRect().bottom + $scrollTop
+		};
+		var upper_1 = pos.top - $(window).height();
+		var upper_2 = pos.top - 0.2 * $(window).height();
+		var lower_1 = pos.top + $(window).height();
+		var lower_2 = pos.top + 0.2 * $(window).height();
+		var o;
+		if($scrollTop >= upper_1 && $scrollTop <= upper_2){
+			o = ($scrollTop - upper_1) / (upper_2 - upper_1);
+			$(this).css("opacity",Math.pow(o, 0.7));
+		}else if($scrollTop <= lower_1 && $scrollTop <= lower_2){
+			o = (lower_2 - $scrollTop) / (lower_1 - lower_2);
+			$(this).css("opacity",Math.pow(o, 0.7));
+		}		
+	});	
 });
 
 function menuFormat(current){
@@ -133,50 +152,7 @@ function menuFormat(current){
 		$(pages[current][0]).addClass("current");
 		$(pages[current][1]).addClass("current");	
 		//console.log(pages[current]);
-	}
-	
-		
-	
-	
-	/*
-	if(current === "Our Wedding"){
-		$(".menu-button").removeClass("current")
-		$("h1").removeClass("current")
-		$("#main-menu .wedding .menu-button").addClass("current");		
-		$("#our-wedding h1").addClass("current");
-	}else if(current === "Getting There"){
-		$(".menu-button").removeClass("current")
-		$("h1").removeClass("current")
-		$("#main-menu .there .menu-button").addClass("current");
-		$("#getting-there h1").addClass("current");
-	}else if(current === "Photos"){
-		$("#main-menu .wedding .menu-button").removeClass("current");
-		$("#main-menu .there .menu-button").removeClass("current");
-		$("#main-menu .photos .menu-button").addClass("current");
-		$("#main-menu .registry .menu-button").removeClass("current");
-		$("#our-wedding h1").removeClass("current");
-		$("#getting-there h1").removeClass("current");
-		$("#photos h1").addClass("current");
-		$("#registry h1").removeClass("current");
-	}else if(current === "Registry"){
-		$("#main-menu .wedding .menu-button").removeClass("current");
-		$("#main-menu .there .menu-button").removeClass("current");
-		$("#main-menu .photos .menu-button").removeClass("current");
-		$("#main-menu .registry .menu-button").addClass("current");
-		$("#our-wedding h1").removeClass("current");
-		$("#getting-there h1").removeClass("current");
-		$("#photos h1").removeClass("current");
-		$("#registry h1").addClass("current");
-	}else{
-		$("#main-menu .wedding .menu-button").removeClass("current");
-		$("#main-menu .there .menu-button").removeClass("current");
-		$("#main-menu .photos .menu-button").removeClass("current");
-		$("#main-menu .registry .menu-button").removeClass("current");
-		$("#our-wedding h1").removeClass("current");
-		$("#getting-there h1").removeClass("current");
-		$("#photos h1").removeClass("current");
-		$("#registry h1").removeClass("current");
-	}*/
+	}	
 }
 
 function toggleMaps(key){
