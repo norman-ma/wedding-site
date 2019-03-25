@@ -134,6 +134,47 @@ html{
 		top: 0;
 	}
 	
+	#bg.fade-in, #header.top .bg.fade-in{
+		background: #06062a; 
+		color: #bd9999; 
+		border-color: #bd9999;
+		transition: background 2s ease-in, 
+			color 2s ease-in, 
+			border-color 2s ease-in;
+	}
+	
+	#main .fade-in{
+		color: #bd9999; 
+		border-color: #bd9999;
+		transition: color 2s ease-in, 
+			border-color 2s ease-in;
+	}
+	
+	#bg.fade-out{
+		background: transparent; 
+		color: #400711; 
+		border-color: #400711;
+		transition: background 2s ease-out, 
+			color 2s ease-out, 
+			border-color 2s ease-out;
+	}
+	
+	#header.top #header.top .bg.fade-in{
+		background: white; 
+		color: #400711; 
+		border-color: #400711;
+		transition: background 2s ease-out, 
+			color 2s ease-out, 
+			border-color 2s ease-out;
+	}
+	
+	#main .fade-out{
+		color: #400711; 
+		border-color: #400711;
+		transition: color 2s ease-out, 
+			border-color 2s ease-out;
+	}
+	
 	#main{
 		background: transparent;
 	}

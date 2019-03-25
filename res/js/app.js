@@ -70,35 +70,43 @@ $(window).scroll(function(){
 	
 	if(Math.floor(wedding) <= Math.floor($offset) && Math.floor(wedding) > 0){
 		menuFormat("wedding");
-		$("*").removeClass("to-blue");
+		$("*").removeClass("fade-in");
+		$("*").addClass("fade-out");
 		current = weddingOrigin;		
 	}else if(Math.floor(there) <= Math.floor($offset) && Math.floor(there) > 0){
 		menuFormat("gettingthere");
-		$("*").removeClass("to-blue");
+		$("*").removeClass("fade-in");
+		$("*").addClass("fade-out");
 		current = thereOrigin;		
 	}else if(Math.floor(photos) <= Math.floor($offset) && Math.floor(photos) > 0){
 		menuFormat("photos");
-		current = photosOrigin;		
+		current = photosOrigin;
+		$("*").removeClass("fade-out");
+		$("#header").addClass("fade-in");
+		$("#bg").addClass("fade-in");
+		$("*").addClass("fade-in");
 	}else if(Math.floor(registry) <= Math.floor($offset) && Math.floor(registry) > 0){
 		menuFormat("registry");
-		$("*").removeClass("to-blue");
+		$("*").removeClass("fade-in");
+		$("*").addClass("fade-out");
 		current = registryOrigin;		
 	}else if(Math.floor(rsvp) <= Math.floor($offset) && Math.floor(rsvp) > 0){
 		menuFormat("rsvp");
-		$("*").removeClass("to-blue");
+		$("*").removeClass("fade-in");
+		$("*").addClass("fade-out");	
 		current = rsvpOrigin;
 	}else{
 		menuFormat("other");
-		$("*").removeClass("to-blue");
+		$("*").removeClass("fade-in");
+		$("*").addClass("fade-out");
 		current = "";
 	}	
 	
-		
-	if(Math.floor(photos) <= Math.floor($offset2) && Math.floor(photos) > 0){
-		$("#header").addClass("to-blue");
-		$("#bg").addClass("to-blue");
-		$("*").addClass("to-blue");
-	}
+	/*if(Math.floor(photos) <= Math.floor($offset2) && Math.floor(photos) > 0){
+		$("#header").addClass("fade-in");
+		$("#bg").addClass("fade-in");
+		$("*").addClass("fade-in");
+	}*/
 
 	var currentHead = $("h1.current");	
 		
