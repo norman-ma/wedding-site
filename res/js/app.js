@@ -276,127 +276,152 @@ app.controller("ImageController",["$scope", function($scope){
 		{
 			src:"https://lh3.googleusercontent.com/8druIfbKLRU_hCV8J9UR5KIt96g5zEbDA2t3LCJU4f-sTcm9tZ37cspiZUTDYLQTD4UcrLDJAQjRsBMzUVd0Z3wAK6EgcitaoskabLuqtRLRObroszGC26v3QxLS0vunbYAOkQcyQA=w2400",
 		 	caption:"",
-		 	position: 1
+		 	position: 1,
+			orientation: "portrait"
 		},
 		{
 			src:"https://lh3.googleusercontent.com/nR_LLL0qsoYiVHJPDyjhvufBCGzx-An0jq7Rs8eJXiniCcHqT21Ez9R9Y8LYQDm0YYyFopVV084xcHFT5GkjEGD5KsPDMlKM0LaoXRnMWiK5vHFj1fQdH0wZjPSaeUFH8AbrVq3FgQ=w2400",
 		 	caption:"",
-		 	position: 2
+		 	position: 2,
+			orientation: "landscape"
 		},
 		{
 			src:"https://lh3.googleusercontent.com/zQxC1LMyNKzp1lZpS9Y3bNQ-ZX8bUbm_pd_Yejx9E_-up4SlaFLWpaT9MthhTxw1UxacggNcxiGX0UCg54QPs6S59wnYjv1GV-SjcyjInhTjsEFvXRnqQ9RER-pYBGXnYU1smPCYCA=w2400",
 		 	caption:"",
-		 	position: 3
+		 	position: 3,
+			orientation: "portrait"
 		},
 		{
 			src:"https://lh3.googleusercontent.com/xRe4v0ZkcI0Z6BQnTEgZyboABMDukaxWiHYAS68gtAE5HGMkE_Ifpgc_3BfSnJnWBorxEhb6p1UFfdF_OVB9wP9qjVM6x8aSbLnTknORHF1vdCUI6O0eek5GfWfTIDpQ58-27I6Jzw=w2400",
 		 	caption:"",
-		 	position: 4
+		 	position: 4,
+			orientation: "portrait"
 		},
 		{
 			src:"https://lh3.googleusercontent.com/3IjglklINYEb_h_5mauwWd_5i9oDl64zX5hqxLAkNikVFFX3hKp15fgNWSKnwiemila6k8QGwtI0l6j9gTAnkNN-uzwl5lOmqo0LGnDkFjmscg4sHSPXUOLcPP-5cEnHqgXlfV9VGw=w2400",
 		 	caption:"",
-		 	position: 5
+		 	position: 5,
+			orientation: "landscape"
 		},
 		{
 			src:"https://lh3.googleusercontent.com/9ay2lwbSzb8IADq1NTIELHdCwLJJRdKTJPpHG5MQXQoSGK8D7UYB5A5D3r0p-S7ESCRbpaV2ga3g9miAB_vkQOBgvV4qmvPmnAp1AZSg59IMdF6xDwnt8Oxlf2nKJKQdK8qQaCBjtA=w2400",
 		 	caption:"",
-		 	position: 6
+		 	position: 6,
+			orientation: "landscape"
 		},
 		{
 			src:"https://lh3.googleusercontent.com/q1PWE6woXjBTZrMaG0U44O3jx8pG9kHLNggGeH7kig9PvGKsUQCkuZ1a8qWLWf-acvYJl6el6TK1vuPjgX-CJcMa6ficoaGNiw_VZx6goOEvXDbbMw62gUvTvwE2Vzq8K8PYOzcnMw=w2400",
 		 	caption:"",
-		 	position: 7
+		 	position: 7,
+			orientation: "landscape"
 		},
 		{
 			src:"https://lh3.googleusercontent.com/ADcl5mz0B61AXVD70tt6Xluw5nU3cMoDoZRUNjVNGuIJDeOBCjNPfAfnDJjLnlj9s105DD1q5QcKRHZ8ONq1Z1WkJUmsaNYxies_pOCSTVCIJRV39ZppzmAHRcF1wXaqhsNIILATzQ=w2400",
 		 	caption:"",
-		 	position: 8
+		 	position: 8,
+			orientation: "portrait"
 		},
 		{
 			src:"https://lh3.googleusercontent.com/SSAwf1tzkZKEzQeV4e_ABK1iOJn-Mj27NM1fT4l-wx-cgGYhnQNPIH6br1e8eZ7P4ntAxeCZeBGfYHqj9bQTvVGuMpcNDIx0CoINHN4wUAcu29mcN9-z9ONFT7GTiiFnj-gzWf_n5Q=w2400",
 		 	caption:"",
-		 	position: 9
+		 	position: 9,
+			orientation: "portrait"
 		},
 		{
 			src:"https://lh3.googleusercontent.com/jCR_AF3ZGTtIR4gIpS56kESyP2niHKVroMmlbJ7VoQHfeTM2zFQKFX7ziJX4OcI42qYUM1ROZXAdJsTKDR-RuLrjvgitozNIiX4LvxeBXuYOhCMRwuYOUWu8Jv1wzB5xBEFoYeXEmg=w2400",
 		 	caption:"",
-		 	position: 10
+		 	position: 10,
+			orientation: "portrait"
 		},
 		{
 			src:"https://lh3.googleusercontent.com/99mzl-G3E1jmt2p-8JZUZANGO-TcwvbmLgwKtR3PuZhLFuhSlulwXqWYEs-QvvI1NShF895vkg_oMXYol8W81qjFkiliwtV2VZ9euSjs7NF8vvOhwfIWi6-_wcgLE1NCXkMnoFjNPw=w2400",
 		 	caption:"",
-		 	position: 11
+		 	position: 11,
+			orientation: "portrait"
 		},
 		{
 			src:"https://lh3.googleusercontent.com/q8IAKKIyIZS3OWY4Im4CRZ9n2r3cDJbnen-kwVqRSP0W4maT3PmgPRzr4oZqoDj0B_pjkP4D0_yUpTRUm-QiN4aJ0LjhgebPiSq0Vyd-an1O7pUVGYRcQ9_giJ2kE0EtO7TeOG5dTA=w2400",
 		 	caption:"",
-		 	position: 12
+		 	position: 12,
+			orientation: "portrait"
 		},
 		{
 			src:"https://lh3.googleusercontent.com/k8VKbzmGj81buCKbmDMAtqfx8G5gHBbbxbhN5vCNX7zswQYq_yVqA2FD70J6zI-yeeFJbRPyYMcOMTj-ouZQksL-ul-v0atAPn10TRysE6H50fnqBx67CItOGRciV9bBnEpzM35WYA=w2400",
 		 	caption:"",
-		 	position: 13
+		 	position: 13,
+			orientation: "portrait"
 		},
 		{
 			src:"https://lh3.googleusercontent.com/Fp1VVWEaLU5lKhazkv192L7xs2_69BDE2KxihiprdS3GKgRJl6GHq1XYmXjfvUnbOp0iwdl8wDDh9ZTpnd2QDlTa4byJeEs_tq1zJG2Dhse9J1k1zyBaVq4u_UjGAA3nenTIPIZJ2w=w2400",
 		 	caption:"",
-		 	position: 14
+		 	position: 14,
+			orientation: "portrait"
 		},
 		{
 			src:"https://lh3.googleusercontent.com/BZV7UTnebIRKjuLvzJ0kRFs0uSVA87LKngwIeK6gC-AQrV-DTvHCcnzf3a-eFmo_jBQuf1qbz3slApQc3xYRpEB9p2qdXek9VCzt5NswkOBqdPo5uRMRPeg4PaXWMYi3DUgmggA4rg=w2400",
 		 	caption:"",
-		 	position: 15
+		 	position: 15,
+			orientation: "portrait"
 		},
 		{
 			src:"https://lh3.googleusercontent.com/Dl8xak2SsohuY5vNVuip0BTwSo17f4vSTBhU2FfA13peTNsAbY-7to7aNTJzlteFSCdHIlmuSpZz9Irsk9Qcd1ZvJCw2pbHIHz7IoetT0TWp2vmO1AsjshDNWhe0kULrcN3RYvU8eg=w2400",
 		 	caption:"",
-		 	position: 16
+		 	position: 16,
+			orientation: "landscape"
 		},
 		{
 			src:"https://lh3.googleusercontent.com/WqU_QHMdKeTLe9htz6nZuG69TcKqyjXMx-fNfxdYPHWNWwPKRZx8Z66OUc_f5I5c8Pp7IwjDdayNlLYJ83LWqVb7at8Vbuzo8WykBkdmRAhnCLz3WuaT8tYIcd3vNAhmYDwMa-O6bQ=w2400",
 		 	caption:"",
-		 	position: 17
+		 	position: 17,
+			orientation: "landscape"
 		},
 		{
 			src:"https://lh3.googleusercontent.com/8Nw7Nf-VL8shZGt9U3DYI3KFXWX6fSsOjr3TpvMGLSQI4xJj4_ObxAyzMxo1SJzpJu-8I4l3QvQxwGk1vEt2l_2ZNEQz1ROkBbpw1QxTwlNSkO5Nzjmk25C6L0v6rF3GoPAbM5a4wg=w2400",
 		 	caption:"",
-		 	position: 18
+		 	position: 18,
+			orientation: "portrait"
 		},
 		{
 			src:"https://lh3.googleusercontent.com/gz1Xv1XkQ129aXewbPCBOar22ElupXTxNSA3EX5Vz3dhVyVNr54yBefltGTp1JBcUMDgiPDd5Ek0mEwYkyqy3LkglxXvd3OYYUKAN-Z4X2gWx5PxEv-iWnzuEznkRS-S3jOBq2Qrvg=w2400",
 		 	caption:"",
-		 	position: 19
+		 	position: 19,
+			orientation: "landscape"
 		},
 		{
 			src:"https://lh3.googleusercontent.com/6BRG964vdln0EeTjinSDAkKTa6BfnQK-X87GQZ-m1XTIoTp6RvgRziN9OjYQ3exhAAC9HW8mUR-PgnMzZfPzJbsw6bxxoe5kiIf3Vks0bFfR3vBKhQU5su45cwJiRTJaVYqX20DI2A=w2400",
 		 	caption:"",
-		 	position: 20
+		 	position: 20,
+			orientation: "portrait"
 		},
 		{
 			src:"https://lh3.googleusercontent.com/J8VZFSInJtRn88FuRQxNuq9a_0eEW1WdGYkTEFMFSROciQeaFrID1l8KBFB_IzJ_yBCnvIl_N3RDk1hPIX_bRZEAnQ4RjIBXuz4EOhIE6-2pISGnRlZ98ji28lnZvjemnpsRXs85sQ=w2400",
 		 	caption:"",
-		 	position: 21
+		 	position: 21,
+			orientation: "portrait"
 		},
 		{
 			src:"https://lh3.googleusercontent.com/QPlmw6h7KPAORnYMOoJUhYPSjOgExh8x2CtKbU1tGK2a9JAlC7tA8F0eI_s5KuKsa211cMRnOHtIUlo4kXZyrvWWLVK3Af-5_IV9_PLr2AsJFpC6mGfgN-tICKR9vjFkPF2gC5jTzw=w2400",
 		 	caption:"",
-		 	position: 22
+		 	position: 22,
+			orientation: "landscape"
 		},
 		{
 			src:"https://lh3.googleusercontent.com/OVsqNy9uBkk583lIHkBb1Js_g8CedXGxo2EXXdj1HELaNpvmNMc3jxQ6xyO-jKIyYHRwvAYYDmJs7i3GClDtgMpN4SiO-hDPjNb0A9ZlV4amDS2AWao92Qg6876zgF9xLr8x6QcIEw=w2400",
 		 	caption:"",
-		 	position: 23
+		 	position: 23,
+			orientation: "portrait"
 		},
 		{
 			src:"https://lh3.googleusercontent.com/jRA82P41iVsVvsFnLJFROB4Ru9O_e1PSIxds57HiT6CHVUVed1ka_vtaVAbVOrK78QBqZek8wECRr2F87gXdt2j45R-lHk_QYhbtJff8bcamUVHsjFwE313sm8Qq9njtlDSJoy9S7Q=w2400",
 		 	caption:"",
-		 	position: 24
+		 	position: 24,
+			orientation: "landscape"
 		},
 		{
 			src:"https://lh3.googleusercontent.com/qdnKB9QYrnsIgmIWDpC8OW2WFMSnJaudcL6d6SadLp0Pygb7DkDtojaqOYlhxXm88u9940caYywBTV9RZn_pyKyajcVwxcTZtSAXabdwg_P04lE-j6zVlFgvTiskhfBabYBYDJ7OlQ=w2400",
 		 	caption:"",
-		 	position: 25
+		 	position: 25,
+			orientation: "landscape"
 		}
 	];	
 	
@@ -417,27 +442,65 @@ app.controller("ImageController",["$scope", function($scope){
 		//var col = 0;
 		//var max = Math.floor($scope.num/n) - 1;
 		var min = [];
-		var x, img, min_l, col;
-		for(var img of $scope.photos){
+		var x, min_l, col, o, o_num, data;
+		for(var c = 0; c < $scope.num; c++){
+			var img = $scope.photos[c];
 			min = [];
+			o = img.orientation;
 			for(var i = 0; i < n; i++){
 				col = $scope.columns[i];
+				data = {
+					index: i,
+					ocount: $scope.oCount("portrait",col)
+				};
 				if(min.length === 0){
-					min.push(i);
+					min.push(data);
 					min_l = col.length;
 				}else if(col.length < min_l){
 					min = [];
-					min.push(i);
+					min.push(data);
 					min_l = col.length;
 				}else if(col.length === min_l){
-					min.push(i);
+					min.push(data);
 				}					
 			}
+			
+			if(c < $scope.photos.lastIndexOf){
+				if(o === "portrait"){
+					o_num = Math.min.apply(	Math, min.map(function(o){return o.ocount}));
+				}else{
+					o_num = Math.max.apply(	Math, min.map(function(o){return o.ocount}));
+				}
+			}else{
+				o_num = Math.min.apply(	Math, min.map(function(o){return o.ocount}));
+			}
+			
+			var temp = [];
+			for(i = 0; i < min.length; i++){
+				if(min[i].ocount === o_num){
+					temp.push(min[i]);
+				}
+			}
+			min = temp;
+			
+			
 			x = Math.floor(Math.random() * min.length);
-			$scope.columns[min[x]].push(img);	
-			//console.log(x, min_l, min);
+			$scope.columns[min[x].index].push(img);	
+			//console.log(x, o, min_o, min);
 		}		
 	};	
+	
+	$scope.oCount = function(orientation, column){
+		"use strict";
+		var count = 0;
+		for(var img of column){
+			if(img.orientation === orientation){
+				count++;
+			}
+		}
+		
+		return count;
+	}
 	
 	$("#img-catalog").onload = $scope.distribute;
 	
