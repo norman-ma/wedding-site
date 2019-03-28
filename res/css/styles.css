@@ -865,7 +865,7 @@ html{
 		background: none;
 		position: absolute;
 		width: 100vw;
-		height: 1000vh;
+		height: 1070vh;
 		top: 0;
 	}
 	
@@ -966,11 +966,9 @@ html{
 		cursor: context-menu;
 	}
 	
-	h1.current{}
-	
 	#our-wedding{
 		top: 60vh;
-		height: 300vh
+		height: 270vh
 	}
 	
 	.title{
@@ -1204,7 +1202,7 @@ html{
 	}
 	
 	#photos{
-		height: 250vh;
+		height: 230vh;
 	}
 	
 	#getting-there{
@@ -1263,7 +1261,7 @@ html{
 	}	
 	
 	#registry{
-		height: 180vh
+		height: 160vh
 	}
 	
 	#registry .content{
@@ -1306,7 +1304,7 @@ html{
 	}
 	
 	#rsvp{
-	   height: 115vh;	
+	   height: 100vh;	
 	}
 	
 	form div{
@@ -1320,7 +1318,7 @@ html{
 		position: relative;
 		--width: 100vw;
 		width: var(--width);
-		top: -27vh;
+		top: -37vh;
 		left: 16vw;
 		z-index: 2;
 	}
@@ -1331,8 +1329,8 @@ html{
 	}
 	
 	#rsvpform{ 
-		position: sticky;
-		top: 50vh;
+		position: relative;
+		top: 5%;
 		display: flex;
 		justify-content: center;
 		border: 2px solid;
@@ -1428,6 +1426,10 @@ html{
 		position: relative;
 		font-size: 6em;
 		left: -10%;
+	}
+	
+	#rsvp .content{
+		height: 80%;
 	}
 	
 }
