@@ -484,7 +484,7 @@ html{
 	}	
 	
 	#getting-there{
-		height: 210vh;		
+		height: 230vh;		
 	}
 	
 	#map{
@@ -496,7 +496,7 @@ html{
 		left: calc(100vw/2 - var(--width)/2);
 	}
 	
-	#accomodations{
+	#accomodations, #transportation{
 		position: relative;
 		top: 40vh;
 		color: #400711;
@@ -504,13 +504,13 @@ html{
 		text-align: center;
 	}
 	
-	#accomodations h2{
+	#accomodations h2, #transportation h2{
 		font-family: "Queenstown Signature";
 		font-size: 6em;
 		padding-top: 30px; 
 	}
 	
-	#accomodations p{
+	#accomodations p, #transportation p{
 		--width: 40vw;
 		position: relative;
 		font-family: "Trajan Pro";	
@@ -536,12 +536,12 @@ html{
 		font-size: 1.2em;		
 	}
 	
-	#jdv, #acc a{
+	#jdv, #acc a, #transportation a{
 		font-family: "Trajan Pro Bold";
 		text-decoration: none;
 	}
 	
-	#jdv:hover, #acc a:hover{
+	#jdv:hover, #acc a:hover, #transportation a:hover{
 		font-size: 1.1em;
 	}
 	
@@ -725,7 +725,7 @@ html{
 	
 	form div{
 		position: relative;
-		top: 10%;
+		margin: auto;
 	}
 	
 	#rsvpimg{
@@ -733,16 +733,15 @@ html{
 		position: relative;
 		--width: 25vw;
 		width: var(--width);
-		top: 2vh;
-		left: 44vw;
-		z-index: 2;
+		top: 7vh;
+		left: 47vw;
+		transform: rotate(16deg)
 	}
 	
 	#rsvpform{ 
 		position: sticky;
 		display: flex;
 		align-content: center;
-		padding: 30px;
 		border: 2px solid;
 		border-radius: 30px;
 		box-shadow: 3px 3px 10px grey;
@@ -1083,7 +1082,7 @@ html{
 	}
 	
 	#getting-there{
-		height: 150vh;
+		height: 240vh;
 	}
 	
 	#map{
@@ -1205,11 +1204,7 @@ html{
 		height: 230vh;
 	}
 	
-	#getting-there{
-		height: 190vh;
-	}
-	
-	#accomodations{
+	#accomodations, #transportation{
 		position: relative;
 		top: 15vh;
 		color: #400711;
@@ -1217,13 +1212,13 @@ html{
 		text-align: center;
 	}
 	
-	#accomodations h2{
+	#accomodations h2, #transportation h2{
 		font-family: "Queenstown Signature";
 		font-size: 3.2em;
 		padding-top: 30px; 
 	}
 	
-	#accomodations p{
+	#accomodations p, #transportation p{
 		--width: 90vw;
 		position: relative;
 		font-family: "Trajan Pro";	
@@ -1310,7 +1305,7 @@ html{
 	form div{
 		position: relative;
 		top: 8vh;
-		width: 80%;
+		width: 90%;
 	}
 	
 	#rsvpimg{
@@ -1318,9 +1313,7 @@ html{
 		position: relative;
 		--width: 100vw;
 		width: var(--width);
-		top: -37vh;
-		left: 16vw;
-		z-index: 2;
+		transform: rotate(240deg)
 	}
 	
 	#instructions{
