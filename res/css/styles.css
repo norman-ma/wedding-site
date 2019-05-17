@@ -484,7 +484,7 @@ html{
 	}	
 	
 	#getting-there{
-		height: 230vh;		
+		height: 260vh;		
 	}
 	
 	#map{
@@ -680,7 +680,7 @@ html{
 	}
 	
 	#registry{
-		height: 100vh;
+		height: 120vh;
 	}
 	
 	#registry .content{
@@ -731,11 +731,11 @@ html{
 	#rsvpimg{
 		pointer-events: none;
 		position: relative;
-		--width: 25vw;
+		--width: 50vw;
 		width: var(--width);
-		top: 7vh;
-		left: 47vw;
-		transform: rotate(16deg)
+		top: -40vh;
+		left: 25vw;
+		transform: rotate(60deg)
 	}
 	
 	#rsvpform{ 
@@ -744,10 +744,10 @@ html{
 		align-content: center;
 		border: 2px solid;
 		border-radius: 30px;
+		top: 10vh;
 		box-shadow: 3px 3px 10px grey;
-		top: 40vh;
 		position: relative;
-		--width: 25vw;
+		--width: 40vw;
 		width: var(--width);
 		height: 50vh;
 		left: calc(100vw/2 - var(--width)/2);
@@ -966,8 +966,9 @@ html{
 	}
 	
 	#our-wedding{
+		position: relative;
 		top: 60vh;
-		height: 270vh
+		height: 300vh
 	}
 	
 	.title{
@@ -1082,7 +1083,7 @@ html{
 	}
 	
 	#getting-there{
-		height: 240vh;
+		height: 270vh;
 	}
 	
 	#map{
@@ -1094,9 +1095,14 @@ html{
 		left: calc(100vw/2 - var(--width)/2);
 	}
 	
+	#photos{
+		height: 250vh;
+	}
+	
 	#photos .content{
 		position: relative;
 		height: 100%;
+		top: 10vh;
 	}
 	
 	#img-catalog{
@@ -1200,10 +1206,6 @@ html{
 		opacity: 1;
 	}
 	
-	#photos{
-		height: 230vh;
-	}
-	
 	#accomodations, #transportation{
 		position: relative;
 		top: 15vh;
@@ -1256,7 +1258,7 @@ html{
 	}	
 	
 	#registry{
-		height: 180vh
+		height: 190vh
 	}
 	
 	#registry .content{
