@@ -225,7 +225,7 @@ app.controller("CountdownController",["$scope",function($scope){
 		var days = days_between(today, wedding_date);
 		
 		$scope.countdown = days;
-		if(today > wedding_date){
+		if(today <= wedding_date){
 			if(days > 1){
 				$scope.message = "days to go";
 			}else{
