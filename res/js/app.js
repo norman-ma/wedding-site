@@ -6,27 +6,26 @@ var menu_max = menu_init * 1.2;
 var menu_diff = menu_max - menu_init;
 
 var weddingOrigin = ($("#our-wedding h1.desktop")[0].getBoundingClientRect().top > 0) ? $("#our-wedding h1.desktop")[0].getBoundingClientRect().top:$("#our-wedding h1.mobile")[0].getBoundingClientRect().top;
-var thereOrigin = ($("#getting-there h1.desktop")[0].getBoundingClientRect().top > 0) ? $("#getting-there h1.desktop")[0].getBoundingClientRect().top:$("#getting-there h1.mobile")[0].getBoundingClientRect().top;
+//var thereOrigin = ($("#getting-there h1.desktop")[0].getBoundingClientRect().top > 0) ? $("#getting-there h1.desktop")[0].getBoundingClientRect().top:$("#getting-there h1.mobile")[0].getBoundingClientRect().top;
 var photosOrigin = ($("#photos h1.desktop")[0].getBoundingClientRect().top > 0) ? $("#photos h1.desktop")[0].getBoundingClientRect().top:$("#photos h1.mobile")[0].getBoundingClientRect().top;
 var registryOrigin = ($("#registry h1.desktop")[0].getBoundingClientRect().top > 0) ? $("#registry h1.desktop")[0].getBoundingClientRect().top:$("#registry h1.mobile")[0].getBoundingClientRect().top;
-var rsvpOrigin = ($("#rsvp h1.desktop")[0].getBoundingClientRect().top > 0) ? $("#rsvp h1.desktop")[0].getBoundingClientRect().top:$("#rsvp h1.mobile")[0].getBoundingClientRect().top;
+var thanksOrigin = ($("#thanks h1.desktop")[0].getBoundingClientRect().top > 0) ? $("#thanks h1.desktop")[0].getBoundingClientRect().top:$("#thanks h1.mobile")[0].getBoundingClientRect().top;
 
 $(window).scroll(function(){	
 	"use strict";
 	
 	var wedding = ($("#our-wedding h1.desktop")[0].getBoundingClientRect().top > 0) ? $("#our-wedding h1.desktop")[0].getBoundingClientRect().top:$("#our-wedding h1.mobile")[0].getBoundingClientRect().top;
-	var there = ($("#getting-there h1.desktop")[0].getBoundingClientRect().top > 0) ? $("#getting-there h1.desktop")[0].getBoundingClientRect().top:$("#getting-there h1.mobile")[0].getBoundingClientRect().top;
+	//var there = ($("#getting-there h1.desktop")[0].getBoundingClientRect().top > 0) ? $("#getting-there h1.desktop")[0].getBoundingClientRect().top:$("#getting-there h1.mobile")[0].getBoundingClientRect().top;
 	var photos = ($("#photos h1.desktop")[0].getBoundingClientRect().top > 0) ? $("#photos h1.desktop")[0].getBoundingClientRect().top:$("#photos h1.mobile")[0].getBoundingClientRect().top;
 	var registry = ($("#registry h1.desktop")[0].getBoundingClientRect().top > 0) ? $("#registry h1.desktop")[0].getBoundingClientRect().top:$("#registry h1.mobile")[0].getBoundingClientRect().top;
-	var rsvp = ($("#rsvp h1.desktop")[0].getBoundingClientRect().top > 0) ? $("#rsvp h1.desktop")[0].getBoundingClientRect().top:$("#rsvp h1.mobile")[0].getBoundingClientRect().top;
-	//console.log("w", wedding, "t",there ,"p", photos, "r", registry, "rs", rsvp);
+	var thanks = ($("#thanks h1.desktop")[0].getBoundingClientRect().top > 0) ? $("#thanks h1.desktop")[0].getBoundingClientRect().top:$("#thanks h1.mobile")[0].getBoundingClientRect().top;
+	//console.log("w", wedding, "t",there ,"p", photos, "r", registry, "rs", thanks);
 
 	var $scrollTop = $(document).scrollTop();
 	var $scrollArea = $(document).height() - $(window).height();
 	var percent = $scrollTop/$scrollArea;
 	//console.log(percent);
 	if(percent < 0.1){
-
 		
 		$("#flowers").css("opacity", 1 - 9.5 * percent);
 	
@@ -73,12 +72,12 @@ $(window).scroll(function(){
 		$("*").removeClass("fade-in");
 		$("*").addClass("fade-out");
 		current = weddingOrigin;		
-	}else if(Math.floor(there) <= Math.floor($offset) && Math.floor(there) > 0){
+	}/*else if(Math.floor(there) <= Math.floor($offset) && Math.floor(there) > 0){
 		menuFormat("gettingthere");
 		$("*").removeClass("fade-in");
 		$("*").addClass("fade-out");
 		current = thereOrigin;		
-	}else if(Math.floor(photos) <= Math.floor($offset) && Math.floor(photos) > 0){
+	}*/else if(Math.floor(photos) <= Math.floor($offset) && Math.floor(photos) > 0){
 		menuFormat("photos");
 		current = photosOrigin;
 		$("*").removeClass("fade-out");
@@ -90,11 +89,11 @@ $(window).scroll(function(){
 		$("*").removeClass("fade-in");
 		$("*").addClass("fade-out");
 		current = registryOrigin;		
-	}else if(Math.floor(rsvp) <= Math.floor($offset) && Math.floor(rsvp) > 0){
-		menuFormat("rsvp");
+	}else if(Math.floor(thanks) <= Math.floor($offset) && Math.floor(thanks) > 0){
+		menuFormat("thanks");
 		$("*").removeClass("fade-in");
 		$("*").addClass("fade-out");	
-		current = rsvpOrigin;
+		current = thanksOrigin;
 	}else{
 		menuFormat("other");
 		$("*").removeClass("fade-in");
@@ -148,7 +147,7 @@ function menuFormat(current){
 		gettingthere:["#getting-there h1", "#main-menu .there .menu-button"],
 		photos:["#photos h1", "#main-menu .photos .menu-button"],
 		registry:["#registry h1", "#main-menu .registry .menu-button"],
-		rsvp:["#rsvp h1", "#main-menu .rsvp .menu-button"],
+		thanks:["#thanks h1", "#main-menu .thanks .menu-button"],
 	};
 	
 	if(current === "none"){
@@ -174,34 +173,6 @@ function toggleMaps(key){
 	$("#map").attr("src",maps[key]);
 	$.scrollTo("#map",{offset: -0.3 * $(window).height() });	
 }
-
-$("#rsvpform").on("submit", function(event){
-	"use strict";
-	event.preventDefault();
-	
-	var name = $("#rsvpname").val();
-	var attending = ($("#rsvpaccept").is(":checked")) ? "Accept with pleasure":"Decline with regrets";
-	var num = (attending === "decline") ? 0:$("#attendingnum").val();
-	
-	//console.log(name, attending, num);
-	
-	var formData = new FormData(this);
-	formData.append("service_id", "aislegowithnorman");
-	formData.append("template_id", "template_UdCZDolE");
-	formData.append("user_id", "user_ZrWXKupH6MTY01y5pTaeW");
-	formData.append("name", name);
-	formData.append("attending", attending);
-	formData.append("num", num);
-	
-	$.ajax('https://api.emailjs.com/api/v1.0/email/send-form', {
-        type: 'POST',
-        data: formData,
-        contentType: false, // auto-detection
-        processData: false // no need to parse formData to string
-    }).done(function() {
-        $("form div").html("<h1 id='thankyou'>Thank You!</h1>");
-    }).fail(function(error) {});
-});
 
 function toTop(){
 	"use strict";

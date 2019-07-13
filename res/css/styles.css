@@ -45,12 +45,12 @@ html{
 	position: absolute;
 	left: 48vw;
 	top: 25vw;
-  border: 4px solid white;
-  border-top: 4px solid #CF8EB0; 
-  border-radius: 50%;
-  width: 4vw;
-  height: 4vw;
-  animation: spin 1.5s linear infinite;
+  	border: 4px solid white;
+  	border-top: 4px solid #CF8EB0; 
+  	border-radius: 50%;
+  	width: 4vw;
+  	height: 4vw;
+  	animation: spin 1.5s linear infinite;
 }
 
 #preload{
@@ -64,6 +64,14 @@ html{
 [class*="col-"] {
     float: left;
     margin: 0;
+}
+
+#rsvp{
+	display: none !important;
+}
+
+.rsvp{
+	display: none !important;
 }
 
 @media only screen and (min-width: 992px){
@@ -123,9 +131,9 @@ html{
 	
 	#bg{
 		background: none;
-		position: absolute;
+		position: static;
 		width: 100%;
-		height: 860vh;
+		height: 690vh;
 		top: 0;
 	}
 	
@@ -142,7 +150,7 @@ html{
 		background: none;
 		position: absolute;
 		width: 100%;
-		height: 860vh;
+		/*! height: 860vh; */
 		top: 0;
 	}
 	
@@ -194,7 +202,7 @@ html{
 		margin: 46vw 0 10vh 0;
 		z-index: 4;
 
-    animation-name: welcome;
+    	animation-name: welcome;
 		animation-duration: 2s;
 		animation-delay: 1.5s;
 		animation-fill-mode: backwards;
@@ -212,7 +220,7 @@ html{
 
 	#main-menu{
 		display: flex;
-    margin: 0 auto;
+    	margin: 0 auto;
 		margin-top: 0;
 	}
 
@@ -264,7 +272,7 @@ html{
 		font-size: 2.2vw;
 		text-align: center;
 		width: 100%;
-		color:  #400711;
+		color: #400711;
 		z-index: 5;
 	}
 	
@@ -720,7 +728,8 @@ html{
 	}
 	
 	#rsvp{
-	   height: 100vh;	
+	   	height: 100vh;
+		display: none;
 	}
 	
 	form div{
@@ -746,7 +755,6 @@ html{
 		border-radius: 30px;
 		top: 10vh;
 		box-shadow: 3px 3px 10px grey;
-		position: relative;
 		--width: 40vw;
 		width: var(--width);
 		height: 50vh;
@@ -843,6 +851,29 @@ html{
 		top: 3vh;
 	}
 	
+	#thanks h1{
+		font-family: "Trajan Pro";
+		font-size: 10em
+	}
+	
+	#thanks h3{
+		top: 27vh;
+		position: sticky;
+		font-family: "Queenstown Signature";
+		font-size: 5em;
+		text-align: center;
+		line-height: 1
+	}
+	
+	#thankyouphoto{
+		top: 10vh;
+		position: relative;
+		--width: 20vw;
+		width: var(--width);
+		left: calc(100vw/2 - var(--width)/2);
+		z-index: -1;
+	}
+	
 }
 
 @media only screen and (max-width: 992px){
@@ -864,7 +895,7 @@ html{
 		background: none;
 		position: absolute;
 		width: 100vw;
-		height: 1070vh;
+		height: 920vh;
 		top: 0;
 	}
 	
@@ -1293,13 +1324,6 @@ html{
 		margin: 0 0 5% 0
 	}
 	
-	#paypal{
-		display: block;
-		width: 100vw;
-		display: flex;
-		justify-content: center;
-	}
-	
 	#rsvp{
 	   height: 100vh;	
 	}
@@ -1321,26 +1345,7 @@ html{
 	#instructions{
 		font-family: "Trajan Pro";
 		text-align: center;
-	}
-	
-	#rsvpform{ 
-		position: relative;
-		top: 5%;
-		display: flex;
-		justify-content: center;
-		border: 2px solid;
-		border-radius: 30px;
-		box-shadow: 3px 3px 10px grey;
-		top: 10vh;
-		--width: 97vw;
-		width: var(--width);
-		height: 70vh;
-		left: calc(100vw/2 - var(--width)/2);
-		background: white;
-		z-index: 1;
-		color: #400711;
-		border-color: #400711;
-	}
+	}	
 	
 	label{
 		font-family: "Trajan Pro Bold";
@@ -1426,5 +1431,31 @@ html{
 	#rsvp .content{
 		height: 80%;
 	}
+	
+	#thanks h1{
+		font-family: "Trajan Pro";
+		font-size: 3em;
+		height: 10vh;
+	}
+	
+	#thanks h3{
+		top: 10vh;
+		--width: 90vw;
+		width: var(--width);
+		left: calc(100vw/2 - var(--width)/2);
+		position: sticky;
+		font-family: "Queenstown Signature";
+		font-size: 3em;
+		text-align: center;
+		line-height: .8
+	}
+	
+	#thankyouphoto{
+		top: 10vh;
+		position: relative;
+		--width: 90vw;
+		width: var(--width);
+		left: calc(100vw/2 - var(--width)/2);
+		z-index: -1;
 	
 }

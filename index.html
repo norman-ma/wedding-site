@@ -30,10 +30,9 @@
 					<div id="home" onclick="toTop()" class="col-2"><h3>#AisleGoWithNorman</h3></div>
 					<div id="main-menu" class="col-8">
 						<a href="#our-wedding" class="left wedding"><button class="menu-button">Our Wedding</button></a>
-						<a href="#getting-there" class="center there"><button class="menu-button">Getting There</button></a>
 						<a href="#photos" class="center photos"><button class="menu-button">Photos</button></a>			
 						<a href="#registry" class="center registry"><button class="menu-button">Registry</button></a>
-						<a href="#rsvp" class="right rsvp"><button class="menu-button">RSVP</button></a>
+						<a href="#thanks" class="right thanks"><button class="menu-button">Thank You</button></a>
 					</div>
 					<div id="countdown" ng-controller="CountdownController" class="col-2">
 						<div id="countown-val"><h2>{{ countdown }}</h2></div><div id="countdown-message">{{ message }}</div>						
@@ -75,6 +74,7 @@
 							</div>
 						</div>
 					</div>
+					<!--
 					<div id="getting-there" class="page col-12">
 						<h1 class="col-12 desktop">Getting There</h1>
 						<h1 class="col-12 mobile" onClick="toTop()">Getting There</h1>
@@ -114,6 +114,7 @@
 
 						</div>
 					</div>
+					-->
 					<div id="photos" class="page col-12">
 						<h1 class="col-12 desktop">Photos</h1>
 						<h1 class="col-12 mobile" onClick="toTop()">Photos</h1>
@@ -161,36 +162,15 @@
 								<div id="bbb">
 									<a href="https://www.bedbathandbeyond.com/store/giftregistry/viewregistryguest/547335049?eventType=Wedding"><img src="https://video.bedbathandbeyond.com/img/BBB-BlackLogo.png" alt="Bed Bath & Beyond"></a>
 								</div>
-							</div>
-							<p class="txt">or if you wish: Contribute to our <span>Newlywed Fund</span></p>
-							<div id="paypal">
-								<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-									<input type="hidden" name="cmd" value="_s-xclick" />
-									<input type="hidden" name="hosted_button_id" value="88VEYWP9AN9GQ" />
-									<input id="donatebutton" type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-									<img alt="" border="0" src="https://www.paypal.com/en_JM/i/scr/pixel.gif" width="1" height="1" />
-								</form>
-							</div>
+							</div>							
 						</div>
 					</div>
-					<div id="rsvp" class="page col-12">
-						<h1 class="col-12 desktop">RSVP</h1>
-						<h1 class="col-12 mobile" onClick="toTop()">RSVP</h1>
-						<div class="content">
-							<form id="rsvpform">
-								<div>			
-									<p id="instructions">Kindly submit by June 15<sup>th</sup></p>
-									<input id="rsvpname" type="text"><br/>
-									<label name="name">Name</label><br/><br/>
-									<input type="radio" name="accept" value="accept" id="rsvpaccept" checked="true"><label name="rsvpaccept">Accepts with pleasure</label>
-									<input type="radio" name="accept" value="decline" id="rsvpdecline"><label name="rsvpdecline">Declines with regret</label><br/><br/>
-									<div id="rsvpnum"><label name="num">Number Attending</label><input id="attendingnum" type="number" min="1"></div><br/><br/>
-
-									<input type="submit" value="Submit">
-								</div>							
-							</form>		
-							<img id="rsvpimg" src="res/images/bouquet-6.png" alt="">
-						</div>
+					<div id="thanks" class="page col-12">
+						<h1 class="col-12 desktop">Thank You</h1>
+						<h3 class="col-12 desktop">for your support, prayers, gifts and encouragement.</h3>
+						<h1 class="col-12 mobile" onClick="toTop()">Thank You</h1>
+						<h3 class="col-12 mobile">for your support, prayers, gifts and encouragement.</h3>
+						<img src="res/images/thankyouphoto.png" alt="Thank You" id="thankyouphoto">
 					</div>
 				</div>
 				<div id="preload" ng-controller="ImageController">
